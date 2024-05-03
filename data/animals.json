@@ -1,0 +1,175 @@
+[{
+        "_id": {
+            "$oid": "6632c10cabd8dc73d89e7566"
+        },
+        "_nombre": "Pepe",
+        "_tipo": "Perro",
+        "_imagen": "https://i.pinimg.com/564x/a4/3b/cd/a43bcd47b0c20ba05b2848f74d41e74f.jpg",
+        "_raza": "Labrador",
+        "_sexo": "Macho",
+        "_caracter": "Amigable",
+        "_edad": [2, "años"],
+        "_ubicacion": "Guadalajara",
+        "_pelajeTipo": "Lacio",
+        "_pelajeColor": "otro",
+        "_pelajeLargo": "Corto",
+        "_estirilizado": false,
+        "_fechaDesparasitacion": {
+            "$date": "2000-01-01T06:00:00.000Z"
+        },
+        "_vacunas": ["no", "Rabia"],
+        "_parasitos": ["no"],
+        "_enfermedades": "Tiene una enfermedad en los pulmones.",
+        "_discapacidad": "No tiene una patita",
+        "_estado": false
+    }, {
+        "_id": {
+            "$oid": "6632c10cabd8dc73d89e8567"
+        },
+        "_nombre": "Sam",
+        "_tipo": "Perro",
+        "_imagen": "https://i.pinimg.com/564x/a4/3b/cd/a43bcd47b0c20ba05b2848f74d41e74f.jpg",
+        "_raza": "Pug",
+        "_sexo": "Macho",
+        "_caracter": "Dormilon",
+        "_edad": [4, "meses"],
+        "_ubicacion": "Zapopan",
+        "_pelajeTipo": "Rizado",
+        "_pelajeColor": "Negro",
+        "_pelajeLargo": "Corto",
+        "_estirilizado": true,
+        "_fechaDesparasitacion": {
+            "$date": "2000-01-01T06:00:00.000Z"
+        },
+        "_vacunas": ["Rabia"],
+        "_parasitos": ["no"],
+        "_enfermedades": "Tiene cancer",
+        "_discapacidad": "No tiene un ojo",
+        "_estado": false
+    },
+    {
+        "_id": {
+            "$oid": "6632c10cabd8dc73d89e8568"
+        },
+        "_nombre": "Jack",
+        "_tipo": "Gato",
+        "_imagen": "https://i.pinimg.com/564x/a4/3b/cd/a43bcd47b0c20ba05b2848f74d41e74f.jpg",
+        "_raza": "Bombay",
+        "_sexo": "Hembra",
+        "_caracter": "Amigable",
+        "_edad": [1, "meses"],
+        "_ubicacion": "Tonala",
+        "_pelajeTipo": "Rizado",
+        "_pelajeColor": "Blanco",
+        "_pelajeLargo": "Largo",
+        "_estirilizado": false,
+        "_fechaDesparasitacion": {
+            "$date": "2000-01-01T06:00:00.000Z"
+        },
+        "_vacunas": ["Rabia"],
+        "_parasitos": ["Pulgas"],
+        "_enfermedades": "",
+        "_discapacidad": "",
+        "_estado": false
+    },
+    {
+        "_id": {
+            "$oid": "6632c10cabd8dc73d89e8569"
+        },
+        "_nombre": "Bella",
+        "_tipo": "Gato",
+        "_imagen": "https://i.pinimg.com/564x/a4/3b/cd/a43bcd47b0c20ba05b2848f74d41e74f.jpg",
+        "_raza": "Bombay",
+        "_sexo": "Hembra",
+        "_caracter": "Amigable",
+        "_edad": [1, "años"],
+        "_ubicacion": "Tonala",
+        "_pelajeTipo": "Rizado",
+        "_pelajeColor": "Blanco",
+        "_pelajeLargo": "Largo",
+        "_estirilizado": false,
+        "_fechaDesparasitacion": {
+            "$date": "2000-01-01T06:00:00.000Z"
+        },
+        "_vacunas": ["no"],
+        "_parasitos": ["no"],
+        "_enfermedades": "",
+        "_discapacidad": "",
+        "_estado": false
+    },
+    {
+        "_id": {
+            "$oid": "6632c10cabd8dc73d89e8949"
+        },
+        "_nombre": "Puca",
+        "_tipo": "Gato",
+        "_imagen": "https://i.pinimg.com/564x/a4/3b/cd/a43bcd47b0c20ba05b2848f74d41e74f.jpg",
+        "_raza": "Bombay",
+        "_sexo": "Hembra",
+        "_caracter": "Amigable",
+        "_edad": [1, "años"],
+        "_ubicacion": "Tonala",
+        "_pelajeTipo": "Rizado",
+        "_pelajeColor": "Blanco",
+        "_pelajeLargo": "Largo",
+        "_estirilizado": false,
+        "_fechaDesparasitacion": {
+            "$date": "2000-01-01T06:00:00.000Z"
+        },
+        "_vacunas": ["no"],
+        "_parasitos": ["no"],
+        "_enfermedades": "",
+        "_discapacidad": "",
+        "_estado": false
+    },
+    {
+        "_id": {
+            "$oid": "6632c10cabd8dc73d89e8459"
+        },
+        "_nombre": "Lilo",
+        "_tipo": "Gato",
+        "_imagen": "https://i.pinimg.com/564x/a4/3b/cd/a43bcd47b0c20ba05b2848f74d41e74f.jpg",
+        "_raza": "Bombay",
+        "_sexo": "Hembra",
+        "_caracter": "Amigable",
+        "_edad": [1, "años"],
+        "_ubicacion": "Tonala",
+        "_pelajeTipo": "Rizado",
+        "_pelajeColor": "Blanco",
+        "_pelajeLargo": "Largo",
+        "_estirilizado": false,
+        "_fechaDesparasitacion": {
+            "$date": "2000-01-01T06:00:00.000Z"
+        },
+        "_vacunas": ["Rabia"],
+        "_parasitos": ["no"],
+        "_enfermedades": "",
+        "_discapacidad": "",
+        "_estado": false
+    },
+    {
+        "_id": {
+            "$oid": "6632c10cabd8dc73d89e8849"
+        },
+        "_nombre": "Lola",
+        "_tipo": "Perro",
+        "_imagen": "https://i.pinimg.com/564x/a4/3b/cd/a43bcd47b0c20ba05b2848f74d41e74f.jpg",
+        "_raza": "Pug",
+        "_sexo": "Hembra",
+        "_caracter": "Amigable",
+        "_edad": [1, "años"],
+        "_ubicacion": "Tonala",
+        "_pelajeTipo": "Rizado",
+        "_pelajeColor": "Blanco",
+        "_pelajeLargo": "Largo",
+        "_estirilizado": true,
+        "_fechaDesparasitacion": {
+            "$date": "2000-01-01T06:00:00.000Z"
+        },
+        "_vacunas": ["no"],
+        "_parasitos": ["Gusanos"],
+        "_enfermedades": "Tiene covid",
+        "_discapacidad": "",
+        "_estado": false
+    }
+]

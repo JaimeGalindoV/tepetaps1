@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Caladea&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap');
+
+
+/* General */
+body {
+  font-family: 'Libre Caslon Text', serif;
+}
+
+.btn-primary {
+  background-color: #b8f1f9;
+  border-color: white;
+  color: black;
+}
+
+/* INICIO Barra de busqueda --------------------------------------------------------------------- */
+
+#searchBar {
+  background-color: #fdfce8;
+  top: 40px;
+  /* padding-top: 30px; */
+  padding-bottom: 30px;
+}
+
+@media (min-width: 992px) {
+  #searchBar {
+    position: fixed;
+    height: 100%;
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  #searchBar {
+    position: static;
+    border: #fdfce8 1px solid;
+    
+  }
+  
+}
+
+
+#searchBar form * {
+  font-size: 15px;
+}
+
+#searchBar form ::placeholder {
+  font-size: 14px;
+}
+
+label:not(.form-check-label) {
+  font-size: medium;
+  font-weight: bold;
+}
+/* INICIO Barra de busqueda --------------------------------------------------------------------- */
+
+
+/* Todo EL LADO DERECHO*/
+/* INICIO Selector de usuario/animal/publicacion ------------------------------------------------------------------------------------- */
+.selector {
+  margin: 30px;
+}
+
+input[type="radio"].usuariosBtn,
+input[type="radio"].animalesBtn,
+input[type="radio"].publicacionesBtn,
+input[type="radio"].animalesBtnModal,
+input[type="radio"].publicacionesBtnModal {
+  display: none;
+}
+
+input[type="radio"].usuariosBtn+label,
+input[type="radio"].animalesBtn+label,
+input[type="radio"].publicacionesBtn+label,
+input[type="radio"].animalesBtnModal+label,
+input[type="radio"].publicacionesBtnModal+label {
+  color: #ababab;
+  border-bottom: solid #ababab;
+  text-align: center;
+}
+
+
+#usuariosBtn:checked+label {
+  border-bottom: solid black;
+  color: black;
+}
+
+#publicacionesBtn:checked+label {
+  border-bottom: solid black;
+  color: black;
+}
+
+#animalesBtn:checked+label {
+  border-bottom: solid black;
+  color: black;
+}
+
+#publicacionesBtnModal:checked+label {
+  border-bottom: solid black;
+  color: black;
+}
+
+#animalesBtnModal:checked+label {
+  border-bottom: solid black;
+  color: black;
+}
+
+
+/* FIN Selector de usuario/animal/publicacion ------------------------------------------------------------------------------------- */
+
+
+/* INICIO body -----------------------------------------------------------------------------------------*/
+
+.usuariosMedia,
+.animalesMedia,
+.publicacionesMedia,
+.animalesMediaModal {
+  display: flex;
+  justify-content: center;
+}
+
+
+#usuario,
+#animal {
+  background-color: #fdfce8;
+}
+
+#usuario,
+#animal,
+#publicacionModal,
+#animalModal {
+  border: 1px solid rgba(128, 128, 128, 0.345);
+  padding: 10px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 5px gray;
+}
+
+@media (max-width: 767px) {
+  
+  #usuario,
+  #animal {
+    text-align: center;
+  }
+}
+
+/*Publicaciones como tal*/
+.post {
+  background-color: #FDFCE8;
+  width: 80%;
+  /* Cambiar el ancho de la tarjeta */
+  max-width: 800px;
+  /* Establecer un ancho máximo para la tarjeta */
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  /* Agregar esta propiedad para que los elementos internos se envuelvan si es necesario */
+  align-items: center;
+  /* Alinear elementos verticalmente */
+  border-radius: 20px;
+  /* Agregar bordes redondeados */
+}
+
+
+.post img {
+  max-width: 100%;
+  /* Establecer el ancho máximo al 100% del contenedor */
+  height: auto;
+  /* Altura automática para mantener la proporción de aspecto */
+  margin-right: 20px;
+  margin-bottom: 20px;
+  /* Agregar margen inferior para separar las imágenes */
+  border-radius: 15px;
+  /* Agregar bordes redondeados */
+}
+
+.post-content {
+  flex-grow: 1;
+  margin-top: 20px;
+}
+
+.person-name {
+  font-size: 1rem;
+  /* Tamaño de fuente más pequeño */
+  margin-left: 10px;
+  /*Espacio entre imágen de perfil y nombre de la persona*/
+  margin-top: 13px;
+}
+
+/*imagen de la publicación*/
+
+.post-content img {
+  max-width: 100%;
+  /* Establece el ancho máximo al 100% del contenedor */
+  height: auto;
+  /* Altura automática para mantener la proporción de aspecto */
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* FIN body -----------------------------------------------------------------------------------------*/
+
+/* Para modal y para body ------------------------------------------------------------ */
+#animalModal #body,
+#body {
+  margin-top: 10px;
+  flex-direction: column;
+}
+
+#imgContainer {
+  display: flex;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  padding: 0;
+}
+
+#imgMarco {
+  display: flex;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 50%;
+  border: #000000 1px solid;
+  box-shadow: 4px 4px 5px gray;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+img {
+  width: 100%;
+}
+
+
+/*FIN  Para modal y para body ------------------------------------------------------------ */
+
+
+/*Modal usuario / Animal---------------------------------------------------------------------------------*/
+.imgUsuarioModal,
+.imgAnimalModal {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: #53797e 3px solid;
+  box-shadow: 4px 4px 5px gray;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#infoUsuario .modal-content,
+#infoAnimal .modal-content {
+  font-weight: 500;
+  background-color: #fdfce8;
+}
+
+
+#publicacionModal #imgContainer,
+#animalModal #imgContainer {
+  display: flex;
+  justify-content: center;
+}
+
+
+#publicacionModal,
+#animalModal {
+  background-color: white;
+}
+
+
+@media (max-width: 991px) {
+  
+  #animalModal,
+  #publicacionModal {
+    text-align: center;
+  }
+
+  #imgPublicacionModal {
+    margin-bottom: 20px;
+  }
+}
+
+#imgPublicacion {
+  border-radius: 10%;
+  border: #000000 1px solid;
+}
+
+/* FIN Modal usuario / Animal---------------------------------------------------------------------------------*/
+
+/* Aqui voy ------------------------------------- */

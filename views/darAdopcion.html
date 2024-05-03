@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Dar en adopción</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caladea&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap');
+
+        body {
+            font-family: 'Libre Caslon Text', serif;
+            background-color: white;
+            /* Fondo amarillo claro */
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --------------------PAGINA REGISTRO PARA DAR EN ADOPCION -------------- */
+        .registroDarAdopcion {
+            top: 130px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #f2f2f2;
+        }
+
+        .registroDarAdopcion>form>div {
+            left: 2%;
+            right: 5%;
+        }
+
+        .registroDarAdopcion>form label:not(label.tipo) {
+            font-size: small;
+        }
+
+        /* MODALES */
+        .modal {
+            color: black;
+        }
+
+        .modal-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-md" id="navBar">
+    </nav>
+
+    <!-- Pantalla completa para registrar nuevo animal -->
+    <!-- AGREGAR RAZAS Y SI SE SESLECCIONE PERRO SOLO SE MUESTRES LAS DE CLASE PERRO SINO LAS DE GATO -->
+    <div class="registroDarAdopcion col-9">
+        <form id="formDarAdopcion"
+            action="mailto:POO@test.com?cc=otro@test.com&subject=Curso%20Programación%20Orinetada%20a%20Objetos"
+            method="post" enctype="multipart/form-data">
+            <h4 class="text-center pt-5 mb-3">Registra un nuevo peludito</h4>
+            <div class="row justify-content-center col-12 pb-4">
+                <!-- IMAGEN -->
+                <input type="text" id="fileImgAnimal" class="form-control" name="imagenAnimal" placeholder="Ingresar url de foto del peludito"
+                    required>
+                <!-- NOMBRE -->
+                <input type="text" name="nombre animal" id="nombreAnimalRegistro" class="form-control mt-3 mb-3"
+                    placeholder="Nombre del peludito" required>
+                <!-- TIPO -->
+                <div class="input-group mb-3 col-12" id="tipoAnimal">
+                    <div class="col-6 form-check form-check-inline">
+                        <input type="radio" name="tipoAnimal" id="perroRegistro" value="perro" checked>
+                        <label for="perroRegistro" class="tipo">Perro</label>
+                    </div>
+                    <div class="col-6 form-check form-check-inline">
+                        <input type="radio" name="tipoAnimal" id="gatoRegistro" value="gato">
+                        <label for="gatoRegistro" class="tipo">Gato</label>
+                    </div>
+                </div>
+                <!-- RAZA -->
+                <select class="form-control mb-3" id="razaAnimalRegistro" name="Raza del animal">
+                    <!-- Perros -->
+                    <option value="" disabled selected>Seleccione raza</option>
+                    <option value="PerroMestizo" class="Perro">Perro mestizo</option>
+                    <option value="Chihuahua" class="Perro">Chihuahua</option>
+                    <option value="Schnauzer" class="Perro">Schnauzer</option>
+                    <option value="GoldenRetriever" class="Perro">Golden Retriever</option>
+                    <option value="Pug" class="Perro">Pug</option>
+                    <option value="YorkshireTerriers" class="Perro">Yorkshire Terriers</option>
+                    <option value="BorderCollie" class="Perro">Border Collie</option>
+                    <option value="Labrador" class="Perro">Labrador</option>
+                    <option value="Bulldog" class="Perro">Bulldog</option>
+                    <option value="Pitbull" class="Perro">Pitbull</option>
+                    <option value="Pomerania" class="Perro">Pomerania</option>
+                    <option value="PastorAleman" class="Perro">Pastor Alemán</option>
+                    <option value="Husky" class="Perro">Husky</option>
+                    <option value="PastorBelga" class="Perro">Pastor Belga</option>
+                    <option value="Doberman" class="Perro">Dóberman</option>
+                    <option value="Beagle" class="Perro">Beagle</option>
+                    <option value="PastorAustraliano" class="Perro">Pastor Australiano</option>
+                    <option value="DogoArgentino" class="Perro">Dogo Argentino</option>
+                    <option value="GranDanes" class="Perro">Gran Danés</option>
+                    <option value="Rottweiler" class="Perro">Rottweiler</option>
+                    <!-- Gatos -->
+                    <option value="Mestizo" class="Gato">Gato Mestizo</option>
+                    <option value="Americano" class="Gato">Gato Americano </option>
+                    <option value="Europeo" class="Gato">Gato Europeo</option>
+                    <option value="Bombay" class="Gato">Gato Bombay</option>
+                    <option value="AzulRuso" class="Gato">Gato Azul ruso</option>
+                    <option value="Persa" class="Gato">Gato Persa</option>
+                    <option value="Siames" class="Gato">Gato Siamés</option>
+                    <option value="AngoraTurco" class="Gato">Gato Angora turco</option>
+                    <option value="Siberiano" class="Gato">Gato Siberiano</option>
+                    <option value="MauEgipcio" class="Gato">Gato mau egipcio</option>
+                    <option value="Snowshoe" class="Gato">Gato snowshoe</option>
+                    <!--Otras -->
+                    <option value="OtraRaza">Otra</option>
+                </select>
+                <!-- SEXO -->
+                <select class="form-control mb-3" id="sexoAnimalRegistro" name="Sexo del animal" required>
+                    <option value="" disabled selected>Seleccione sexo del animal</option>
+                    <option value="Macho">Macho</option>
+                    <option value="Hembra">Hembra</option>
+                </select>
+                <!-- CARACTER -->
+                <textarea id="caracterAnimalRegistro" placeholder="Describe el caracter del animal"
+                    name="caracter animal" rows="2" cols="50" class="form-control mb-3"></textarea>
+                <!-- EDAD -->
+                <div class="input-group col-12 pl-0 pr-0">
+                    <div class="col-8 pl-0 pr-0">
+                        <input type="number" id="edadAnimalRegistro" class="form-control mb-3" min="0"
+                            placeholder="Edad del animal">
+                    </div>
+                    <div class="col-4 pl-1 pr-0">
+                        <select class="form-control mb-3" id="unidadEdadAnimalRegistro" name="añosMeses">
+                            <option value="" disabled selected>Años o Meses</option>
+                            <option value="años">Años</option>
+                            <option value="meses">Meses</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- UBICACION -->
+                <div class="row col-12 pl-0 pr-0 mb-3">
+                    <div class="col-4 pl-0 pr-0">
+                        <input type="text" class="form-control mt-1" id="pais" name="Pais" value="Mexico"
+                            placeholder="País: México" disabled>
+                    </div>
+                    <div class="col-4 pl-1 pr-0">
+                        <input type="text" class="form-control mt-1" id="estado" name="Estado" value="Jalisco"
+                            placeholder="Estado: Jalisco" disabled>
+                    </div>
+                    <div class="col-4 pl-1 pr-0">
+                        <select class="form-control mt-1" id="ciudad" name="Ciudad" required>
+                            <option value="" disabled selected>Ciudad</option>
+                            <option value="Guadalajara">Guadalajara</option>
+                            <option value="Zapopan">Zapopan</option>
+                            <option value="Tonala">Tonála</option>
+                            <option value="Tlaquepaque">Tlaquepaque</option>
+                            <option value="Tlajomulco">Tlajomulco</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- PELAJE -->
+                <div class="row col-12 pl-0 pr-0 mb-3">
+                    <div class="col-4 pl-0 pr-0">
+                        <select class="form-control" id="tipoPelajeRegistro" name="tipo_pelaje" required>
+                            <option value="" disabled selected>Seleccione tipo de pelaje</option>
+                            <option value="Lacio">Lacio</option>
+                            <option value="Rizado">Rizado</option>
+                            <option value="otro">Otro</option>
+                            <!-- agregar más opciones según sea necesario -->
+                        </select>
+                    </div>
+                    <div class="col-4 pl-1 pr-0">
+                        <select class="form-control" id="colorPelajeRegistro" name="color_pelaje" required>
+                            <option value="" disabled selected>Seleccione color de pelaje</option>
+                            <option value="Negro">Negro</option>
+                            <option value="Cafe oscuro">Café oscuro</option>
+                            <option value="Cafe claro">Café claro</option>
+                            <option value="Blanco">Blanco</option>
+                            <option value="otro">Otro</option>
+                            <!-- agregar más opciones según sea necesario -->
+                        </select>
+                    </div>
+                    <div class="col-4 pl-1 pr-0">
+                        <select class="form-control" id="largoPelajeRegistro" name="largo_pelaje" required>
+                            <option value="" disabled selected>Seleccione largo de pelaje</option>
+                            <option value="Largo">Largo</option>
+                            <option value="Mediano">Mediano</option>
+                            <option value="Corto">Corto</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- ESTIRILIZACION -->
+                <select class="form-control mb-3" id="estirilizacionRegistro" name="Estirilizado" required>
+                    <option value="" disabled selected>¿El animal está esterilizado?</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+                <!-- FECHA DESPARACITACION -->
+                <label for="fechaDesparacitacionRegistro" style="color: #888888;">Última fecha de
+                    desparacitación</label>
+                <input type="date" name="fechaDesparacitacion" id="fechaDesparacitacionRegistro"
+                    class="form-control mb-3" value="Fecha desparacitacion">
+                <!-- VACUNAS -->
+                <div class="dropdown col-12 form-control mb-3 p-0" id="vacunasRegistro">
+                    <button class="btn dropdown-toggle col-12 text-left" type="button" id="dropdownMenuButtonVacunas"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Seleccionar vacunas
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <form>
+                            <!-- ambos -->
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="rabia" name="Vacunas" value="rabia">
+                                <label for="rabia">Rabia</label>
+                            </div>
+                            <!-- vacunas para perros -->
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="primeraVacuna" name="Vacunas" value="Primera Vacuna"
+                                    class="Perro">
+                                <label for="primeraVacuna">Primera vacuna</label>
+                            </div>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="tos" name="Vacunas" value="tos" class="Perro">
+                                <label for="tos">Tos de las perreras</label>
+                            </div>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="mosquillo" name="Vacunas" value="mosquillo" class="Perro">
+                                <label for="mosquillo">Moquillo canino</label>
+                            </div>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="coronavirus" name="Vacunas" value="coronavirus"
+                                    class="Perro">
+                                <label for="coronavirus">Coronavirus canino</label>
+                            </div>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="parvovirus" name="Vacunas" value="Parvovirus" class="Perro">
+                                <label for="parvovirus">Parvovirus</label>
+                            </div>
+                            <!-- vacunas para perros -->
+                            <!-- vacunas para gatos -->
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="Panleucopenia" name="Vacunas" value="Panleucopenia"
+                                    class="Gato">
+                                <label for="Panleucopenia">Panleucopenia felina</label>
+                            </div>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="herpesvirus" name="Vacunas" value="herpesvirus" class="Gato">
+                                <label for="herpesvirus">Herpesvirus</label>
+                            </div>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="calicivirus" name="Vacunas" value="calicivirus" class="Gato">
+                                <label for="calicivirus">Calicivirus</label>
+                            </div>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="leucemia" name="Vacunas" value="leucemia" class="Gato">
+                                <label for="leucemia">Leucemia viral felina</label>
+                            </div>
+                            <!-- vacunas para gatos -->
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="otras" name="Vacunas" value="otras">
+                                <label for="otras">Otras</label>
+                            </div>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="ningunaVacunas" name="Vacunas" value="no">
+                                <label for="ningunaVacunas">Ninguna</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- PARASITOS -->
+                <div class="dropdown col-12 form-control mb-3 p-0" id="parasitosRegistro">
+                    <button class="btn dropdown-toggle col-12 text-left" type="button" id="dropdownMenuButtonParasitos"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Seleccionar parásitos
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <form>
+                            <!-- ambos -->
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="garrapatas" name="Parasitos" value="garrapatas">
+                                <label for="garrapatas">Garrapatas</label>
+                            </div>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="pulgas" name="Parasitos" value="pulgas">
+                                <label for="pulgas">Pulgas</label>
+                            </div>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="piojos" name="Parasitos" value="piojos">
+                                <label for="piojos">Piojos</label>
+                            </div>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="gusanos" name="Parasitos" value="gusanos">
+                                <label for="gusanos">Gusanos</label>
+                            </div>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="otrosParasitos" name="Parasitos" value="otros">
+                                <label for="otrosParasitos">Otros</label>
+                            </div>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="ningunaParasitos" name="Parasitos" value="no">
+                                <label for="ningunaParasitos">Ninguna</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- ENFERMEDADES -->
+                <textarea id="enfermedadesAnimalRegistro"
+                    placeholder="Describe las enfermedades del animal (dejar en blanco si no tiene)"
+                    name="enfermedades animal" rows="2" cols="50" class="form-control mb-3"></textarea>
+                <!-- DISCAPACIDADES -->
+                <textarea id="dispacacidadesAnimalRegistro"
+                    placeholder="Describe las discapacidades del animal (dejar en blanco si no tiene)"
+                    name="discapacidades animal" rows="2" cols="50" class="form-control mb-3"></textarea>
+                <!-- BOTON DE REGISTRAR (se sube al perfil y a la pagina de adoptar) -->
+                <button type="submit" class="btn btn-success col-5">Registrar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- MODAL LOG IN -->
+    <!-- MODAL LOG IN -->
+    <div class="modal fade" id="logIn" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+
+    </div>
+
+    <!-- MODAL REGISTRO -->
+    <div class="modal fade" id="registro" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <script src="animals.js"></script>
+    <script src="darAdopcion_utils.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+
+        // mostrar solo razas de gatos o razas de perros
+        let perroRadio = document.getElementById("perroRegistro");
+        let gatoRadio = document.getElementById("gatoRegistro");
+        let razaAnimalSelect = document.getElementById("razaAnimalRegistro"); 
+        let opcionesGato = razaAnimalSelect.querySelectorAll(".Gato");
+        let opcionesPerro = razaAnimalSelect.querySelectorAll(".Perro");
+        perroRadio.addEventListener('change', function () {
+            if (perroRadio.checked) {
+                opcionesGato.forEach(function (opcion) {
+                    opcion.style.display = "none";
+                });
+                opcionesPerro.forEach(function (opcion) {
+                    opcion.style.display = "block";
+                });
+            }
+        });
+        gatoRadio.addEventListener('change', function () {
+            if (gatoRadio.checked) {
+                opcionesPerro.forEach(function (opcion) {
+                    opcion.style.display = "none";
+                });
+                opcionesGato.forEach(function (opcion) {
+                    opcion.style.display = "block";
+                });
+            }
+        });
+    </script>
+    <script src="utils/utils.js"></script>
+
+</body>
+
+</html>

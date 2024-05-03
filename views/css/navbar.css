@@ -1,0 +1,164 @@
+
+.navbar {
+    height: 90px;
+    width: 100%;
+    background-color: #b8f1f9; /* Fondo azul */
+    position: fixed;  /* Barra de navegación fija */
+    top: 0;  /* Alineada al inicio de la página */
+    /* Asegura que la barra de navegación esté por encima de otros elementos */
+    z-index: 100;  
+    padding: 0;
+  }
+  
+  /* TITULO (TEPETAPS) */
+  .navbar-brand {
+    font-size: 2em;
+    color: #000000;
+    font-weight: bold;
+    /* Agrega esta línea para eliminar el subrayado */
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  /* Margen de boton para pantallas pequeñas */
+  .navbar-toggler{
+    margin-right: 40px;
+  }
+  
+  /* Todo el contenedor derecho */
+  .navbar-collapse {
+    /* Alinea los elementos a la derecha */
+    justify-content: flex-end;
+    display: flex;
+    /* border: #000000 1px solid ; */
+    /* height: 100%; */
+  }
+  
+  @media (max-width: 767px) {
+    .rightNavbar {
+      border: white 1px solid;
+      background-color: #b8f1f9;
+        border-radius: 10%;
+        padding: 15px;
+    }
+    
+  }
+  
+  .rightNavbar{
+    display: flex; /* Activa el modo flexbox */
+    margin-right: 30px;
+    /* border: #000000 1px solid; */
+    /* border: black 1px solid; */
+  }
+  
+  .ulprincipal {
+    margin-right: 0%;
+    height: auto;
+    align-items: center;
+  }
+  
+  
+  .nav-item {
+    /* margin-top: 30px; */
+    display: flex; /* Permite usar flexbox para centrar el contenido */
+    align-items: center; /* Alinea verticalmente el contenido */
+    height: auto; /* Ajusta la altura automáticamente */
+    border: none; /* Elimina el borde */
+    height: 100%;
+    margin: 0 10px;
+  }
+  
+  .nav-link {
+    color: #000000;
+  }
+  
+  
+  .menu-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .menu-button span {
+    width: 2rem;
+    height: 0.25rem;
+    /* Color de las líneas */
+    background: #333;
+  }
+  
+  
+  
+  #imgPerfil {
+    /* height: 90px; */
+    margin-left: 10px;
+  }
+  
+  .user-image {
+    /* Ancho de la imagen de usuario */
+    width: 50px;
+    /* Altura de la imagen de usuario */
+    height: 50px;
+    /* Hace que la imagen sea un círculo */
+    border-radius: 50%;
+    /* Color de fondo en caso de que la imagen no se cargue */
+    background: #ccc;
+    /* Aquí puedes poner la URL de la imagen de usuario */
+    background-image: url('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png');
+    /* Asegura que la imagen cubra todo el círculo */
+    background-size: cover;
+    background-position: center;
+    border: gray 1px solid;
+    box-shadow: gray 2px 2px 5px;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    flex-direction: column;
+    /* Color de fondo del menú */
+    background: #fff;
+    /* Color del texto del menú */
+    color: #333;
+    position: absolute;
+    /* Posición debajo de la barra de navegación */
+    top: 40px;
+    /* right: 10PX; */
+    left: 50%;
+    /* Alinear a la derecha */
+    transform: translateX(-40%);
+  
+    /* Asegurar que el menú esté por encima de otros elementos */
+    z-index: 99;
+    /* Añadir borde */
+    border: 1px solid #ccc;
+    /* Fuente del menú */
+    font-family: 'Libre Caslon Text', serif;
+  }
+  
+  .dropdown-menu a {
+    color: #333;
+    /* Color del texto de los enlaces */
+    text-decoration: none;
+    /* Eliminar el subrayado de los enlaces */
+    padding: 10px;
+    /* Añadir relleno a los enlaces */
+    display: block;
+    /* Hacer que los enlaces ocupen toda la línea */
+  }
+  
+  .dropdown-menu a:hover {
+    /* Cambiar el color de fondo al pasar el ratón */
+    background-color: #f2f2f2;
+  }
+  
+  .dropdown-menu.show {
+    /* Muestra el menú cuando la clase 'show' está presente */
+    display: flex;
+  }
+  
+  

@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>PAGINA PRINCIPAL</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caladea&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap');
+
+        body {
+            font-family: 'Libre Caslon Text', serif;
+            /* Fondo amarillo claro */
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-content {
+            text-align: center;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .main-content img {
+            width: 100%;
+            /* Ajusta el tamaño de la imagen */
+        }
+
+        .main-content h1 {
+            font-family: 'Caladea', serif;
+            /* Fuente Caladea */
+            font-weight: 400;
+            /* Peso de la fuente */
+            font-size: 64px;
+            /* Tamaño de la fuente */
+            line-height: 73.6px;
+            /* Altura de línea */
+            text-align: center;
+            /* Alineación del texto */
+            color: #333;
+            /* Color del texto */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            background-color: rgba(255, 255, 255, 0.5);
+            /* Color de fondo con transparencia */
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            /* Sombra */
+        }
+
+        .main-content p {
+            color: #666;
+            /* Color del texto */
+        }
+
+        .quote {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .quote-right {
+            position: absolute;
+            top: 50%;
+            right: 3%;
+            /* Ajusta este valor para mover la caja de texto hacia la derecha */
+            transform: translateY(-50%);
+            /* Centra la caja de texto solo verticalmente */
+            font-size: 2.3em;
+            /* Aumenta este valor para hacer la letra un poco más grande */
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 50px;
+            /* Aumenta este valor para agregar más espacio alrededor del texto */
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            width: 550px;
+            /* Aumenta este valor para hacer la caja de texto más grande */
+            height: 500px;
+            /* Aumenta este valor para hacer la caja de texto más grande */
+            font-family: 'Caladea', serif;
+            /* Fuente del menú */
+        }
+
+        .quote-right h2 {
+            font-size: 1.5em;
+            /* Reduce este valor para hacer el texto "Nuestra motivación" más pequeño */
+            font-weight: bold;
+            /* Hace el texto "Nuestra motivación" en negritas */
+            color: #000;
+            /* Cambia el color del texto a negro */
+        }
+
+        .quote-right p {
+            color: #000;
+            /* Cambia el color del texto a negro */
+        }
+
+        .table-content {
+            margin-top: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ffffff;
+            padding: 5px 15px 15px 5px;
+            /* Reducir el relleno en la parte superior e izquierda */
+            text-align: left;
+            color: #000000;
+        }
+
+        td img {
+            width: 70%;
+        }
+
+        h2 {
+            font-size: 3em;
+            /* Tamaño de la fuente aumentado */
+            font-family: 'Caladea', serif;
+            /* Fuente Caladea */
+        }
+
+        /*tarjetas de más sobre nosotros*/
+
+        .section h2 {
+            text-align: center;
+            font-size: 4em;
+            font-family: 'Caladea', serif;
+            color: #333;
+        }
+
+        .section hr {
+            width: 50px;
+            border: 1px solid orange;
+            margin: 0 auto 20px auto;
+            /* Centra la línea horizontal */
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            /* Agrega sombra a las tarjetas */
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            font-family: 'Caladea', serif;
+            color: #333;
+        }
+
+        /*CARRUSEL*/
+
+        .carousel-container {
+            width: 1175px;
+            height: 646px;
+            background-color: white;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            /* Efecto de sombra en la parte inferior */
+        }
+
+        .carousel-inner-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-inner {
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-item {
+            text-align: right;
+            /* Alinea el texto a la derecha */
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            /* Ajusta el tamaño máximo de las imágenes */
+            height: auto;
+            /* Altura automática para mantener la proporción */
+            margin-left: 60px;
+            margin-top: 40px;
+        }
+
+        .carousel-item .card-title,
+        .carousel-item .card-text {
+            color: black;
+            /* Color del texto */
+            text-align: center;
+            /* Centra el texto horizontalmente */
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            top: calc(50% - 30px);
+            /* Posición vertical centrada de las flechas */
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 30px;
+            /* Tamaño de las flechas */
+            height: 30px;
+            /* Tamaño de las flechas */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Color de fondo de las flechas */
+            border-radius: 50%;
+            /* Forma redondeada */
+        }
+
+        .carousel-control-prev-icon:before,
+        .carousel-control-next-icon:before {
+            font-size: 24px;
+            /* Tamaño del icono de flecha */
+            color: white;
+            /* Color del icono de flecha */
+        }
+
+        /*Donaciones*/
+        .donation-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1175px;
+            height: 646px;
+            background-color: white;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .donation-item {
+            display: flex;
+            /* Añade flexbox al contenedor del ítem */
+            align-items: center;
+            /* Centra verticalmente el contenido */
+            justify-content: flex-start;
+            /* Alinea el contenido a la izquierda */
+            text-align: left;
+            /* Alinea el texto a la izquierda */
+            width: 100%;
+            /* Asegura que el ítem ocupe todo el ancho disponible */
+        }
+
+        .donation-item img {
+            max-width: 50%;
+            /* Ajusta el tamaño máximo de las imágenes al 50% */
+            height: auto;
+            /* Altura automática para mantener la proporción */
+            margin-right: 60px;
+            /* Añade margen a la derecha de la imagen */
+            margin-left: 60px;
+        }
+
+        .donation-content {
+            flex: 1;
+            /* Asegura que el contenido ocupa todo el espacio restante */
+            padding: 20px;
+            text-align: center;
+            /* Alinea el texto al centro */
+        }
+
+        .donation-content h3,
+        .donation-content p {
+            color: black;
+            /* Color del texto */
+        }
+
+        .btn-donate {
+            display: block;
+            width: 80%;
+            /* Reduce el ancho del botón al 80% */
+            padding: 10px;
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin: 0 auto;
+            /* Centra el botón horizontalmente */
+        }
+
+        .btn-donate:hover {
+            background-color: #0056b3;
+        }
+
+        /*parte de abajo*/
+
+        .contact-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            /* Asegura que el contenedor ocupe todo el ancho de la pantalla */
+            background-color: #D3D3D3;
+            /* Cambia el color de fondo a gris */
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            /* Centra el texto horizontalmente */
+        }
+
+        .contact-item {
+            text-align: center;
+            /* Alinea el texto al centro */
+        }
+
+        .contact-item h3,
+        .contact-item p {
+            color: black;
+            /* Color del texto */
+            font-size: 0.8em;
+            /* Reduce el tamaño de la letra */
+        }
+
+        .modal {
+            color: black;
+        }
+
+        .modal-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-md" id="navBar">
+    </nav>
+    <!-- --------------------------------------------------------------------------------------------------------- -->
+
+    <!-- Imagen de inicio -->
+
+    <div class="main-content">
+        <br>
+        <br>
+        <br>
+        <img src="https://elcomercio.pe/resizer/NJJG0TF-AnPdJ5Xe74hjlViNCPk=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/HRSNIX6RSNERJEHH72DYD6KAKM.jpg"
+            alt="Imagen de un perro">
+        <h1>Un amigo de 4 patitas es un amigo para siempre ¿No crees?</h1>
+    </div>
+    <div class="table-content">
+        <br>
+        <br>
+        <br>
+        <br>
+        <table>
+            <tr>
+                <td>
+                    <center>
+                        <img src="https://scontent.fgdl3-1.fna.fbcdn.net/v/t1.6435-9/97997728_1516371398530009_7255453979293777920_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGR4Ab5THuoJETM_C66b2SLuNqWUGZsjJe42pZQZmyMlwU4dY6G-YlzyERrKFRdAJoc0axudEV8FelH0LxrM_SO&_nc_ohc=5NbnvhcnFggAX-x_XZb&_nc_ht=scontent.fgdl3-1.fna&oh=00_AfB6ps2NR2wzN-PWL-0bEDAnFiVFyNGaCxwh1goLX2LhxA&oe=662F0CDF"
+                            alt="Imagen de un perro con gafas">
+                    </center>
+                </td>
+                <td>
+                    <center>
+                        <h2>En México tenemos un serio problema</h2>
+                        <br>
+                        Al rededor de medio millón de gatos y perros
+                        <br>
+                        son abandonados anualmente.
+                        <br>
+                        Además se estima que 96.000 perros viven en albergues
+                        <br>
+                        y 18,8 millones viven en situación de calle.
+                        <br>
+                        En el caso de los gatos, 32.000 están en albergues
+                        <br>
+                        y 9,1 millones deambulan.
+                    </center>
+                </td>
+            </tr>
+        </table>
+
+        <div class="main-content">
+            <br>
+            <br>
+            <br>
+            <br>
+            <img src="https://img.freepik.com/fotos-premium/perro-corriendo-playa-al-atardecer_948735-128125.jpg?w=900"
+                alt="perro en la playa">
+            <div class="quote-right">
+                <h2>Nuestra motivación</h2>
+                <p>Siendo consientes de este problema, nuestra motivación
+                    es poder ayudar a estos peluditos a encontrar un hogar
+                    <br>
+                    en el cual puedan tener una vida digna.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------- -->
+
+
+    <!-- Más sobre nosotros (misión, visión y eso) -->
+    <div class="section">
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2>Más sobre nosotros</h2>
+        <hr>
+        <br>
+        <div class="card-container">
+            <!-- Tarjeta 1 -->
+            <div class="card">
+                <img src="https://www.radioformula.com.mx/u/fotografias/m/2023/1/13/f960x540-629011_703086_7.jpg"
+                    alt="Imagen 1">
+                <div class="card-content">
+                    <h3>Misión</h3>
+                    <p>Nuestra misión es conectar a las mascotas sin hogar con personas amorosas y responsables que
+                        puedan proporcionarles un hogar seguro y cariñoso. Nos esforzamos por educar a la comunidad
+                        sobre la importancia de la adopción de mascotas y el bienestar animal, y trabajamos
+                        incansablemente para mejorar las vidas de las mascotas en nuestra comunidad.</p>
+                </div>
+            </div>
+            <!-- Tarjeta 2 -->
+            <div class="card">
+                <img src="https://depor.com/resizer/4GA1USC-xSB4OAHso4D1xS07Aug=/580x330/smart/filters:format(jpeg):quality(90)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/WLG26I3H2NFEZPVNGWGP5EJCMI.jpg"
+                    alt="Imagen 2">
+                <div class="card-content">
+                    <h3>Logros</h3>
+                    <p>Nuestra visión es un mundo donde cada mascota tiene un hogar amoroso y se cuida adecuadamente.
+                        Creemos en un futuro donde los refugios de animales estén vacíos porque todas las mascotas
+                        tienen un lugar al que llamar hogar. Trabajamos para hacer de este sueño una realidad a través
+                        de la adopción, la educación y el apoyo a los dueños de mascotas.</p>
+                </div>
+            </div>
+            <!-- Tarjeta 3 -->
+            <div class="card">
+                <img src="https://fotografias.antena3.com/clipping/cmsimages01/2021/06/16/17E9635D-51B2-4235-A1EE-22E7647E8CFF/96.jpg?crop=910,512,x58,y0&width=1200&height=675&optimize=low&format=webply"
+                    alt="Imagen 3">
+                <div class="card-content">
+                    <h3>Visión</h3>
+                    <p>Reducir la cantidad de peluditos en estado de abandono.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------- -->
+
+    <!-- Carrusel -->
+    <div class="section">
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2>Formas de Ayudar</h2>
+        <hr>
+        <br>
+    </div>
+
+    <div class="carousel-container">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://images.ecestaticos.com/wmI1q7bk8yTVuXabb9_pZqV70fM=/0x0:1599x899/1200x1200/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F978%2Fc56%2F4bd%2F978c564bdaec602576ad65791d8ca233.jpg"
+                                class="d-block w-100" alt="Imagen">
+                        </div>
+                        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title">Adopta</h5>
+                            <br>
+                            <p class="card-text">
+                                Al adoptar, no solo le das a una mascota un hogar amoroso,
+                                <br>sino que también abres un espacio en los diversos refugios
+                                <br>que hay, para que otro animal pueda ser adoptado.
+                            </p>
+                            <br>
+                            <a href="tu_pagina_destino.html" class="btn btn-primary">Anímate</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://img.freepik.com/fotos-premium/gato-gafas-sol-lentes-naranjas-par-gafas-sol-naranjas_867452-8549.jpg"
+                                class="d-block w-100" alt="Imagen">
+                        </div>
+                        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title">Da en Adopción</h5>
+                            <br>
+                            <p class="card-text">Si tienes una mascota que ya no puedes cuidar,
+                                <br>o has encontrado un animal que necesita un hogar, podemos
+                                <br>ayudarte a encontrarle un hogar seguro y amoroso.</p>
+                            <br>
+                            <a href="tu_pagina_destino.html" class="btn btn-primary">Ayuda</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2022/01/heroes-por-adopcion-cdmx.jpeg?fit=959%2C959&ssl=1"
+                                class="d-block w-100" alt="Imagen">
+                        </div>
+                        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title">Apadrina</h5>
+                            <br>
+                            <p class="card-text">Apadrinar a un perrito es una forma maravillosa de ayudar
+                                <br> a los perros que más lo necesitan.
+                                <br>Al apadrinar, puedes proporcionar el apoyo financiero
+                                <br>necesario para el cuidado y bienestar de un perro en particular,
+                                <br>mientras permanece en un refugio asociado, en espera
+                                <br>de un hogar permanente.</p>
+                            <br>
+                            <a href="tu_pagina_destino.html" class="btn btn-primary">Únete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------- -->
+
+    <!-- Dona dona, dona dona dona -->
+
+    <div class="section">
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2>Ayuda a que esto siga</h2>
+        <hr>
+        <br>
+    </div>
+
+    <div class="donation-container">
+        <div class="donation-item">
+            <img src="https://koshka.top/uploads/posts/2021-12/thumbs/1638867940_81-koshka-top-p-kotik-s-dengami-85.jpg"
+                alt="Perro donación">
+            <div class="donation-content">
+                <h3>Ayudanos con una donación</h3>
+                <br>
+                <p>Este proyecto ha nacido del ver la sensibilización
+                    <br>que tenemos como estudiantes, por este motivo,
+                    <br>nosotros no contamos con ganancias económicas.
+                    <br>Sin embargo, puedes ayudarnos con un apoyo
+                    <br>económico para que este proyecto pueda continuar.</p>
+                <br>
+                <a href="#" class="btn-donate">Donar</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- --------------------------------------------------------------------------------------------------------- -->
+
+    <!-- info y redes socuales -->
+
+    <div class="contact-container">
+        <div class="contact-item">
+            <h3>Número</h3>
+            <p>33 3333 3333</p>
+        </div>
+        <div class="contact-item">
+            <h3>Correo</h3>
+            <p>correo@gmail.com</p>
+        </div>
+        <div class="contact-item">
+            <h3>Redes Sociales</h3>
+            <p>@nombre</p>
+        </div>
+        <div class="contact-item">
+            <h3>Políticas</h3>
+            <ul>
+                <li><a href="#">Aviso de privacidad</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- MODAL LOG IN -->
+    <div class="modal fade" id="logIn" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+
+    </div>
+
+    <!-- MODAL REGISTRO -->
+    <div class="modal fade" id="registro" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+
+    </div>
+
+</body>
+
+
+
+<!-- Optional JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script src="utils/utils.js"></script>
+
+</html>
