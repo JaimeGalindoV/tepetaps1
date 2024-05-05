@@ -15,19 +15,19 @@ const path = require('path');
 const views = path.join(__dirname, '../views');
 router.use(express.static(views));
 
-// router.route('/')
-//     .get((req, res) => {
-//         res.sendFile(path.join(views, 'admin.html'));
-//     });
-
 router.route('/')
-     .get(async (req, res) => {
-      let decoded = await veryfyToken(req.cookies.token);
-        if (decoded === false || decoded._role !== 'ADMIN'){
-          return res.redirect('/home');
-        }
+    .get((req, res) => {
         res.sendFile(path.join(views, 'admin.html'));
-      });
+    });
+
+// router.route('/')
+//      .get(async (req, res) => {
+//       let decoded = await veryfyToken(req.cookies.token);
+//         if (decoded === false || decoded._role !== 'ADMIN'){
+//           return res.redirect('/home');
+//         }
+//         res.sendFile(path.join(views, 'admin.html'));
+//       });
 
 router.route('/create-admin')
     .post(async (req, res) => {

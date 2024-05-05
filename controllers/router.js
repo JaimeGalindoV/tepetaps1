@@ -14,8 +14,6 @@ const admin = require('./../routes/admin');
 const publicaciones = require('./../routes/publicaciones');
 
 const views = path.join(__dirname, '../views');
-router.use(express.static(views));
-
 
 router.use((req, res, next) => {
     if (req.path.endsWith('.html')) {
@@ -24,6 +22,8 @@ router.use((req, res, next) => {
         next();
     }
 });
+
+router.use(express.static(views));
 
 router.use('/peluditos', peluditos);
 router.use('/perfil/', perfilPersonal);

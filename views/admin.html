@@ -28,9 +28,8 @@
   <nav class="navbar navbar-expand-md" id="navBar">
   </nav>
 
-  <div class="container-fluid todo" style="padding: 0;">
+  <div class="container-fluid todo" style="padding: 0; margin-top: 90px;">
 
-    <div class="espacio" style="height: 90px;"></div>
 
     <!-- Barra de busqueda lado izquierdo, perfiles lado derecho -->
     <!-- BARRA DE BUSQUEDA (form: se envia y filtra los perfiles con esa informacion) -->
@@ -39,8 +38,8 @@
       <form class="mt-5" id="formDeFiltro" action="">
         <!-- Nombre de la persona -->
         <div class="form-group col-12" id="searchForm">
-          <div class="input-group col-12" id="search">
-            <input class="form-control" type="text" name="search" id="searchInput" placeholder="Buscar"
+          <div class="input-group p-0 col-12" id="search">
+            <input class="form-control col-12" type="text" name="search" id="searchInput" placeholder="Buscar"
               style="border-radius: 100px;">
           </div>
         </div>
@@ -78,15 +77,15 @@
         </div>
 
 
-        <div class="text-center">
-          <button type="submit" class="btn btn-primary col-10">Submit</button>
+        <div class="text-center col-12">
+          <button type="submit" class="btn btn-primary col-12">Submit</button>
         </div>
       </form>
     </div>
 
 
 
-    <div class="container-fluid right col-lg-10 mr-lg-0">
+    <div class="container-fluid right col-lg-10 mr-lg-0" style="padding-top: 5px;">
       <div class="row selector">
         <div class="mediaSelector col-12 row justify-content-center" id="lineasBoton">
           <input type="radio" id="usuariosBtn" class="usuariosBtn col-5" name="btn-group" checked>
@@ -209,15 +208,15 @@
           <div class="post">
 
             <div class="header col-12">
-              <div class="user-image col-1" style="background-image: url(https://randomuser.me/api/portraits/men/1.jpg);" onclick="location.href='/perfil'"></div>
+              <div class="user-image col-1" style="background-image: url(https://randomuser.me/api/portraits/men/1.jpg);"></div>
 
-              <div class="person-name col-9">
+              <div class="person-name col-6">
                 <h5>
                   Persona 1
                 </h5><!-- Nombre de la persona -->
               </div>
 
-              <div class="delete-button col-2">
+              <div class="delete-button col-5">
                 <button type="button" class="btn btn-danger">Eliminar</button>
               </div>
             </div>

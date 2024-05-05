@@ -39,7 +39,6 @@ body {
   
 }
 
-
 #searchBar form * {
   font-size: 15px;
 }
@@ -47,6 +46,9 @@ body {
 #searchBar form ::placeholder {
   font-size: 14px;
 }
+
+
+
 
 label:not(.form-check-label) {
   font-size: medium;
@@ -164,6 +166,12 @@ input[type="radio"].publicacionesBtnModal+label {
   /* Alinear elementos verticalmente */
   border-radius: 20px;
   /* Agregar bordes redondeados */
+}
+
+.post .header .delete-button{
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
 }
 
 

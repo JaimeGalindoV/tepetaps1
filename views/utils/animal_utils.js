@@ -60,6 +60,7 @@ function infoAnimal(animal) {
                 <p><b>Caracter:</b> ${animal._caracter}</p>
                 <p><b>Esterilización:</b> ${animal._estirilizado ? 'Sí' : 'No'}</p>
                 <p><b>Ubicación:</b> ${animal._ubicacion}</p>
+                <p><b>Enfermedades:</b> ${animal._enfermedades ? animal._enfermedades : 'Ninguna'}</p>
                 <p><b>Discapacidades:</b> ${animal._discapacidad ? animal._discapacidad : 'Ninguna'}</p>
                 <p><b>Fecha de desparasitación:</b> ${animal._fechaDesparasitacion}</p>
             </div>

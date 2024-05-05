@@ -1,12 +1,13 @@
 "use strict";
 
 const express = require('express');
+
 const router = require('./controllers/router');
 const loginRouter = require('./controllers/login_router');
 const app = express();
 const port = 3000;
 
-var cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 app.use(express.json());
