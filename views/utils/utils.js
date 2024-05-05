@@ -35,21 +35,21 @@ function navBar() {
               <span></span>
               <span></span>
             </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownId">
+            <div class="dropdown-menu" aria-labelledby="dropdownId" id="dropdownPrincipal">
               <!-- LINK A MODAL DE LogIn -->
-              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logIn">Iniciar Sesión</a>
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logIn" id="loginBtn">Iniciar Sesión</a>
               <!-- LINK A MODAL DE registro -->
-              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#registro">Regístrate</a>
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#registro" id="registerBtn">Regístrate</a>
               <!-- LINK A PAGINA PRINCIPAL? -->
               <a class="dropdown-item" href="../home" target="_blank">Sobre nosotros</a>
               <!-- SOLO APARCE SI ESTA LOGIN (cierra sesion y regresa en pagina principal) -->
-              <a class="dropdown-item" href="../home" target="_blank">Cerrar sesión</a>
+              <a class="dropdown-item" onclick="logout()" id="logoutBtn">Cerrar sesión</a>
             </div>
           </li>
         </ul>
 
         <div id="imgPerfil">
-          <a href="../perfil">
+          <a href="#" onclick="event.preventDefault(); goToProfile(event);">
             <div class="user-image"></div>
           </a>
           <!--Imagen de usuario: LINK A PAGINA perfilPersonal o a Modal LogIn -->
@@ -61,6 +61,41 @@ function navBar() {
 `
 
 }
+
+
+navBar();
+
+function optionsToShow(){
+  let token = document.cookie.split('=')[1];
+
+  let loginBtn = document.getElementById('loginBtn');
+  let registroBtn = document.getElementById('registerBtn');
+  let logoutBtn = document.getElementById('logoutBtn');
+  let imgPerfil = document.getElementById('imgPerfil');
+
+  let dropdownPrincipal = document.getElementById('dropdownPrincipal');
+
+
+
+  if(token === undefined || token === '-1' || token === ''){ // El usuario no esta loggeado
+    imgPerfil.style.display = 'none';
+    logoutBtn.style.display = 'none';
+    loginBtn.style.display = '';
+    registroBtn.style.display = '';
+    // dropdownPrincipal.style.border = '#fff 1px solid';
+  }
+  else{
+    imgPerfil.style.display = '';
+    logoutBtn.style.display = '';
+    loginBtn.style.display = 'none';
+    registroBtn.style.display = 'none';
+
+  }
+
+}
+
+
+optionsToShow();
 
 function registerModal() {
   return `
@@ -130,7 +165,7 @@ function loginModal() {
           <h5 class="modal-title">Iniciar sesión</h5>
       </div>
       <div class="modal-body mt-4">
-          <form action="/login" method="POST">
+          <form onsubmit="login(event)" id="loginForm">
               <div class="form-group">
                   <div class="input-group">
                       <div class="input-group-prepend">
@@ -138,7 +173,7 @@ function loginModal() {
                               <i class="fa fa-user" aria-hidden="true"></i>
                           </span>
                       </div>
-                      <input type="email" class="form-control" name="_correo" id="emailLogIn"
+                      <input type="email" class="form-control" name="_correo" id="_correo"
                           placeholder="Correo" required>
                   </div>
               </div>
@@ -149,7 +184,7 @@ function loginModal() {
                               <i class="fa fa-key" aria-hidden="true"></i>
                           </span>
                       </div>
-                      <input type="password" class="form-control" name="_contraseña" id="passwordLogIn"
+                      <input type="password" class="form-control" name="_contraseña" id="_contraseña"
                           placeholder="Contraseña" required>
                   </div>
               </div>
@@ -181,6 +216,7 @@ function modals() {
 
 modals();
 
+// Agregar un evento al formulario de registro para validar datos
 document.getElementById('registerForm').addEventListener('submit', function (event) {
   // Verificar que sea mayor de edad
   let fechaNacimiento = new Date(document.getElementById('fechaNacimiento').value);
@@ -202,13 +238,12 @@ document.getElementById('registerForm').addEventListener('submit', function (eve
   let correo = document.getElementById('correo').value;
 
   fetch('/user/?correo=' + correo)
-    .then(response => response.json()) // Convierte la respuesta en JSON
-    .then(data => {
-      if (data !== null) {
+    .then(response => {
+      if (response.status === 200) {
         alert('correo electronico ya registrado');
         event.preventDefault();
       }
-    }) // Imprime los datos en la consola    
+    })
     .catch(error => {
       console.error('Error:', error);
     });
@@ -222,11 +257,80 @@ document.getElementById('registerForm').addEventListener('submit', function (eve
     event.preventDefault(); // Esto evitará que se envíe el formulario
   }
 
-
-
-
 });
 
+async function login(event) {
+  event.preventDefault(); // Agrega esta línea para prevenir el comportamiento predeterminado del formulario
+
+  const response = await fetch('/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      _correo: document.getElementById('_correo').value,
+      _contraseña: document.getElementById('_contraseña').value
+    })
+  });
 
 
-navBar();
+  // Verificar si la solicitud fue exitosa
+  if (!response.ok) {
+    const data = await response.json();
+    alert(data.error); // Muestra el mensaje de error enviado por el servidor
+    return;
+  }
+
+  const token = await response.text(); // Obtener el token del cuerpo de la respuesta
+
+  if (token === "-1") {
+    // Si el token es -1, significa que las credenciales son incorrectas
+    alert('Usuario o contraseña incorrectos.');
+    return;
+  }
+
+  // Si las credenciales son correctas, redirigir a la página principal
+  window.location.reload();
+
+  //if (document.cookie === "token=-1" || document.cookie === ''){
+  //alert('Usuario o contraseña incorrectos.');   
+  //}
+}
+
+async function veryfyLogin(){
+  const response = await fetch('/perfil/', {
+    method: 'GET'
+  });
+
+  if(response.status === 401){
+    return false;
+  }
+  else if (response.status === 200){
+    return true;
+  }
+
+}
+
+async function goToProfile(event) {
+  let login = await veryfyLogin();
+
+  if(!login){
+    alert('Inicia sesion para acceder a esa pagina');
+    $('#logIn').modal('show');
+    return;
+  }
+  else{
+    window.location.href = '/perfil';
+  }
+}
+
+
+function logout(event) {
+
+  // Eliminar la cookie
+  document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'; // Elimina la cookie
+  alert('adios :c');
+  window.location.href = '/'; // Redirige a la página principal
+}
+
+

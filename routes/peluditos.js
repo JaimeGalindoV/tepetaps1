@@ -26,7 +26,5 @@ router.get('/api', async (req, res) => {
             res.status(500).send("Error al obtener las mascotas");
         }
     });
-    
-
 
 module.exports = router;

@@ -38,14 +38,14 @@
     <div class="container-fluid col-lg-2" id="searchBar">
       <form class="mt-5" id="formDeFiltro" action="">
         <!-- Nombre de la persona -->
-        <div class="form-group col-12">
+        <div class="form-group col-12" id="searchForm">
           <div class="input-group col-12" id="search">
             <input class="form-control" type="text" name="search" id="searchInput" placeholder="Buscar"
               style="border-radius: 100px;">
           </div>
         </div>
         <!-- Sexo de la persona: hombre o mujer, si no se selecciona se muestran todos-->
-        <div class="form-group col-12">
+        <div class="form-group col-12" id="sexoForm">
           <label for="animalSex">Sexo</label>
           <select class="form-control" id="animalSex" name="Sexo del animal">
             <option value="" disabled selected>Seleccione sexo</option>
@@ -54,15 +54,30 @@
           </select>
         </div>
         <!-- Fecha de inscripcion -->
-        <div class="form-group col-12">
-          <label for="age">Fecha de nacimiento </label>
-          <div class="input-group" id="age">
+        <div class="form-group col-12" id="fechaNaciminetoForm">
+          <label for="date">Fecha de nacimiento </label>
+          <div class="input-group" id="date">
             <!-- agregar limites de min y max -->
-            <input type="date" class="form-control mr-2" placeholder="Desde" name="Instripcion desde ">
+            <input type="date" class="form-control mr-2" placeholder="Desde" name="instripcion_desde ">
             <span style="margin-right: 5px;">—</span>
-            <input type="date" class="form-control ml-2" placeholder="Hasta" name="Instripcion hasta ">
+            <input type="date" class="form-control ml-2" placeholder="Hasta" name="instripcion_hasta ">
           </div>
         </div>
+
+        <div class="form-group col-12" id="edadForm" style="display: none;">
+          <label for="age">Edad</label>
+          <div class="input-group" id="age">
+            <!-- agregar limites de min y max -->
+            <input type="number" class="form-control mr-2" placeholder="edad" name="edad">
+            <select class="form-control" id="medida_tiempo" name="medida_tiempo">
+              <option value="" disabled selected>años/meses</option>
+              <option value="Año">año(s)</option>
+              <option value="Mes">Mes(es)</option>
+            </select> 
+          </div>
+        </div>
+
+
         <div class="text-center">
           <button type="submit" class="btn btn-primary col-10">Submit</button>
         </div>
@@ -107,8 +122,9 @@
             </div>
 
             <div class="col-10 col-md-3 col-xl-2" id="button">
-              <a name="" id="" class="btn btn-primary mensajeBtn w-100" href="#" role="button">Mensaje</a>
+              <a name="" id="" class="btn btn-danger mensajeBtn w-100" href="#" role="button">Eliminar</a>
             </div>
+
           </div>
 
           <div class="d-flex flex-column flex-md-row" href="#" data-toggle="modal" data-target="#infoUsuario"
@@ -126,8 +142,9 @@
             </div>
 
             <div class="col-10 col-md-3 col-xl-2" id="button">
-              <a name="" id="" class="btn btn-primary mensajeBtn w-100" href="#" role="button">Mensaje</a>
+              <a name="" id="" class="btn btn-danger mensajeBtn w-100" href="#" role="button">Eliminar</a>
             </div>
+
           </div>
 
           <div class="d-flex flex-column flex-md-row" href="#" data-toggle="modal" data-target="#infoUsuario"
@@ -145,9 +162,12 @@
             </div>
 
             <div class="col-10 col-md-3 col-xl-2" id="button">
-              <a name="" id="" class="btn btn-primary mensajeBtn w-100" href="#" role="button">Mensaje</a>
+              <a name="" id="" class="btn btn-danger mensajeBtn w-100" href="#" role="button">Eliminar</a>
             </div>
+
           </div>
+
+
 
 
         </div>
@@ -186,45 +206,78 @@
 
       <div class="row publicacionesMedia" id="publicacionesMedia" style="display: none;">
         <div class="col-10">
-
           <div class="post">
-            <a href="perfil.html">
-              <!-- Enlace al perfil -->
-              <div class="user-image"></div><!-- Imagen de perfil -->
-            </a>
-            <h2 class="person-name"><strong>Persona 1</strong></h2><!-- Nombre de la persona -->
-            <div class="post-content">
-              <p>Texto de la publicación...</p><!-- Texto de la publicación -->
-              <img src="https://manchas.com/wp-content/uploads/2023/01/pexels-rhys-abel-15033180-scaled.jpg"
-                alt="Imagen debajo del texto"><!-- Imagen debajo del texto -->
+
+            <div class="header col-12">
+              <div class="user-image col-1" style="background-image: url(https://randomuser.me/api/portraits/men/1.jpg);" onclick="location.href='/perfil'"></div>
+
+              <div class="person-name col-9">
+                <h5>
+                  Persona 1
+                </h5><!-- Nombre de la persona -->
+              </div>
+
+              <div class="delete-button col-2">
+                <button type="button" class="btn btn-danger">Eliminar</button>
+              </div>
+            </div>
+            <div class="body">
+
+              <div class="post-content">
+                <p>Texto de la publicación...</p><!-- Texto de la publicación -->
+                <img src="https://manchas.com/wp-content/uploads/2023/01/pexels-rhys-abel-15033180-scaled.jpg"
+                  alt="Imagen debajo del texto"><!-- Imagen debajo del texto -->
+              </div>
             </div>
           </div>
 
           <div class="post">
-            <a href="perfil.html">
-              <!-- Enlace al perfil -->
-              <div class="user-image"></div><!-- Imagen de perfil -->
-            </a>
-            <h2 class="person-name"><strong>Persona 2</strong></h2><!-- Nombre de la persona -->
-            <div class="post-content">
-              <p>Texto de la publicación...</p><!-- Texto de la publicación -->
-              <img
-                src="https://images.hola.com/imagenes/mascotas/20190215137141/razas-perro-pequenos-gt/0-645-998/perros-miniatura-m.jpg?tx=w_680"
-                alt="Imagen debajo del texto"><!-- Imagen debajo del texto -->
+
+            <div class="header col-12">
+              <div class="user-image col-1" style="background-image: url(https://randomuser.me/api/portraits/men/1.jpg);" onclick="location.href='/perfil'"></div>
+
+              <div class="person-name col-9">
+                <h5>
+                  Persona 1
+                </h5><!-- Nombre de la persona -->
+              </div>
+
+              <div class="delete-button col-2">
+                <button type="button" class="btn btn-danger">Eliminar</button>
+              </div>
+            </div>
+            <div class="body">
+
+              <div class="post-content">
+                <p>Texto de la publicación...</p><!-- Texto de la publicación -->
+                <img src="https://manchas.com/wp-content/uploads/2023/01/pexels-rhys-abel-15033180-scaled.jpg"
+                  alt="Imagen debajo del texto"><!-- Imagen debajo del texto -->
+              </div>
             </div>
           </div>
 
           <div class="post">
-            <a href="perfil.html">
-              <!-- Enlace al perfil -->
-              <div class="user-image"></div><!-- Imagen de perfil -->
-            </a>
-            <h2 class="person-name"><strong>Persona 3</strong></h2><!-- Nombre de la persona -->
-            <div class="post-content">
-              <p>Texto de la publicación...</p><!-- Texto de la publicación -->
-              <img
-                src="https://blog.mascotaysalud.com/wp-content/uploads/2020/09/tran-mau-tri-tam-7QjU_u2vGDs-unsplash.jpg"
-                alt="Imagen debajo del texto"><!-- Imagen debajo del texto -->
+
+            <div class="header col-12">
+              <div class="user-image col-1" style="background-image: url(https://randomuser.me/api/portraits/men/1.jpg);" onclick="location.href='/perfil'"></div>
+
+              <div class="person-name col-9">
+                <h5>
+                  Persona 1
+                </h5><!-- Nombre de la persona -->
+              </div>
+
+              <div class="delete-button col-2">
+                <button type="button" class="btn btn-danger">Eliminar</button>
+              </div>
+            </div>
+            <div class="body">
+
+              <div class="post-content">
+                <p>Texto de la publicación...</p><!-- Texto de la publicación -->
+                <img src="https://manchas.com/wp-content/uploads/2023/01/pexels-rhys-abel-15033180-scaled.jpg"
+                  alt="Imagen debajo del texto"><!-- Imagen debajo del texto -->
+              </div>
             </div>
           </div>
 
@@ -416,9 +469,6 @@
 
 
         </div>
-        <div class="modal-footer">
-          <a href="#" class="btn btn-danger">Eliminar</a>
-        </div>
       </div>
     </div>
   </div>
@@ -455,11 +505,11 @@
         <div class="modal-footer">
           <!-- ambos botones mandan un correo al responsable del perro -->
           <!-- Adoptar: enviar form por correo al responsable -->
-          <a type="submit" class="btn btn-primary" href="#" data-toggle="modal" data-target="#registroAdoptar"
-            data-dismiss="modal">Adoptar</a>
+          <a type="submit" class="btn btn-danger" href="#" data-toggle="modal" data-target="#registroAdoptar"
+            data-dismiss="modal">Eliminar</a>
           <!-- Vloluntario: enviar correo o telefono a predeterminado y la comunicacion es aparte -->
           <a href="mailto:responsable@registrado.com?subject=Solicitud%20de%20voluntariado(EDITA EL CORREO)"
-            class="btn btn-primary">Voluntario</a>
+            class="btn btn-primary">Contactar dueño</a>
         </div>
       </div>
     </div>
@@ -536,10 +586,10 @@
 
 
 <script>
-  //para mostrar solo una de las opciones publicaciones/usuarios/animales
+  //para mostrar solo una de las opciones del modal animales/publicaciones
   let animalesBtnModal = document.getElementById('animalesBtnModal');
   let publicacionesBtnModal = document.getElementById('publicacionesBtnModal');
-
+  
   let animalesMediaModal = document.getElementById('animalesMediaModal');
   let publicacionesMediaModal = document.getElementById('publicacionesMediaModal');
 
@@ -558,34 +608,49 @@
   });
 
 
-  //para mostrar solo una de las opciones del modal animales/publicaciones
+  //para mostrar solo una de las opciones publicaciones/usuarios/animales
+  // Obtener los botones que lo activan
   let usuariosBtn = document.getElementById('usuariosBtn');
   let publicacionesBtn = document.getElementById('publicacionesBtn');
   let animalesBtn = document.getElementById('animalesBtn');
 
+  // Obtener los contenedores de cada sección
   let usuariosMedia = document.getElementById('usuariosMedia');
   let animalesMedia = document.getElementById('animalesMedia');
   let publicacionesMedia = document.getElementById('publicacionesMedia');
+  
+  // Obtener las distintas opciones de filtro
+  let formDeFiltro = document.getElementById('formDeFiltro');
+  let edadForm = document.getElementById('edadForm');
+  let fechaNaciminetoForm = document.getElementById('fechaNaciminetoForm');
+
 
   //para mostrar solo publicaciones
   publicacionesBtn.addEventListener('click', function () {
     publicacionesMedia.style.display = '';
     animalesMedia.style.display = 'none';
     usuariosMedia.style.display = 'none';
+    formDeFiltro.style.display = 'none'; // No tiene filtros
   });
-
+  
   //para mostrar solo usuarios
   usuariosBtn.addEventListener('click', function () {
     publicacionesMedia.style.display = 'none';
     animalesMedia.style.display = 'none';
     usuariosMedia.style.display = '';
+    formDeFiltro.style.display = '';
+    fechaNaciminetoForm.style.display = '';
+    edadForm.style.display = 'none';
   });
-
+  
   //para mostrar solo animales
   animalesBtn.addEventListener('click', function () {
     publicacionesMedia.style.display = 'none';
     animalesMedia.style.display = '';
     usuariosMedia.style.display = 'none';
+    formDeFiltro.style.display = '';
+    fechaNaciminetoForm.style.display = 'none';
+    edadForm.style.display = '';
   });
 
 

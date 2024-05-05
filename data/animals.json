@@ -21,7 +21,8 @@
         "_parasitos": ["no"],
         "_enfermedades": "Tiene una enfermedad en los pulmones.",
         "_discapacidad": "No tiene una patita",
-        "_estado": false
+        "_estado": false,
+        "_correoUser": "userChido@servicio.com"
     }, {
         "_id": {
             "$oid": "6632c10cabd8dc73d89e8567"
@@ -45,7 +46,8 @@
         "_parasitos": ["no"],
         "_enfermedades": "Tiene cancer",
         "_discapacidad": "No tiene un ojo",
-        "_estado": false
+        "_estado": false,
+        "_correoUser": "userChido@servicio.com"
     },
     {
         "_id": {
@@ -70,7 +72,8 @@
         "_parasitos": ["Pulgas"],
         "_enfermedades": "",
         "_discapacidad": "",
-        "_estado": false
+        "_estado": false,
+        "_correoUser": "userChido@servicio.com"
     },
     {
         "_id": {
@@ -95,7 +98,8 @@
         "_parasitos": ["no"],
         "_enfermedades": "",
         "_discapacidad": "",
-        "_estado": false
+        "_estado": false,
+        "_correoUser": "userChido@servicio.com"
     },
     {
         "_id": {
@@ -120,7 +124,8 @@
         "_parasitos": ["no"],
         "_enfermedades": "",
         "_discapacidad": "",
-        "_estado": false
+        "_estado": false,
+        "_correoUser": "userChido@servicio.com"
     },
     {
         "_id": {
@@ -145,7 +150,8 @@
         "_parasitos": ["no"],
         "_enfermedades": "",
         "_discapacidad": "",
-        "_estado": false
+        "_estado": false,
+        "_correoUser": "userChido@servicio.com"
     },
     {
         "_id": {
@@ -170,6 +176,7 @@
         "_parasitos": ["Gusanos"],
         "_enfermedades": "Tiene covid",
         "_discapacidad": "",
-        "_estado": false
+        "_estado": false,
+        "_correoUser": "userChido@servicio.com"
     }
 ]

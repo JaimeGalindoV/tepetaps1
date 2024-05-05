@@ -9,7 +9,7 @@ class AnimalException{
 class Animal{
     constructor(imagen, nombre, tipo, raza, sexo, caracter, edad, ubicacion, 
                 pelajeTipo, pelajeColor, pelajeLargo,estirilizado, fechaDesparacitacion, 
-                vacunas, parasitos, enfermedades, discapacidad, estado){
+                vacunas, parasitos, enfermedades, discapacidad, estado, correoUser){
         this.imagen = imagen;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -29,6 +29,7 @@ class Animal{
         this.enfermedades = enfermedades; //string
         this.discapacidades = discapacidad; //string
         this.estado = estado; //true o false
+        this._correoUser = correoUser;
     };
 
     get imagen(){
@@ -254,6 +255,19 @@ class Animal{
         }
     }
 
+    get correoUser(){
+        return this._correoUser;
+    }
+
+    set correoUser(correo){
+        if(typeof correo !== 'string'){
+            throw new AnimalException("El correo del usuario debe ser un string.");
+        }else {
+            this._correoUser = correo;
+        }
+        
+    }
+    
     static createFromJson(jsonValue){
         let obj = JSON.parse(jsonValue);
         return Animal.createFromObject(obj);

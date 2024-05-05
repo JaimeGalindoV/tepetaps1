@@ -205,6 +205,26 @@ input[type="radio"].publicacionesBtnModal+label {
   display: block;
 }
 
+
+/* .header, .header *{
+  border:#000000 1px solid;
+} */
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.user-image{
+  cursor: pointer;
+} 
+
+.person-name, .person-name h5 {
+  margin: 0;
+} 
+
+
 /* FIN body -----------------------------------------------------------------------------------------*/
 
 /* Para modal y para body ------------------------------------------------------------ */

@@ -2,24 +2,21 @@
 
 const jwt = require('jsonwebtoken');
 
-let privateKey = process.env.TOKEN_KEY;
+let privateKey = "ABC123#";
 
-const veryfyToken = (req,res,next)=>{
-    let token = req.get("x-auth");
+async function veryfyToken(token){
 
-    if(token == undefined){
-        return res.status(403)
-            .type("text/plain")
-            .send("Missing token");   
+    
+    if(token === undefined || token === -1 || token === ''){
+        return false;   
     }
 
+    let decodedReturn;
     jwt.verify(token,privateKey,(err,decoded)=>{
-        if(err) return res.status(401)
-            .type("text/plain")
-            .send("Invalid token");   
-        req.userInfo = decoded;
-        return next()
+        if(err) decodedReturn = false;
+        else decodedReturn = decoded;
     });
+    return decodedReturn;
 }
 
 exports.veryfyToken = veryfyToken;

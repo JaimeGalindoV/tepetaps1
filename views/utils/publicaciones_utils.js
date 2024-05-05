@@ -1,5 +1,5 @@
 
-function publicacionesToHtml(){
+function animalesToHtml(){
 
     fetch('/publicaciones/api')
     .then(response => response.json())
@@ -8,13 +8,13 @@ function publicacionesToHtml(){
         // Puedes usar estos datos para actualizar el DOM
         let publicacionesList = document.getElementById('publicacionesList');
         publicaciones.forEach(publicacion => {
-            publicacionesList.innerHTML += publicacionToHtml(publicacion);
+            publicacionesList.innerHTML += animalToHtml(publicacion);
         });
     })
     .catch(error => console.error('Error:', error));
 }
 
-function publicacionToHtml(publicacion){
+function animalToHtml(publicacion){
     return `
     <div class="post">
     <a href="perfil.html">
@@ -32,4 +32,4 @@ function publicacionToHtml(publicacion){
     `
 }
 
-publicacionesToHtml();
+animalesToHtml();

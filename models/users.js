@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-let privateKey =  process.env.TOKEN_KET; "ABC123#"
+let privateKey = "ABC123#";
 
 const option = {}
 let mongoDB='mongodb+srv://JaimeGV:3_tacosDeCanasta@mycluster.pi6cvi0.mongodb.net/Tepetaps';
@@ -24,21 +24,21 @@ let userSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    _telefono:{
-        type: String,
-        required: true
-    },
     _contraseña:{
         type: String,
         required: true
     },
-    _fechaNacimiento:{
-        type: Date,
-        require: true
-    },
+    _telefono: String,
+    _fechaNacimiento: Date,
     _imagen: String,
     _animales: Array, 
-    _publicaciones: Array
+    _publicaciones: Array,
+    _role:{
+        type:String,
+        enum:["ADMIN", "USER"],
+        default:"USER",
+        required:true
+    }
 });
 
 
@@ -48,14 +48,14 @@ userSchema.pre('save', function(next){
     next();
 })
 
-userSchema.methods.generateToken = function(password) {
+userSchema.methods.generateToken = function(contraseña) {
     let user = this;
-    let payload = { id:user._id, role: user.role};
-    let options = {expiresIn: 60*60}
-
-    if(bcrypt.compareSync(password,user.password)){
+    let payload = { _correo:user._correo, _role: user._role};
+    let options = {}
+    
+    if(bcrypt.compareSync(contraseña,user._contraseña)){
         try{
-            return jwt.sign(payload,privateKey, options);
+            return jwt.sign(payload, privateKey, options);
         }catch(err){
             console.log(err);
         }

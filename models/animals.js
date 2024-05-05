@@ -56,6 +56,10 @@ let animalSchema = mongoose.Schema({
     _enfermedades: String,
     _discapacidad: String,
     _estado: Boolean,
+    _correoUser: {
+        type: String,
+        required: true
+    }
 });
 
 let animal = mongoose.model('animal', animalSchema);

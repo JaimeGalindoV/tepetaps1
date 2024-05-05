@@ -5,67 +5,60 @@ let animals = [];
 let admins = [];
 let publicaciones = [];
 
-const User = require('../models/users')
+const User = require('../models/users');
 const Usuario = require('./usuario');
+
+const Animal = require('../models/animals');
+const AnimalController = require('./animal');
 
 
 function logIn(req, res){
-    let email = req.body.email;
-    let password = req.body.password;
+    let correo = req.body._correo;
+    let contraseña = req.body._contraseña;
     
     // Verifica si el usuario existe en la base de datos
-    User.findOne({ email: `${email}` })
+    User.findOne({ _correo: `${correo}` })
         .then((user) => {
-            let token = user.generateToken(password);
+            let token = user.generateToken(contraseña);
             if(token != undefined){
-                res.status(200);
-                res.type( 'text/plain' );
-                res.send(token)
+                // Guarda el token en una cookie
+                res.cookie('token', token, { httpOnly: false });
+                // Redirige a la ruta '/'
+                res.redirect('/');
             }else{
-                res.status(401);
-                res.type( 'text/plain' );
-                res.send("Wrong email or password")
+                res.cookie('token', -1, { httpOnly: false });
+                res.status(404).json({ error: 'usuario o contraseña incorrectos' });
             }
         })
         .catch(err =>{
-            res.status(400);
-            res.type( 'text/plain' );
-            res.send("Wrong email or password")
+            res.cookie('token', -1, { httpOnly: false });
+            res.status(404).json({ error: 'usuario o contraseña incorrectos' });
         })
         
 }
 
-
 async function register(req, res){
-
     let newUsuario = {
         _nombre: req.body.nombre,
         _apellido: req.body.apellido,
         _correo: req.body.correo,
-        _telefono: req.body.telefono,
         _contraseña: req.body.contraseña,
         _fechaNacimiento: new Date(req.body.fechaNacimiento),
+        _telefono: req.body.telefono,
         _imagen: req.body.imagen,
         _animales: [],
         _publicaciones: []
     };
-
     try {
-
-        
         const us = await User.findOne({ _correo: newUsuario._correo });
-    
         if (us === null) {
             let usuario = Usuario.createFromObject(newUsuario);
             let usuarioMongoose = User(usuario);
         
             // Guardamos el usuario en nuestra base de datos
             usuarioMongoose.save()
-        
             res.redirect('/');
         }
-
-        
     } catch (error) {
         console.log(error)
         res.status(400);
@@ -76,13 +69,17 @@ async function register(req, res){
 
 // ANIMALES
 function getAnimals(){
-    return animals;
+    Animal.find({}).then(animal => res.status(200).json(animal));
 }
 
 function getAnimalById(AnimalId){
-    let animal = animals.find(a=> AnimalId == a.uuid);
-    if(!animal) throw new Error("Animal not found.");
-    else return animal;
+    // let animal = animals.find(a=> AnimalId == a.uuid);
+    // if(!animal) throw new Error("Animal not found.");
+    // else return animal;
+    return Animal.findOne({ _id: `${AnimalId}` }).then(animal => {
+        return animal;
+    });
+
 }
 
 function createAnimal(animal){
@@ -118,6 +115,12 @@ function getUsers(req, res){
 function getUserByEmail(req, res){
     let correo = req.query.correo;
     User.findOne({ _correo: `${correo}` }).then(user => res.status(200).json(user));
+}
+
+function getUserByEmail2(correo){
+    return User.findOne({ _correo: `${correo}` }).then(user => {
+        return user;
+    });
 }
 
 function createUser(user){
@@ -307,4 +310,4 @@ function findAnimalAdmin(query){
     });
 }
 
-module.exports = {register, getUserByEmail};
+module.exports = {register, getUserByEmail, getUserByEmail2, logIn, getAnimalById};

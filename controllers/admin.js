@@ -7,9 +7,28 @@ class AdminExcepcion {
 }
 
 class Admin{
-    constructor(correo, contraseña){
+    constructor(nombre, apellido, correo, contraseña){
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.correo = correo;
         this.contraseña = contraseña;
+        this._role = "ADMIN";
+    }
+    
+    set nombre(nombre){
+        this._nombre = nombre;
+    }
+
+    get nombre(){
+        return this._nombre;
+    }
+
+
+    get apellido(){
+        return this._apellido;
+    }
+    set apellido(apellido){
+        this._apellido = apellido;
     }
 
     get correo(){
@@ -66,8 +85,9 @@ class Admin{
         let newAdmin = {};
         Object.assign(newAdmin, obj);
         Admin.cleanObject(newAdmin);
-
         let admin = new Admin(
+            newAdmin._nombre,
+            newAdmin._apellido,
             newAdmin._correo,
             newAdmin._contraseña,
         );
@@ -76,7 +96,7 @@ class Admin{
     }
 
     static  cleanObject(obj) {
-        const adminProperties = ['_correo', '_contraseña'];
+        const adminProperties = ['_nombre', '_apellido', '_correo', '_contraseña'];
 
         for (let prop in obj) {
             let exist = false;

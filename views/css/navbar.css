@@ -126,11 +126,11 @@
     color: #333;
     position: absolute;
     /* Posición debajo de la barra de navegación */
-    top: 40px;
+    top: 50px;
     /* right: 10PX; */
     left: 50%;
     /* Alinear a la derecha */
-    transform: translateX(-40%);
+    transform: translateX(-70%);
   
     /* Asegurar que el menú esté por encima de otros elementos */
     z-index: 99;

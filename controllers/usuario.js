@@ -7,13 +7,12 @@ class UsuarioExcepcion {
 }
 
 class Usuario {
-    constructor(nombre, apellido, fechaNacimiento, correo, contraseña, telefono, imagen){
-        
+    constructor(nombre, apellido, correo, contraseña, fechaNacimiento, telefono, imagen){
         this.nombre = nombre;
         this.apellido = apellido;
-        this.fechaNacimiento = fechaNacimiento;
         this.correo = correo;
         this.contraseña = contraseña;
+        this.fechaNacimiento = fechaNacimiento;
         this.telefono = telefono;
         this.imagen = imagen;
         this._animales = [];
@@ -262,9 +261,9 @@ class Usuario {
         let usuario = new Usuario(
             newUsuario._nombre,
             newUsuario._apellido,
-            newUsuario._fechaNacimiento,
             newUsuario._correo,
             newUsuario._contraseña,
+            newUsuario._fechaNacimiento,
             newUsuario._telefono,
             newUsuario._imagen
         );
