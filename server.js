@@ -6,6 +6,9 @@ const loginRouter = require('./controllers/login_router');
 const app = express();
 const port = 3000;
 
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
