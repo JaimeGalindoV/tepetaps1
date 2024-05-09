@@ -8,8 +8,8 @@ class AnimalException{
 
 class Animal{
     constructor(imagen, nombre, tipo, raza, sexo, caracter, edad, ubicacion, 
-                pelajeTipo, pelajeColor, pelajeLargo,estirilizado, fechaDesparacitacion, 
-                vacunas, parasitos, enfermedades, discapacidad, estado, correoUser){
+                pelajeTipo, pelajeColor, pelajeLargo,estirilizado, fechaDesparasitacion, 
+                vacunas, paracitos, enfermedades, discapacidades, estado, correoUser){
         this.imagen = imagen;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -22,12 +22,12 @@ class Animal{
         this.pelajeColor = pelajeColor;
         this.pelajeLargo = pelajeLargo;
         this.estirilizado = estirilizado; //true o false
-        this.fechaDesparacitacion = fechaDesparacitacion; //format  AAAA-MM-DD
+        this.fechaDesparasitacion = fechaDesparasitacion; //format  AAAA-MM-DD
         //Colecciones de atributos que pueden ser múltiples
         this.vacunas = vacunas;//array de vacunas (puede ser solo ninguna)
-        this.parasitos = parasitos;//array de parasitos (puede ser solo ninguno)
+        this.paracitos = paracitos;//array de parasitos (puede ser solo ninguno)
         this.enfermedades = enfermedades; //string
-        this.discapacidades = discapacidad; //string
+        this.discapacidades = discapacidades; //string
         this.estado = estado; //true o false
         this._correoUser = correoUser;
     };
@@ -118,7 +118,7 @@ class Animal{
     //edad resive un objeto con valor y unidad
     set edad(edad) {
         if (Array.isArray(edad)) {
-            if ((typeof edad[0] === "number" && edad[0] >= 0)&&(typeof edad[1] === "string") ) {
+            if ((typeof parseInt(edad[0]) === "number" && parseInt(edad[0]) >= 0)&&(typeof edad[1] === "string") ) {
                 this._edad = [edad[0], edad[1]];
             } else if (edad === null || edad === undefined || edad === '' || isNaN(edad)){
                 this._edad = null;
@@ -180,16 +180,16 @@ class Animal{
         }
     }
 
-    get fechaDesparacitacion(){
-        return this._fechaDesparacitacion;
+    get fechaDesparasitacion(){
+        return this._fechaDesparasitacion;
     }
     //no obligatoria
-    set fechaDesparacitacion(date){
+    set fechaDesparasitacion(date){
         let auxDate=new Date(date);
         if(auxDate instanceof Date){
-            this._fechaDesparacitacion = date;
+            this._fechaDesparasitacion = date;
         }else if(date === "null" || date ===''||date===undefined) {
-            this._fechaDesparacitacion = null;
+            this._fechaDesparasitacion = null;
         }else{
             throw new AnimalException("El la fecha de desparacitación del animal debe tener un formato valido.");
         }
@@ -207,13 +207,13 @@ class Animal{
         }
     }
 
-    get parasitos(){
-        return this._parasitos;
+    get paracitos(){
+        return this._paracitos;
     }
     //obligatoria (pueden poner la opcion ninguna)
-    set parasitos(parasitos) {
+    set paracitos(parasitos) {
         if (Array.isArray(parasitos)) { 
-            this._parasitos = parasitos;    
+            this._paracitos = parasitos;    
         } else {
             throw new AnimalException("Los parásitos deben ser una lista.");
         }
@@ -231,15 +231,15 @@ class Animal{
         }
     }
 
-    get discapacidad(){
-        return this._discapacidad;
+    get discapacidades(){
+        return this._discapacidades;
     }
     //no obligatoria
-    set discapacidad(discapacidad){
+    set discapacidades(discapacidad){
         if(typeof discapacidad !== 'string'){
             throw new AnimalException("La descripción de la discapacidad del animal debe ser un string.");
         }else {
-            this._discapacidad = discapacidad;
+            this._discapacidades = discapacidad;
         }
     }
 
@@ -290,20 +290,21 @@ class Animal{
             newAnimal._pelajeColor,
             newAnimal._pelajeLargo,
             newAnimal._estirilizado,
-            newAnimal._fechaDesparacitacion,
+            newAnimal._fechaDesparasitacion,
             newAnimal._vacunas, 
-            newAnimal._parasitos, 
+            newAnimal._paracitos, 
             newAnimal._enfermedades,
-            newAnimal._discapacidad,
-            newAnimal._estado
+            newAnimal._discapacidades,
+            newAnimal._estado,
+            newAnimal._correoUser
         ); 
         return animal;
     }
 
     static cleanObject(obj){
         let properties = ['_imagen', '_nombre', '_tipo', '_raza', '_sexo', '_caracter', '_edad', '_ubicacion', 
-                '_pelajeTipo', '_pelajeColor', '_pelajeLargo','_estirilizado', '_fechaDesparacitacion', 
-                '_vacunas', '_parasitos', '_enfermedades', '_discapacidad', '_estado']
+                '_pelajeTipo', '_pelajeColor', '_pelajeLargo','_estirilizado', '_fechaDesparasitacion', 
+                '_vacunas', '_paracitos', '_enfermedades', '_discapacidades', '_estado','_correoUser']
         for (let prop in obj) {
             if(!properties.includes(prop)){
                 delete obj[prop];

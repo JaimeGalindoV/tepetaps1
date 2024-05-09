@@ -33,26 +33,20 @@
 
     /* usersImgPerfil: solo para la pagina perfilPersonal */
     .userImgPerfil {
-      width: 50px;
-      /* Ancho de la imagen de usuario */
-      height: 50px;
-      /* Altura de la imagen de usuario */
       border-radius: 50%;
       /* Hace que la imagen sea un círculo */
       background: #ccc;
       /* Color de fondo en caso de que la imagen no se cargue */
       /* Aquí puedes poner la URL de la imagen de usuario */
-      background-image: url('https://cdn-images.livecareer.es/pages/foto_cv_lc_es_7.jpg');
+      background-image: url('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png');
       background-size: cover;
       /* Asegura que la imagen cubra todo el círculo */
       background-position: center;
       /* Centra la imagen en el círculo */
-      margin-left: 20px;
-      /* Aumenta el margen a la izquierda para mover la imagen hacia la izquierda */
-      margin-right: 20px;
     }
 
     /* -------------------DE PAGINA PERFIL PERSONAL--------------- */
+
     .imgInfoAnimal {
       width: 100px;
       height: 100px;
@@ -77,10 +71,10 @@
       margin-left: 80px;
     }
 
-    #fotoNombre {
+    /* #fotoNombre {
       left: auto;
       right: auto;
-    }
+    } */
 
     .card {
       background-color: #eeeeee;
@@ -131,19 +125,6 @@
       text-align: center;
     }
 
-    .nombreUsuario,
-    .botonesPerfil {
-      margin-top: 80px;
-      /* margin-right: 10px; */
-    }
-
-    .botonesPerfil {
-      margin-top: 70px;
-      left: auto;
-      right: auto;
-      margin-right: 90px;
-    }
-
     .card-imgPublicacion {
       border-radius: 5px;
       width: 90%;
@@ -172,6 +153,13 @@
       margin-right: 10%;
     }
 
+
+
+
+
+
+
+    /* Lineas publicaciones perfil */
     #publicacionesBtn:checked+label {
       border-bottom: solid black;
       color: black;
@@ -207,26 +195,27 @@
   </style>
 </head>
 
-<body>
+<div>
   <!-- NAV BAR -->
   <nav class="navbar navbar-expand-md" id="navBar">
   </nav>
 
   <!-- fOTO DE PERFIL Y NOMBRE DE USUARIO -->
-  <div class="media row col-12 mt-4 mb-2 justify-content-between" id="fotoNombre">
-    <div class="imgP media-left row col-12 col-sm-12 col-xl-6 col-lg-5 col-md-12 mb-0">
-      <div class="userImgPerfil col-4 "></div>
-      <div class="nombreUsuario col-5 col-lg-3 col-xl-5">
+  <div class="media row justify-content-center mt-4 mb-2 pl-5 pr-5 col-12 align-items-center" id="fotoNombre">
+    <div class="media-left row mb-2 mr-2 col-12 col-lg-8 col-xl-7 align-items-center">
+      <div class="userImgPerfil ml-0 col-4" id="userImgPerfil"
+        style="border: gray 1px solid; box-shadow: gray 2px 2px 5px;">
+      </div>
+      <div class="nombreUsuario col-6 col-sm-6 col-md-6 col-lg-8" id="nombreUsuario">
         <h4>Nombre Apellido</h4>
       </div>
     </div>
-    <!-- <div class="espacio col-xl-2 col-lg-1 col-md-1 mb-0"></div> -->
-    <div
-      class="media-right botonesPerfil col-12 col-sm-6 col-xl-4 col-lg-5 col-md-12 col-sm-12 justify-content-end d-flex align-items-center">
+
+    <div class="media-right botonesPerfil  mb-2 col-12 col-lg-4 col-xl-4 justify-content-center d-flex">
       <!-- BOTON DAR EN ADOPCION (LINK A PAGINA darAdopcion) Y AGREGAR PUBLICACION(LINK A MODAL agregarPublicacion)-->
-      <a href="/darAdopcion" class="btn btn-primary mr-4 p-3 mb-2 col-4 col-xl-5 col-lg-6 col-md-5 col-sm-5">Agregar
+      <a href="/darAdopcion" class="btn btn-primary mr-4 p-3 col-4 col-sm-4 col-md-4 col-lg-5 col-xl-5">Agregar
         Perfil</a>
-      <a href="#" class="btn btn-primary p-3 mb-2 col-6 col-xl-7 col-lg-7 col-md-5 col-sm-6" data-toggle="modal"
+      <a href="#" class="btn btn-primary p-3 col-5 col-sm-5 col-md-5 col-lg-7 col-xl-7" data-toggle="modal"
         data-target="#agregarPublicacion" id="btnAgregarPublicacion">Agregar
         Publicación</a>
     </div>
@@ -243,8 +232,8 @@
   <!-- APARECEN PERFILES DE ANIMALES (como en pagina adoptar) -->
   <!-- Al dar click en un perfil link a modal de infoPerfilAnimal -->
   <div class="media col-12 justify-content-center" id="perfilesAnimales">
-    <div class="row row-cols-4 justify-content-center mr-4">
-      <div class="containerCard col-lg-3 col-xl-3 col-md-4 col-sm-6 col-5">
+    <div class="row row-cols-4 justify-content-center mr-4" id="mascotaList">
+      <!-- <div class="containerCard col-lg-3 col-xl-3 col-md-4 col-sm-6 col-5">
         <a class="card dropdown-item" href="#" data-toggle="modal" data-target="#infoAnimalPerfil">
           <img
             src="https://www.okchicas.com/wp-content/uploads/2015/11/Adorables-cachorros-que-no-parecen-reales-12.jpg"
@@ -257,112 +246,16 @@
             <p class="card-text">Ubicación: Guadalajara, Mexico</p>
           </div>
         </a>
-      </div>
-      <div class="containerCard col-lg-3 col-xl-3 col-md-4 col-sm-6 col-5">
-        <a class="card dropdown-item" href="#" data-toggle="modal" data-target="#infoAnimalPerfil">
-          <img
-            src="https://www.okchicas.com/wp-content/uploads/2015/11/Adorables-cachorros-que-no-parecen-reales-12.jpg"
-            class="card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Animal 3</h5>
-            <p class="card-text">Raza: udhffhewrku</p>
-            <p class="card-text">Edad: 5 meses</p>
-            <p class="card-text">Sexo: Macho</p>
-            <p class="card-text">Ubicación: Guadalajara, Mexico</p>
-          </div>
-        </a>
-      </div>
-      <div class="containerCard col-lg-3 col-xl-3 col-md-4 col-sm-6 col-5">
-        <a class="card dropdown-item" href="#" data-toggle="modal" data-target="#infoAnimalPerfil">
-          <img
-            src="https://www.okchicas.com/wp-content/uploads/2015/11/Adorables-cachorros-que-no-parecen-reales-12.jpg"
-            class="card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Animal 3</h5>
-            <p class="card-text">Raza: udhffhewrku</p>
-            <p class="card-text">Edad: 5 meses</p>
-            <p class="card-text">Sexo: Macho</p>
-            <p class="card-text">Ubicación: Guadalajara, Mexico</p>
-          </div>
-        </a>
-      </div>
-      <div class="containerCard col-lg-3 col-xl-3 col-md-4 col-sm-6 col-5">
-        <a class="card dropdown-item" href="#" data-toggle="modal" data-target="#infoAnimalPerfil">
-          <img
-            src="https://www.okchicas.com/wp-content/uploads/2015/11/Adorables-cachorros-que-no-parecen-reales-12.jpg"
-            class="card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Animal 3</h5>
-            <p class="card-text">Raza: udhffhewrku</p>
-            <p class="card-text">Edad: 5 meses</p>
-            <p class="card-text">Sexo: Macho</p>
-            <p class="card-text">Ubicación: Guadalajara, Mexico</p>
-          </div>
-        </a>
-      </div>
-      <div class="containerCard col-lg-3 col-xl-3 col-md-4 col-sm-6 col-5">
-        <a class="card dropdown-item" href="#" data-toggle="modal" data-target="#infoAnimalPerfil">
-          <img
-            src="https://www.okchicas.com/wp-content/uploads/2015/11/Adorables-cachorros-que-no-parecen-reales-12.jpg"
-            class="card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Animal 3</h5>
-            <p class="card-text">Raza: udhffhewrku</p>
-            <p class="card-text">Edad: 5 meses</p>
-            <p class="card-text">Sexo: Macho</p>
-            <p class="card-text">Ubicación: Guadalajara, Mexico</p>
-          </div>
-        </a>
-      </div>
-      <div class="containerCard col-lg-3 col-xl-3 col-md-4 col-sm-6 col-5">
-        <a class="card dropdown-item" href="#" data-toggle="modal" data-target="#infoAnimalPerfil">
-          <img
-            src="https://www.okchicas.com/wp-content/uploads/2015/11/Adorables-cachorros-que-no-parecen-reales-12.jpg"
-            class="card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Animal 3</h5>
-            <p class="card-text">Raza: udhffhewrku</p>
-            <p class="card-text">Edad: 5 meses</p>
-            <p class="card-text">Sexo: Macho</p>
-            <p class="card-text">Ubicación: Guadalajara, Mexico</p>
-          </div>
-        </a>
-      </div>
-      <div class="containerCard col-lg-3 col-xl-3 col-md-4 col-sm-6 col-5">
-        <a class="card dropdown-item" href="#" data-toggle="modal" data-target="#infoAnimalPerfil">
-          <img
-            src="https://www.okchicas.com/wp-content/uploads/2015/11/Adorables-cachorros-que-no-parecen-reales-12.jpg"
-            class="card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Animal 3</h5>
-            <p class="card-text">Raza: udhffhewrku</p>
-            <p class="card-text">Edad: 5 meses</p>
-            <p class="card-text">Sexo: Macho</p>
-            <p class="card-text">Ubicación: Guadalajara, Mexico</p>
-          </div>
-        </a>
-      </div>
-      <div class="containerCard col-lg-3 col-xl-3 col-md-4 col-sm-6 col-5">
-        <a class="card dropdown-item" href="#" data-toggle="modal" data-target="#infoAnimalPerfil">
-          <img
-            src="https://www.okchicas.com/wp-content/uploads/2015/11/Adorables-cachorros-que-no-parecen-reales-12.jpg"
-            class="card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Animal 3</h5>
-            <p class="card-text">Raza: udhffhewrku</p>
-            <p class="card-text">Edad: 5 meses</p>
-            <p class="card-text">Sexo: Macho</p>
-            <p class="card-text">Ubicación: Guadalajara, Mexico</p>
-          </div>
-        </a>
-      </div>
+      </div> -->
+
     </div>
   </div>
 
   <!-- APARECEN PUBLICACIONES (con boton de eliminar)-->
   <div class="media col-10 justify-content-center" id="publicacionesPersonal" style="display: none;">
-    <div class="row row-cols-1">
-      <div class="publicaciones card dropdown-item">
+    <div class="row row-cols-1" id="publicacionesList">
+
+      <!-- <div class="publicaciones card dropdown-item">
         <div class="row">
           <div class="col-4">
             <img
@@ -380,48 +273,10 @@
             <button type="submit" class="btn btn-danger float-right"><i class="fa fa-trash"></i></button>
           </div>
         </div>
-      </div>
-      <div class="publicaciones card dropdown-item">
-        <div class="row">
-          <div class="col-4">
-            <img
-              src="https://www.okchicas.com/wp-content/uploads/2015/11/Adorables-cachorros-que-no-parecen-reales-12.jpg"
-              class="card-imgPublicacion" alt="...">
-          </div>
-          <div class="card-body-publicaciones col-5 mt-3 mb-3 mr-0">
-            <h5 class="card-title mb-3">Titulo publicacion</h5>
-            <p class="card-text">Descripcion de la publicacion:<br>
-              fsdfsdfsdfdfgsd<br>
-              fdsfsdfdf
-            </p>
-          </div>
-          <div class="btnEliminar col-1 mt-3 mb-3 mr-0">
-            <button type="submit" class="btn btn-danger float-right"><i class="fa fa-trash"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="publicaciones card dropdown-item">
-        <div class="row">
-          <div class="col-4">
-            <img
-              src="https://www.okchicas.com/wp-content/uploads/2015/11/Adorables-cachorros-que-no-parecen-reales-12.jpg"
-              class="card-imgPublicacion" alt="...">
-          </div>
-          <div class="card-body-publicaciones col-5 mt-3 mb-3 mr-0">
-            <h5 class="card-title mb-3">Titulo publicacion</h5>
-            <p class="card-text">Descripcion de la publicacion:<br>
-              fsdfsdfsdfdfgsd<br>
-              fdsfsdfdf
-            </p>
-          </div>
-          <div class="btnEliminar col-1 mt-3 mb-3 mr-0">
-            <button type="submit" class="btn btn-danger float-right"><i class="fa fa-trash"></i></button>
-          </div>
-        </div>
-      </div>
+      </div> -->
+
     </div>
   </div>
-
 
   <!-- MODAL agregarPublicacion -->
   <div class="modal fade" id="agregarPublicacion" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
@@ -433,17 +288,21 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body justify-content-start">
-          <input type="text" id="fileInput" placeholder="Ingresar url de imagen para publicación" required>
-          <div id="imagePreview" class="mb-1"></div>
-          <label for="descripcionPublicacionModal">Agregar descripción:</label>
-          <textarea name="descripcionPublicacionModal" id="descripcionPublicacionModal" cols="45" rows="6"
-            required></textarea>
-        </div>
-        <div class="modal-footer justify-content-center">
-          <!-- este boton agrega nueva publicacion al perfil y a la pagina de publicaciones -->
-          <button type="submit" class="btn btn-primary" data-dismiss="modal">Publicar</button>
-        </div>
+        <form action="/publicaciones/crearPublicacion" method="post">
+          <div class="modal-body justify-content-start">
+
+            <input type="text" id="titulo" placeholder="Agregar título de la publicación" name="_titulo" required>
+            <input type="text" id="fileInput" placeholder="Ingresar url de imagen para publicación" name="_imagen"
+              required>
+            <div id="imagePreview" class="mb-1"></div>
+            <label for="descripcionPublicacionModal">Agregar descripción:</label>
+            <textarea name="_contenido" id="descripcionPublicacionModal" cols="45" rows="6" required></textarea>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <!-- este boton agrega nueva publicacion al perfil y a la pagina de publicaciones -->
+            <button type="submit" class="btn btn-primary">Publicar</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -461,26 +320,12 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <div class="headerContent">
-            <img class="imgInfoAnimal mb-2"
-              src="https://www.okchicas.com/wp-content/uploads/2015/11/Adorables-cachorros-que-no-parecen-reales-12.jpg"
-              alt="...">
-            <h5 class="modal-title">Nombre</h5>
+          <div class="headerContent text-center">
+            <img class="imgInfoAnimal mb-2" src="" alt="...">
+            <h5 class="modal-title"></h5>
           </div>
         </div>
         <div class="modal-body p-5">
-          <p><b>Raza:</b> asjdlak</p>
-          <p><b>Sexo:</b> Macho</p>
-          <p><b>Edad:</b> xx</p>
-          <p><b>Pelaje:</b> Café, Chino, Corto</p>
-          <p><b>Vacunas:</b> jdsajk, dajdjas, hdakshdk</p>
-          <p><b>Parásitos:</b> dasdas, dasd, dasdasd</p>
-          <p><b>Caracter:</b> fsdfsdfsdfs</p>
-          <p><b>Esterilización:</b> Sí</p>
-          <p><b>Ubicación:</b> Guadalajara, Jalisco, México</p>
-          <p><b>Discapacidades:</b> asjdlak</p>
-          <p><b>Fecha de desparacitación:</b> dd/mm/aaaa</p>
-          <p><b>Adoptado:</b> No</p>
         </div>
         <div class="modal-footer">
           <!-- Editar: se abre modal de editarPerfilAnimal -->
@@ -491,17 +336,19 @@
         </div>
       </div>
     </div>
+
+
   </div>
 
 
   <!-- MODAL LOGIN -->
   <div class="modal fade" id="logIn" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-  
+
   </div>
 
   <!-- MODAL REGISTRO -->
   <div class="modal fade" id="registro" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    
+
   </div>
 
 
@@ -516,77 +363,80 @@
           </button>
           <h5 class="modal-title">Editar peludito</h5>
         </div>
-        <form action="" method="post" enctype="multipart/form-data" class="justify-content-center">
+        <form action="" method="" enctype="multipart/form-data" class="justify-content-center" id="editarAnimalForm">
           <div class="modal-body">
             <div class=" row justify-content-center col-12 pb-4 ml-1 mr-1">
+              <!-- ID -->
+              <input type="text" id="_idAnimal" style="display: none;">
               <!-- IMAGEN -->
-              <input type="text" id="fileImgAnimal" placeholder="Ingresar url de foto del peludito" class="form-control" required>
+              <input type="text" id="fileImgAnimal" placeholder="Ingresar url de foto del peludito" class="form-control"
+                required>
               <!-- NOMBRE -->
-              <input type="text" name="nombre animal" id="nombreAnimalRegistro" class="form-control mt-3 mb-3"
+              <input type="text" name="nombre animal" id="nombreAnimal" class="form-control mt-3 mb-3"
                 placeholder="Nombre del peludito" required>
               <!-- TIPO -->
-              <div class="input-group mb-3 col-12">
+              <div class="input-group mb-3 col-12" id="tipoAnimal">
                 <div class="col-6 form-check form-check-inline">
-                  <input type="radio" name="tipoAnimal" id="perroRegistro" value="perro" checked>
+                  <input type="radio" name="tipoAnimal" id="perroEdit" value="Perro" checked>
                   <label for="perroRegistro">Perro</label>
                 </div>
                 <div class="col-6 form-check form-check-inline">
-                  <input type="radio" name="tipoAnimal" id="gatoRegistro" value="gato">
+                  <input type="radio" name="tipoAnimal" id="gatoEdit" value="Gato">
                   <label for="gatoRegistro">Gato</label>
                 </div>
               </div>
               <!-- RAZA -->
-              <select class="form-control mb-3" id="razaAnimalRegistro" name="Raza del animal">
+              <select class="form-control mb-3" id="razaAnimalEdit" name="Raza del animal">
                 <!-- Perros -->
                 <option value="" disabled selected>Seleccione raza</option>
-                <option value="PerroMestizo" class="Perro">Perro mestizo</option>
+                <option value="Perro Mestizo" class="Perro">Perro mestizo</option>
                 <option value="Chihuahua" class="Perro">Chihuahua</option>
                 <option value="Schnauzer" class="Perro">Schnauzer</option>
-                <option value="GoldenRetriever" class="Perro">Golden Retriever</option>
+                <option value="Golden Retriever" class="Perro">Golden Retriever</option>
                 <option value="Pug" class="Perro">Pug</option>
-                <option value="YorkshireTerriers" class="Perro">Yorkshire Terriers</option>
-                <option value="BorderCollie" class="Perro">Border Collie</option>
+                <option value="Yorkshire Terriers" class="Perro">Yorkshire Terriers</option>
+                <option value="Border Collie" class="Perro">Border Collie</option>
                 <option value="Labrador" class="Perro">Labrador</option>
                 <option value="Bulldog" class="Perro">Bulldog</option>
                 <option value="Pitbull" class="Perro">Pitbull</option>
                 <option value="Pomerania" class="Perro">Pomerania</option>
-                <option value="PastorAleman" class="Perro">Pastor Alemán</option>
+                <option value="Pastor Aleman" class="Perro">Pastor Alemán</option>
                 <option value="Husky" class="Perro">Husky</option>
-                <option value="PastorBelga" class="Perro">Pastor Belga</option>
+                <option value="Pastor Belga" class="Perro">Pastor Belga</option>
                 <option value="Doberman" class="Perro">Dóberman</option>
                 <option value="Beagle" class="Perro">Beagle</option>
-                <option value="PastorAustraliano" class="Perro">Pastor Australiano</option>
-                <option value="DogoArgentino" class="Perro">Dogo Argentino</option>
-                <option value="GranDanes" class="Perro">Gran Danés</option>
+                <option value="Pastor Australiano" class="Perro">Pastor Australiano</option>
+                <option value="Dogo Argentino" class="Perro">Dogo Argentino</option>
+                <option value="Gran Danes" class="Perro">Gran Danés</option>
                 <option value="Rottweiler" class="Perro">Rottweiler</option>
                 <!-- Gatos -->
                 <option value="Mestizo" class="Gato">Gato Mestizo</option>
                 <option value="Americano" class="Gato">Gato Americano </option>
                 <option value="Europeo" class="Gato">Gato Europeo</option>
                 <option value="Bombay" class="Gato">Gato Bombay</option>
-                <option value="AzulRuso" class="Gato">Gato Azul ruso</option>
+                <option value="Azul Ruso" class="Gato">Gato Azul ruso</option>
                 <option value="Persa" class="Gato">Gato Persa</option>
                 <option value="Siames" class="Gato">Gato Siamés</option>
-                <option value="AngoraTurco" class="Gato">Gato Angora turco</option>
+                <option value="Angora Turco" class="Gato">Gato Angora turco</option>
                 <option value="Siberiano" class="Gato">Gato Siberiano</option>
-                <option value="MauEgipcio" class="Gato">Gato mau egipcio</option>
+                <option value="Mau Egipcio" class="Gato">Gato mau egipcio</option>
                 <option value="Snowshoe" class="Gato">Gato snowshoe</option>
                 <!-- agregar más -->
-                <option value="OtraRaza">Otra</option>
+                <option value="Otra">Otra</option>
               </select>
               <!-- SEXO -->
-              <select class="form-control mb-3" id="sexoAnimalRegistro" name="Sexo del animal" required>
+              <select class="form-control mb-3" id="sexoAnimalEdit" name="Sexo del animal" required>
                 <option value="" disabled selected>Seleccione sexo del animal</option>
                 <option value="Macho">Macho</option>
                 <option value="Hembra">Hembra</option>
               </select>
               <!-- CARACTER -->
-              <textarea id="caracterAnimalRegistro" placeholder="Describe el caracter del animal" name="caracter animal"
+              <textarea id="caracterAnimalEdit" placeholder="Describe el caracter del animal" name="caracter animal"
                 rows="2" cols="50" class="form-control mb-3"></textarea>
               <!-- EDAD -->
               <div class="input-group col-12 pl-0 pr-0">
                 <div class="col-8 pl-0 pr-0">
-                  <input type="number" id="edadAnimalRegistro" class="form-control mb-3" min="0"
+                  <input type="number" id="edadAnimalEditValue" class="form-control mb-3" min="0"
                     placeholder="Edad del animal">
                 </div>
                 <div class="col-4 pl-1 pr-0">
@@ -621,105 +471,106 @@
               <!-- PELAJE -->
               <div class="row col-12 pl-0 pr-0 mb-3 ml-0 mr-0">
                 <div class="col-4 pl-0 pr-0">
-                  <select class="form-control" id="tipoPelajeRegistro" name="tipo_pelaje" required>
+                  <select class="form-control" id="tipoPelajeEdit" name="tipo_pelaje" required>
                     <option value="" disabled selected>Seleccione tipo de pelaje</option>
                     <option value="Lacio">Lacio</option>
                     <option value="Rizado">Rizado</option>
-                    <option value="otro">Otro</option>
+                    <option value="Otro">Otro</option>
                     <!-- agregar más opciones según sea necesario -->
                   </select>
                 </div>
                 <div class="col-4 pl-1 pr-0">
-                  <select class="form-control" id="colorPelajeRegistro" name="color_pelaje" required>
+                  <select class="form-control" id="colorPelajeEdit" name="color_pelaje" required>
                     <option value="" disabled selected>Seleccione color de pelaje</option>
                     <option value="Negro">Negro</option>
                     <option value="Cafe oscuro">Café oscuro</option>
                     <option value="Cafe claro">Café claro</option>
+                    <option value="Amarillo">Amarillo</option>
+                    <option value="Gris">Gris</option>
                     <option value="Blanco">Blanco</option>
-                    <option value="otro">Otro</option>
+                    <option value="Otro">Otro</option>
                     <!-- agregar más opciones según sea necesario -->
                   </select>
                 </div>
                 <div class="col-4 pl-1 pr-0">
-                  <select class="form-control" id="largoPelajeRegistro" name="largo_pelaje" required>
+                  <select class="form-control" id="largoPelajeEdit" name="largo_pelaje" required>
                     <option value="" disabled selected>Seleccione largo de pelaje</option>
                     <option value="Largo">Largo</option>
                     <option value="Mediano">Mediano</option>
                     <option value="Corto">Corto</option>
-                    <option value="otro">Otro</option>
+                    <option value="Otro">Otro</option>
                   </select>
                 </div>
               </div>
               <!-- ESTIRILIZACION -->
-              <select class="form-control mb-3" id="estirilizacionRegistro" name="Estirilizado" required>
+              <select class="form-control mb-3" id="estirilizacionEdit" name="Estirilizado" required>
                 <option value="" disabled selected>¿El animal está esterilizado?</option>
                 <option value="si">Sí</option>
                 <option value="no">No</option>
               </select>
               <!-- FECHA DESPARACITACION -->
-              <label for="fechaDesparacitacionRegistro" style="color: #888888;">Última fecha de
+              <label for="fechaDesparacitacionEdit" style="color: #888888;">Última fecha de
                 desparacitación</label>
-              <input type="date" name="fechaDesparacitacion" id="fechaDesparacitacionRegistro" class="form-control mb-3"
-                value="Fecha desparacitacion">
+              <input type="date" name="fechaDesparacitacion" id="fechaDesparacitacionEdit" class="form-control mb-3"
+                value="yyyy-mm-dd">
               <!-- VACUNAS -->
               <div class="dropdown col-12 form-control mb-3 p-0" id="vacunasRegistro">
                 <button class="btn dropdown-toggle col-12 text-left" type="button" id="dropdownMenuButtonVacunas"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Seleccionar vacunas que tiene el animal
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <form>
-                    <!-- ambos -->
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="rabia" name="Vacunas" value="rabia">
-                      <label for="rabia">Rabia</label>
-                    </div>
-                    <!-- vacunas para perros -->
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="primeraVacuna" name="Vacunas" value="Primera Vacuna" class="Perro">
-                      <label for="primeraVacuna">Primera vacuna</label>
-                    </div>
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="tos" name="Vacunas" value="tos" class="Perro">
-                      <label for="tos">Tos de las perreras</label>
-                    </div>
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="mosquillo" name="Vacunas" value="mosquillo" class="Perro">
-                      <label for="mosquillo">Moquillo canino</label>
-                    </div>
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="coronavirus" name="Vacunas" value="coronavirus" class="Perro">
-                      <label for="coronavirus">Coronavirus canino</label>
-                    </div>
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="parvovirus" name="Vacunas" value="Parvovirus" class="Perro">
-                      <label for="parvovirus">Parvovirus</label>
-                    </div>
-                    <!-- vacunas para perros -->
-                    <!-- vacunas para gatos -->
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="Panleucopenia" name="Vacunas" value="Panleucopenia" class="Gato">
-                      <label for="Panleucopenia">Panleucopenia felina</label>
-                    </div>
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="herpesvirus" name="Vacunas" value="herpesvirus" class="Gato">
-                      <label for="herpesvirus">Herpesvirus</label>
-                    </div>
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="calicivirus" name="Vacunas" value="calicivirus" class="Gato">
-                      <label for="calicivirus">Calicivirus</label>
-                    </div>
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="leucemia" name="Vacunas" value="leucemia" class="Gato">
-                      <label for="leucemia">Leucemia viral felina</label>
-                    </div>
-                    <!-- vacunas para gatos -->
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="otras" name="Vacunas" value="otras">
-                      <label for="otras">Otras</label>
-                    </div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="vacunasEdit">
 
-                  </form>
+                  <!-- ambos -->
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="rabia" name="_vacunas" value="Rabia">
+                    <label for="rabia">Rabia</label>
+                  </div>
+                  <!-- vacunas para perros -->
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="primeraVacuna" name="_vacunas" value="Primera Vacuna" class="Perro">
+                    <label for="primeraVacuna">Primera vacuna</label>
+                  </div>
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="tos" name="_vacunas" value="Tos" class="Perro">
+                    <label for="tos">Tos de las perreras</label>
+                  </div>
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="mosquillo" name="_vacunas" value="Mosquillo" class="Perro">
+                    <label for="mosquillo">Moquillo canino</label>
+                  </div>
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="coronavirus" name="_vacunas" value="Coronavirus" class="Perro">
+                    <label for="coronavirus">Coronavirus canino</label>
+                  </div>
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="parvovirus" name="_vacunas" value="Parvovirus" class="Perro">
+                    <label for="parvovirus">Parvovirus</label>
+                  </div>
+                  <!-- vacunas para perros -->
+                  <!-- vacunas para gatos -->
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="Panleucopenia" name="_vacunas" value="Panleucopenia" class="Gato">
+                    <label for="Panleucopenia">Panleucopenia felina</label>
+                  </div>
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="herpesvirus" name="_vacunas" value="Herpesvirus" class="Gato">
+                    <label for="herpesvirus">Herpesvirus</label>
+                  </div>
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="calicivirus" name="_vacunas" value="Calicivirus" class="Gato">
+                    <label for="calicivirus">Calicivirus</label>
+                  </div>
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="leucemia" name="_vacunas" value="Leucemia" class="Gato">
+                    <label for="leucemia">Leucemia viral felina</label>
+                  </div>
+                  <!-- vacunas para gatos -->
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="otras" name="_vacunas" value="Otras">
+                    <label for="otras">Otras</label>
+                  </div>
+
                 </div>
               </div>
               <!-- PARASITOS -->
@@ -728,39 +579,37 @@
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Seleccionar parásitos que tiene el animal
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <form>
-                    <!-- ambos -->
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="garrapatas" name="Parasitos" value="garrapatas">
-                      <label for="garrapatas">Garrapatas</label>
-                    </div>
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="pulgas" name="Parasitos" value="pulgas">
-                      <label for="pulgas">Pulgas</label>
-                    </div>
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="piojos" name="Parasitos" value="piojos">
-                      <label for="piojos">Piojos</label>
-                    </div>
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="gusanos" name="Parasitos" value="gusanos">
-                      <label for="gusanos">Gusanos</label>
-                    </div>
-                    <div class="dropdown-item">
-                      <input type="checkbox" id="otrosParasitos" name="Parasitos" value="otros">
-                      <label for="otrosParasitos">Otros</label>
-                    </div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="parasitosEdit">
+                  <!-- ambos -->
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="garrapatas" name="_parasitos" value="Garrapatas">
+                    <label for="garrapatas">Garrapatas</label>
+                  </div>
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="pulgas" name="_parasitos" value="Pulgas">
+                    <label for="pulgas">Pulgas</label>
+                  </div>
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="piojos" name="_parasitos" value="Piojos">
+                    <label for="piojos">Piojos</label>
+                  </div>
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="gusanos" name="_parasitos" value="Gusanos">
+                    <label for="gusanos">Gusanos</label>
+                  </div>
+                  <div class="dropdown-item">
+                    <input type="checkbox" id="otrosParasitos" name="_parasitos" value="Otros">
+                    <label for="otrosParasitos">Otros</label>
+                  </div>
 
-                  </form>
                 </div>
               </div>
               <!-- ENFERMEDADES -->
-              <textarea id="enfermedadesAnimalRegistro"
+              <textarea id="enfermedadesAnimalEdit"
                 placeholder="Describe las enfermedades del animal (dejar en blanco si no tiene)"
                 name="enfermedades animal" rows="2" cols="50" class="form-control mb-3"></textarea>
               <!-- DISCAPACIDADES -->
-              <textarea id="dispacacidadesAnimalRegistro"
+              <textarea id="dispacacidadesAnimalEdit"
                 placeholder="Describe las discapacidades del animal (dejar en blanco si no tiene)"
                 name="discapacidades animal" rows="2" cols="50" class="form-control mb-3"></textarea>
               <!-- Estado de adopcion -->
@@ -768,11 +617,11 @@
                 <label for="estadoAdopcion" style="color: #888888;">El peludito ha sido adoptado?</label>
                 <div class="input-group col-12" id="estadoAdoptado">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Adoptado" id="siAdoptado" value="Si">
+                    <input class="form-check-input" type="radio" name="Adoptado" id="siAdoptado" value="si">
                     <label class="form-check-label" for="siAdoptado">Sí</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Adoptado" id="noAdoptado" value="No" checked>
+                    <input class="form-check-input" type="radio" name="Adoptado" id="noAdoptado" value="no" checked>
                     <label class="form-check-label" for="noAdoptado">No</label>
                   </div>
                 </div>
@@ -780,22 +629,24 @@
             </div>
             <div class="modal-footer justify-content-center">
               <!-- BOTON DE guardar (se actualiza al perfil y a la pagina de adoptar) -->
-              <button type="submit" class="btn btn-success col-5 justify-content-center">Guardar</button>
+              <button type="submit" class="btn btn-success col-5 justify-content-center btnSave">Guardar</button>
             </div>
         </form>
       </div>
     </div>
+
+
+
   </div>
 
 
   <!-- Optional JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script>
-  
     //para mostrar solo publicaciones
     let perfilesBtn = document.getElementById('perfilesBtn');
     let cardPublicaciones = document.querySelector('#publicacionesPersonal');
@@ -814,44 +665,18 @@
 
     //agregar imagen de publicacion
     document.getElementById('fileInput').addEventListener('change', function (event) {
-        let imageUrl = event.target.value;
-        let imagePreview = document.getElementById('imagePreview');
-        imagePreview.innerHTML = '<img src="' + imageUrl + '" alt="Imagen seleccionada">';
-        imagePreview.style.padding = '0px';
+      let imageUrl = event.target.value;
+      let imagePreview = document.getElementById('imagePreview');
+      imagePreview.innerHTML = '<img src="' + imageUrl + '" alt="Imagen seleccionada">';
+      imagePreview.style.padding = '0px';
     });
     //------------------------------------------------------------------------------
-
-    // mostrar solo razas de gatos o razas de perros
-    let perroRadio = document.getElementById("perroRegistro");
-    let gatoRadio = document.getElementById("gatoRegistro");
-    let razaAnimalSelect = document.getElementById("razaAnimalRegistro");
-    let opcionesGato = razaAnimalSelect.querySelectorAll(".Gato");
-    let opcionesPerro = razaAnimalSelect.querySelectorAll(".Perro");
-    perroRadio.addEventListener('change', function () {
-      if (perroRadio.checked) {
-        opcionesGato.forEach(function (opcion) {
-          opcion.style.display = "none";
-        });
-        opcionesPerro.forEach(function (opcion) {
-          opcion.style.display = "block";
-        });
-      }
-    });
-    gatoRadio.addEventListener('change', function () {
-      if (gatoRadio.checked) {
-        opcionesPerro.forEach(function (opcion) {
-          opcion.style.display = "none";
-        });
-        opcionesGato.forEach(function (opcion) {
-          opcion.style.display = "block";
-        });
-      }
-    });
   </script>
 
-  <script src="utils/publicaciones_utils.js"></script>
   <script src="utils/utils.js"></script>
+  <script src="utils/perfil_utils.js"></script>
 
-</body>
+
+  </body>
 
 </html>

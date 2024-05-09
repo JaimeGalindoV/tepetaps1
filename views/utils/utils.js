@@ -20,7 +20,7 @@ function navBar() {
           </li>
           <!-- LINK PAGINA darAdopcion -->
           <li class="nav-item">
-            <a class="nav-link" href="../darAdopcion">Dar en Adopción</a>
+            <a class="nav-link" href="#" onclick="goToDarAdopcion(event)">Dar en Adopción</a>
           </li>
           <!-- LINK PAGINA publicaciones -->
           <li class="nav-item">
@@ -50,7 +50,7 @@ function navBar() {
 
         <div id="imgPerfil">
           <a href="#" onclick="event.preventDefault(); goToProfile(event);">
-            <div class="user-image"></div>
+            <div class="user-image" id="user-image"></div>
           </a>
           <!--Imagen de usuario: LINK A PAGINA perfilPersonal o a Modal LogIn -->
         </div>
@@ -62,22 +62,22 @@ function navBar() {
 
 }
 
-
 navBar();
 
-function optionsToShow(){
+async function optionsToShow(){
   let token = document.cookie.split('=')[1];
 
   let loginBtn = document.getElementById('loginBtn');
   let registroBtn = document.getElementById('registerBtn');
   let logoutBtn = document.getElementById('logoutBtn');
   let imgPerfil = document.getElementById('imgPerfil');
+  let user_image = document.getElementById('user-image');
 
   let dropdownPrincipal = document.getElementById('dropdownPrincipal');
 
+  let response = await fetch('/perfil/api');
 
-
-  if(token === undefined || token === '-1' || token === ''){ // El usuario no esta loggeado
+  if(response.status != 200 ){ // El usuario no esta loggeado
     imgPerfil.style.display = 'none';
     logoutBtn.style.display = 'none';
     loginBtn.style.display = '';
@@ -85,6 +85,9 @@ function optionsToShow(){
     // dropdownPrincipal.style.border = '#fff 1px solid';
   }
   else{
+    let user = await response.json();
+  
+    user_image.style.backgroundImage = 'url(' + user._imagen + ')';
     imgPerfil.style.display = '';
     logoutBtn.style.display = '';
     loginBtn.style.display = 'none';
@@ -130,7 +133,7 @@ function registerModal() {
                   placeholder="Número de teléfono" pattern="^\\d{10}$" required>
               <!-- CAMBIAR A QUE ELLOS ESCOGAN SU IMAGEN DE PERIFL DE SU DISPOSITIVO -->
               <input type="text" id="fileImgRegistro" class="form-control mt-3" name="imagen"
-                  placeholder="Ingresar url de foto de perfil">
+                  placeholder="Ingresar url de foto de perfil" required>
               <div class="form-group d-flex justify-content-center mt-4">
                   <button type="submit" class="btn btn-success" hres="/">Registrarse</button>
               </div>
@@ -290,6 +293,7 @@ async function login(event) {
   }
 
   // Si las credenciales son correctas, redirigir a la página principal
+
   window.location.reload();
 
   //if (document.cookie === "token=-1" || document.cookie === ''){
@@ -321,6 +325,21 @@ async function goToProfile(event) {
   }
   else{
     window.location.href = '/perfil';
+  }
+}
+
+async function goToDarAdopcion(event){
+  let login = await veryfyLogin();
+  
+  console.log("algo");
+
+  if(!login){
+    alert('Inicia sesion para acceder a esa pagina');
+    $('#logIn').modal('show');
+    return;
+  }
+  else{
+    window.location.href = '/darAdopcion';
   }
 }
 

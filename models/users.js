@@ -28,9 +28,12 @@ let userSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    _imagen: {
+        type: String,
+        required: true
+    },
     _telefono: String,
     _fechaNacimiento: Date,
-    _imagen: String,
     _animales: Array, 
     _publicaciones: Array,
     _role:{

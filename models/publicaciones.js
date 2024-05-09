@@ -20,12 +20,13 @@ let publicacionSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    _autor: {
+    _autorImagen: {
         type: String,
         required: true
     },
-    _autorImagen:{
-        type: String
+    _autorNombre: {
+        type: String,
+        required: true
     }
 });
 

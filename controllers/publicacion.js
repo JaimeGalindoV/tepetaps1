@@ -8,12 +8,12 @@ class PublicacionExcepcion {
 }
 
 class Publicacion {
-    constructor(titulo, contenido, imagen, autor, autorImagen) {
+    constructor(titulo, contenido, imagen, autorImagen, autorNombre) {
         this.titulo = titulo;
         this.contenido = contenido;
-        this.autor = autor;
         this.imagen = imagen;
         this.autorImagen = autorImagen;
+        this.autorNombre = autorNombre;
     }
 
     get autorImagen(){
@@ -23,6 +23,15 @@ class Publicacion {
     set autorImagen(value){
         this._autorImagen = value;
     }
+
+    get autorNombre(){
+        return this._autorNombre;
+    }
+
+    set autorNombre(value){
+        this._autorNombre = value;
+    }
+
 
     get titulo() {
         return this._titulo;
@@ -58,17 +67,6 @@ class Publicacion {
         this._contenido = contenido.trim();
     }
 
-    get autor() {
-        return this._autor;
-    }
-
-    set autor(value){
-        if(typeof value === "string"){
-            this._autor = value;
-        }else{
-            throw new PublicacionExcepcion("Autor debe ser un string")
-        }
-    }
 
     static createFromJson(jsonValue) {
         let obj = JSON.parse(jsonValue);
@@ -83,15 +81,15 @@ class Publicacion {
             newPublicacion._titulo,
             newPublicacion._contenido,
             newPublicacion._imagen,
-            newPublicacion._autor,
-            newPublicacion._autorImagen
+            newPublicacion._autorImagen,
+            newPublicacion._autorNombre
         );
         
         return publicacion;
     }
 
     static cleanObject(obj) {
-        const publicacionProperties = ['_titulo', '_contenido', '_autor', '_imagen', '_autorImagen'];
+        const publicacionProperties = ['_titulo', '_contenido', '_imagen', '_autorImagen', '_autorNombre'];
 
         for (let prop in obj) {
             let exist = false;

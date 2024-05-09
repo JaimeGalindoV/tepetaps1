@@ -17,7 +17,6 @@ class Usuario {
         this.imagen = imagen;
         this._animales = [];
         this._publicaciones = [];
-
     }
 
     get nombre(){
@@ -120,7 +119,7 @@ class Usuario {
 
     set imagen(file){
         if (/*file instanceof File*/ typeof file === "string") {
-            this._image = file;
+            this._imagen = file;
         } else {
             throw new UsuarioExcepcion("La imagen debe ser un archivo válido.");
         }
@@ -187,13 +186,8 @@ class Usuario {
     }
 
     // ADD, UPDATE, REMOVE ANIMAL
-    addAnimal(animalUuid){
-        let animalAdd = this._animales.find(a => a.uuid === animalUuid);
-        if (animalAdd) {
-            throw new UsuarioExcepcion('El animal ya existe.')
-        } else {
-            this._animales.push(animalAdd);
-        }
+    addAnimal(animal){
+        this._animales.push(animal);
     }
 
     updateAnimal(animalUuid, newAnimal) {
@@ -270,8 +264,6 @@ class Usuario {
         
         return usuario;
     }
-
-    
 }
 
 module.exports = Usuario;

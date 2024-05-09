@@ -27,7 +27,7 @@ body {
 /* Contenedor inicial, que tenga un dondo y el contenido flote en el centro */
 .imgInicialContainer{
     /* Hacer que flote en el centro */
-    background-image: url("https://elcomercio.pe/resizer/NJJG0TF-AnPdJ5Xe74hjlViNCPk=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/HRSNIX6RSNERJEHH72DYD6KAKM.jpg");
+    background-image: url("https://purina.com.pe/sites/default/files/2022-11/Purina-aprende-a-identificar-sintomas-de-envenenamiento-en-perros-nota02.png");
     justify-content: center;
     min-height: 100vh ;
 }

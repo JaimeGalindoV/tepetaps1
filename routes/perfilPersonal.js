@@ -47,7 +47,7 @@ router.route('/api/')
 
             let perfil = await Perfil.findOne({ _correo: decoded._correo });
 
-            res.send(JSON.stringify(perfil));
+            res.status(200).send(perfil);
         } catch (err) {
             // console.error(err);
             res.status(500).send("Error al obtener tu perfil");

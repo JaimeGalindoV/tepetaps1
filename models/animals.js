@@ -22,7 +22,6 @@ let animalSchema = mongoose.Schema({
     },
     _raza:{
         type: String,
-        required: true
     },
     _sexo:{
         type: String,
@@ -54,7 +53,7 @@ let animalSchema = mongoose.Schema({
     _vacunas: Array,
     _paracitos: Array,
     _enfermedades: String,
-    _discapacidad: String,
+    _discapacidades: String,
     _estado: Boolean,
     _correoUser: {
         type: String,

@@ -5,6 +5,7 @@ const router = express.Router();
 const path = require('path');
 const dataHandler = require('./data_handler');
 
+
 const multer = require('multer');
 const upload = multer();
 
@@ -12,6 +13,7 @@ const peluditos = require('./../routes/peluditos');
 const perfilPersonal = require('./../routes/perfilPersonal');
 const admin = require('./../routes/admin');
 const publicaciones = require('./../routes/publicaciones');
+const darAdopcion = require('./../routes/darAdopcion');
 
 const views = path.join(__dirname, '../views');
 
@@ -28,6 +30,8 @@ router.use(express.static(views));
 router.use('/peluditos', peluditos);
 router.use('/perfil/', perfilPersonal);
 router.use('/publicaciones', publicaciones);
+router.use('/darAdopcion', darAdopcion);
+
 router.use('/admin', admin);
 
 
@@ -42,11 +46,6 @@ router.route('/home')
         res.sendFile(path.join(views, 'home.html'));
     })
 
-router.route('/darAdopcion')
-    .get((req, res) => {
-        res.sendFile(path.join(views, 'darAdopcion.html'));
-    })
-
 
 
 router.route('/register')
@@ -57,7 +56,10 @@ router.route('/register')
 router.route('/login')
     .post(upload.none(), (req, res) => {
         dataHandler.logIn(req, res);
+
     });
+
+
 // -----------------------------------------------------------------------------------------------------
 
 router.route('/user')

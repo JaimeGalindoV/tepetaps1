@@ -65,7 +65,8 @@
         }
 
         .card-img {
-            height: fit-content;
+            /* height: fit-content; */
+            height: 250px;
             width: 90%;
             margin-top: 10px;
             border-radius: 5px;
@@ -364,7 +365,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <form class="mt-5" id="formDeFiltro" action="">
+                        <form class="mt-5" id="formDeFiltroM" action="">
                             <!-- Animal: Perro o Gato -->
                             <div class="form-group col-12">
                                 <label for="animalType">Animal</label>
@@ -575,8 +576,34 @@
     </div>
 
     <!-- MODAL INFOANIMAL -->
-    <div class="modal fade" id="infoAnimal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-        aria-hidden="true">
+    <div class="modal fade" id="infoAnimal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="headerContent text-center">
+                        <img class="imgInfoAnimal mb-2"
+                            src=""
+                            alt="...">
+                        <h5 class="modal-title"></h5>
+                    </div>
+                </div>
+                <div class="modal-body p-5">
+                </div>
+                <div class="modal-footer">
+                    <!-- ambos botones mandan un correo al responsable del perro -->
+                    <!-- Adoptar: enviar form por correo al responsable -->
+                    <a type="submit" class="btn btn-primary" href="#" data-toggle="modal"
+                        id="btnAdoptar" data-dismiss="modal" onclick="adoptarAnimal()">Adoptar</a>
+                    <!-- Vloluntario: enviar correo o telefono a predeterminado y la comunicacion es aparte -->
+                    <a id="btnVoluntarido" class="btn btn-primary" href="#" data-dismiss="modal">Voluntario</a>
+                </div>
+            </div>
+        </div>
+    
     </div>
 
     <!-- REGISTRO PARA ADOPTAR -->
@@ -643,10 +670,12 @@
 
 
 <!-- Optional JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 
 <script>
     //-------MOSTRAR SOLO RAZAS DE PERROS O GATOS O AMBAS------------------

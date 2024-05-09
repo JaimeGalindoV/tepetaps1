@@ -1,15 +1,20 @@
 "use strict";
 
 
-let animals = [];
-let admins = [];
-let publicaciones = [];
 
 const User = require('../models/users');
 const Usuario = require('./usuario');
 
 const Animal = require('../models/animals');
-const AnimalController = require('./animal');
+const AnimalClass = require('./animal');
+
+const Publicacion = require('../models/publicaciones');
+const PublicacionClass = require('./publicacion');
+
+const { verify } = require('jsonwebtoken');
+
+const veryfyToken = require('./token_utils').veryfyToken;
+
 
 
 function logIn(req, res){
@@ -43,13 +48,14 @@ async function register(req, res){
         _apellido: req.body.apellido,
         _correo: req.body.correo,
         _contraseña: req.body.contraseña,
+        _imagen: req.body.imagen,
         _fechaNacimiento: new Date(req.body.fechaNacimiento),
         _telefono: req.body.telefono,
-        _imagen: req.body.imagen,
         _animales: [],
         _publicaciones: []
     };
     try {
+        
         const us = await User.findOne({ _correo: newUsuario._correo });
         if (us === null) {
             let usuario = Usuario.createFromObject(newUsuario);
@@ -60,7 +66,7 @@ async function register(req, res){
             res.redirect('/');
         }
     } catch (error) {
-        console.log(error)
+        console.error(error)
         res.status(400);
         res.type('text/plain');
         res.send(error);
@@ -82,28 +88,109 @@ function getAnimalById(AnimalId){
 
 }
 
-function createAnimal(animal){
-    let a;
-    if(typeof animal === 'string'){
-        a= Animal.createFromJson(animal);
-        animals.push(a);
-    }else{
-        a = Animal.createFromObject(animal);
-        animals.push(a);
+
+async function createAnimal(req, res){
+    let userMongoose = await veryfyToken(req.cookies.token);
+    let newAnimal = {
+        _nombre: req.body._nombre,
+        _tipo: req.body._tipo,
+        _imagen: req.body._imagen,
+        _raza: (req.body._raza === undefined) ? '' : req.body._raza,
+        _sexo: req.body._sexo,
+        _caracter: req.body._caracter,
+        _edad: [req.body._edadValor, (req.body._edadUnidad === undefined) ? '' : req.body._edadUnidad],
+        _ubicacion: req.body._ubicacion,
+        _pelajeTipo: req.body._pelajeTipo,
+        _pelajeColor: req.body._pelajeColor,
+        _pelajeLargo: req.body._pelajeLargo,
+        _estirilizado: ((req.body._estirilizado === "si") ? true : false),
+        _fechaDesparasitacion: req.body._fechaDesparasitacion,
+        _vacunas: (req.body._vacunas === undefined) ? [] : (Array.isArray(req.body._vacunas)) ? req.body._vacunas : [req.body._vacunas],
+        _paracitos: (req.body._parasitos === undefined) ? [] : (Array.isArray(req.body._parasitos) ? req.body._parasitos : [req.body._parasitos]),
+        _enfermedades: req.body._enfermedades,
+        _discapacidades: req.body._discapacidades,
+        _estado: false,
+        _correoUser: userMongoose._correo
+    };
+
+
+    try {
+        let animal = AnimalClass.createFromObject(newAnimal); // Convertir a objeno animal de nuestra clase
+        let animalMongoose = Animal(animal); // Convertir a objeto animal de la base de datos
+        animalMongoose.save(); // Guardo el animal en la base de datos
+
+
+        let user = await getUserByEmail2(userMongoose._correo);
+        let animales = user._animales;
+
+        animales.push(animalMongoose._id);
+        updateUser(userMongoose._correo, { _animales: animales });
+
+        // Guardamos el usuario en nuestra base de datos
+
+        res.redirect('/perfil');
+    } catch (error) {
+        res.status(400).send(error);
     }
-    return a;
+
+    // let a;
+    // if(typeof animal === 'string'){
+    //     a= Animal.createFromJson(animal);
+    //     animals.push(a);
+    // }else{
+    //     a = Animal.createFromObject(animal);
+    //     animals.push(a);
+    // }
+    // return a;
 }
 
-function updateAnimal(AnimalId, updateAnimal){
-    let animalToUpdate = getAnimalById(AnimalId);
-    if (animalToUpdate) {
-        Object.assign(animalToUpdate, updateAnimal);
-    }
+//----------------------------------------------------------------------------------------------------
+function updateUser(correo, updatedUser) {
+    User.findOneAndUpdate({ _correo: `${correo}` }, updatedUser, { new : true }).then(user => {
+        return user;
+    });
+}
+//-------------------------------------------------------------------------------------------------------------
+
+function updateAnimal(req, res){
+    let animalId = req.params.idAnimal;
+    let updateAnimal = req.body;
+    console.log(updateAnimal);
+    Animal.findOneAndUpdate({ _id: `${animalId}` }, updateAnimal, { new : true }).then(animal => {
+        res.status(200).json(animal);
+    });
+
 }
 
-function deleteAnimal(AnimalId){
-    let index = animals.findIndex(a =>a.uuid === AnimalId);
-    animals.splice(index,1);
+async function deleteAnimal(req, res){
+    try {
+        // Obtenemos el correo del usuario al mismo tiempo que lo verificamos (sacamos el correo del token)
+        let userMongoose = await veryfyToken(req.cookies.token);
+        let user = await getUserByEmail2(userMongoose._correo); // Obtenemos el usuario de mongodb
+
+        let animales = user._animales; //Obtenemos los animales que tiene ese usuario
+        let index = await animales.findIndex(a => {
+            console.log(`${a} == ${req.params.idAnimal}: ${a == req.params.idAnimal}`)
+            return (a == req.params.idAnimal);
+        }); // Buscamos el animal que queremos eliminar
+
+        console.log(index);
+        if (index != -1){
+            animales.splice(index,1); // Eliminamos el animal de la lista de animales del usuario
+            updateUser(userMongoose._correo, { _animales: animales}); // Actualizamos la lista de animales del usuario de mongodb
+    
+            let animalEliminado = await Animal.findOneAndDelete({ _id: `${req.params.idAnimal}` }); // Eliminamos el animal de mongodb
+
+            res.status(200).send("Animal eliminado");
+        } else {
+            res.status(404).send("Animal no encontrado");
+        }
+
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Error al eliminar el animal");
+    }
 }
 
 
@@ -123,24 +210,24 @@ function getUserByEmail2(correo){
     });
 }
 
-function createUser(user){
-    let u;
-    if(typeof user === 'string'){
-        u = Usuario.createFromJson(user);
-        users.push(u);
-    }else{
-        u = Usuario.createFromObject(user);
-        users.push(u);
-    }
-    return u;
-}
+// function createUser(user){
+//     let u;
+//     if(typeof user === 'string'){
+//         u = Usuario.createFromJson(user);
+//         users.push(u);
+//     }else{
+//         u = Usuario.createFromObject(user);
+//         users.push(u);
+//     }
+//     return u;
+// }
 
-function updateUser(userId, updateUser){
-    let userToUpdate = getAnimalById(userId);
-    if (userToUpdate) {
-        Object.assign(userToUpdate, updateUser);
-    }
-}
+// function updateUser(userId, updateUser){
+//     let userToUpdate = getAnimalById(userId);
+//     if (userToUpdate) {
+//         Object.assign(userToUpdate, updateUser);
+//     }
+// }
 
 function deleteUser(userId){
     let index = users.findIndex(u =>u.uuid === userId);
@@ -177,10 +264,7 @@ function updateAdmin(AdminlId, updateAdmin){
     }
 }
 
-function deleteAnimal(AdminId){
-    let index = admins.findIndex(a =>a.uuid === AdminId);
-    admins.splice(index,1);
-}
+
 
 
 // PUBLICACIONES
@@ -194,21 +278,67 @@ function getPublicacionById(publicacionId){
     else return publicacion;
 }
 
-function createPublicacion(publicacion){
-    let p;
-    if(typeof publicacion === 'string'){
-        p = Publicacion.createFromJson(publicacion);
-        publicaciones.push(p);
-    }else{
-        p = Publicacion.createFromObject(publicacion);
-        publicaciones.push(p);
+async function createPublicacion(req, res){
+    
+    try {    
+        
+        let token = await veryfyToken(req.cookies.token);
+        let user = await getUserByEmail2(token._correo);
+        let newPublicacion = {
+            _titulo: req.body._titulo,
+            _contenido: req.body._contenido,
+            _imagen: req.body._imagen,
+            _autorNombre: user._nombre,
+            _autorImagen: user._imagen,
+        }
+
+        let publicacion = PublicacionClass.createFromObject(newPublicacion); // Convertir a objeno animal de nuestra clase
+        let publicacionMongoose = Publicacion(publicacion); // Convertir a objeto animal de la base de datos
+        publicacionMongoose.save(); // Guardo el animal en la base de datos
+
+
+        let publicaciones = user._publicaciones;
+
+        publicaciones.push(publicacionMongoose._id);
+        updateUser(user._correo, { _publicaciones: publicaciones });
+
+        // Guardamos el usuario en nuestra base de datos
+
+        res.redirect('/perfil');
+    } catch (error) {
+        res.status(400).send(error);
     }
-    return p;
 }
 
-function deleteAnimal(publicacionId){
-    let index = publicaciones.findIndex(p =>p.uuid === publicacionId);
-    publicaciones.splice(index,1);
+async function deletePublicacion(req, res){
+    try {
+        // Obtenemos el correo del usuario al mismo tiempo que lo verificamos (sacamos el correo del token)
+        let token = await veryfyToken(req.cookies.token);
+        let user = await getUserByEmail2(token._correo); // Obtenemos el usuario de mongodb
+
+        let publicaciones = user._publicaciones; //Obtenemos los animales que tiene ese usuario
+        let index = await publicaciones.findIndex(p => {
+            return (p == req.params.idPublicacion);
+        }); // Buscamos el animal que queremos eliminar
+
+        console.log(index);
+
+        if (index != -1){
+            publicaciones.splice(index,1); // Eliminamos el animal de la lista de animales del usuario
+            updateUser(user._correo, { _publicaciones: publicaciones}); // Actualizamos la lista de animales del usuario de mongodb
+    
+            let publicacionEliminada = await Publicacion.findOneAndDelete({ _id: `${req.params.idPublicacion}`}); // Eliminamos el animal de mongodb
+
+            res.status(200).send("Publicaciones eliminada");
+        } else{
+            res.status(404).send("Publicacion no encontrada");
+        }
+
+        
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Error al eliminar la publicacion");
+    }
 }
 
 
@@ -310,4 +440,4 @@ function findAnimalAdmin(query){
     });
 }
 
-module.exports = {register, getUserByEmail, getUserByEmail2, logIn, getAnimalById};
+module.exports = {register, getUserByEmail, getUserByEmail2, logIn, createAnimal, updateAnimal, deleteAnimal, createPublicacion, deletePublicacion};
