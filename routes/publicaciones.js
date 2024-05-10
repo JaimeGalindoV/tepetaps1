@@ -44,7 +44,6 @@ router.route('/api/:idPublicacion')
 
 router.route('/crearPublicacion')
     .post((req, res) => {
-        console.log(req.body);
         dataHandler.createPublicacion(req, res);
     });
 

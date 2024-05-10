@@ -47,7 +47,6 @@ router.route('/home')
     })
 
 
-
 router.route('/register')
     .post(upload.none(), (req, res) => {
         dataHandler.register(req, res);

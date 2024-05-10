@@ -98,7 +98,7 @@ async function createAnimal(req, res){
         _raza: (req.body._raza === undefined) ? '' : req.body._raza,
         _sexo: req.body._sexo,
         _caracter: req.body._caracter,
-        _edad: [req.body._edadValor, (req.body._edadUnidad === undefined) ? '' : req.body._edadUnidad],
+        _edad: [parseInt(req.body._edadValor), (req.body._edadUnidad === undefined) ? '' : req.body._edadUnidad],
         _ubicacion: req.body._ubicacion,
         _pelajeTipo: req.body._pelajeTipo,
         _pelajeColor: req.body._pelajeColor,
@@ -155,7 +155,6 @@ function updateUser(correo, updatedUser) {
 function updateAnimal(req, res){
     let animalId = req.params.idAnimal;
     let updateAnimal = req.body;
-    console.log(updateAnimal);
     Animal.findOneAndUpdate({ _id: `${animalId}` }, updateAnimal, { new : true }).then(animal => {
         res.status(200).json(animal);
     });
@@ -170,11 +169,9 @@ async function deleteAnimal(req, res){
 
         let animales = user._animales; //Obtenemos los animales que tiene ese usuario
         let index = await animales.findIndex(a => {
-            console.log(`${a} == ${req.params.idAnimal}: ${a == req.params.idAnimal}`)
             return (a == req.params.idAnimal);
         }); // Buscamos el animal que queremos eliminar
 
-        console.log(index);
         if (index != -1){
             animales.splice(index,1); // Eliminamos el animal de la lista de animales del usuario
             updateUser(userMongoose._correo, { _animales: animales}); // Actualizamos la lista de animales del usuario de mongodb
@@ -195,13 +192,12 @@ async function deleteAnimal(req, res){
 
 
 // USERS
-function getUsers(req, res){
+async function getUsers(req, res){
     User.find({}).then(users => res.status(200).json(users));
 }
 
 function getUserByEmail(req, res){
-    let correo = req.query.correo;
-    User.findOne({ _correo: `${correo}` }).then(user => res.status(200).json(user));
+    User.findOne({ _correo: `${req.params.correoUser}` }).then(user => res.status(200).json(user));
 }
 
 function getUserByEmail2(correo){
@@ -229,10 +225,35 @@ function getUserByEmail2(correo){
 //     }
 // }
 
-function deleteUser(userId){
-    let index = users.findIndex(u =>u.uuid === userId);
-    users.splice(index,1);
+function deleteUser(req, res){
+    let correo = req.params.correoUser;
+
+    try {
+        
+        User.findOneAndDelete({ _correo: `${correo}` }).then(user => {
+
+            let deleteAnimals = user._animales.map(animal => {
+                return Animal.findOneAndDelete({ _id: `${animal}` });
+            });
+
+            let deletePublications = user._publicaciones.map(publicacion => {
+                return Publicacion.findOneAndDelete({ _id: `${publicacion}` });
+            });
+
+            Promise.all([...deleteAnimals, ...deletePublications]).then(() => {
+                res.status(200)
+                .type('text/plain; charset=utf-8')
+                .send(user != undefined ? `Usuario ${user._nombre} se elimino!` : `No se encontro ningun usuario con el correo ${correo}!`);
+            });
+
+        });
+
+    } catch (error) {
+        res.status(400).send(error);
+    }
+
 }
+
 
 // ADMINISTRADORES
 function getAdmins(){
@@ -321,7 +342,6 @@ async function deletePublicacion(req, res){
             return (p == req.params.idPublicacion);
         }); // Buscamos el animal que queremos eliminar
 
-        console.log(index);
 
         if (index != -1){
             publicaciones.splice(index,1); // Eliminamos el animal de la lista de animales del usuario
@@ -344,52 +364,26 @@ async function deletePublicacion(req, res){
 
 //filtro para buscar animales (para el usuario)
 //tipo:raza:sexo:edadUnidad:edadValorInicial:edadValorFinal:pelajeColor:pelajeTipo:pelajeLargo:Vacunas:EPD:estirilizacion:ubicacion
-function findAnimales(query){
-    let [tipo, raza, sexo, edadUnidad, edadValorInicial, edadValorFinal, pelajeTipo, pelajeColor, pelajeLargo, vacunas, EPD, esterilizacion, ubicacion] = query.split(':');
-    let queryTipo = tipo? tipo.trim().toLowerCase() : '';
-    let queryRaza = raza? raza.trim().toLowerCase() : '';
-    let querySexo = sexo? sexo.trim().toLowerCase() : '';
-    let queryEdadUnidad = edadUnidad? edadUnidad.trim().toLowerCase() : '';
-    let queryEdadValorInicial = edadValorInicial? edadValorInicial : '';
-    let queryEdadValorFinal = edadValorFinal? edadValorFinal : '';
-    let queryPelajeTipo = pelajeTipo? pelajeTipo.trim().toLowerCase() : '';
-    let queryPelajeColor = pelajeColor? pelajeColor.trim().toLowerCase() : '';
-    let queryPelajeLargo = pelajeLargo? pelajeLargo.trim().toLowerCase() : '';
-    let queryVacunas = vacunas? vacunas.trim().toLowerCase() : '';
-    let queryEPD = EPD? EPD.trim().toLowerCase() : '';
-    let queryEsterilizacion = esterilizacion? esterilizacion.trim().toLowerCase() : '';
-    let queryUbicacion = ubicacion? ubicacion.trim().toLowerCase() : '';
-  
-    return animals.filter(animal => {
-        let animalTipo = animal.tipo.toLowerCase();
-        let animalRaza = animal.raza.toLowerCase();
-        let animalSexo = animal.sexo.toLowerCase();
-        let animalEdadUnidad = animal.edad.unidad.toLowerCase();
-        let animalEdadValorInicial = animal.edad.valor;
-        let animalEdadValorFinal = animal.edad.valor;
-        let animalPelajeTipo = animal.pelajeTipo.toLowerCase();
-        let animalPelajeColor = animal.pelajeColor.toLowerCase();
-        let animalPelajeLargo = animal.pelajeLargo.toLowerCase();
-        let animalVacunas = ((animal.vacunas.lenght > 0) && (!animal.vacunas.includes('no')) ? 'si' : '');
-        let animalEPD = (((animal.parasitos.lenght > 0) && (!animal.parasitos.includes('no')) || (animal.enfermedades.toLowerCase().trim() !== '' ) || (animal.discapacidades.toLowerCase().trim() !== ''))? 'si' : '');
-        let animalEsterilizacion = animal.estirilizado.toLowerCase();
-        let animalUbicacion = animal.ubicacion.toLowerCase();
-        return (
-            (queryTipo === '' || animalTipo.includes(queryTipo)) &&
-            (queryRaza === '' || animalRaza.includes(queryRaza)) &&
-            (querySexo === '' || animalSexo === querySexo) &&
-            (queryEdadUnidad === '' || animalEdadUnidad === queryEdadUnidad) &&
-            (queryEdadValorInicial === '' || animalEdadValorInicial >= parseInt(queryEdadValorInicial)) &&
-            (queryEdadValorFinal === '' || animalEdadValorFinal <= parseInt(queryEdadValorFinal)) &&
-            (queryPelajeTipo === '' || animalPelajeTipo === queryPelajeTipo) &&
-            (queryPelajeColor === '' || animalPelajeColor === queryPelajeColor) &&
-            (queryPelajeLargo === '' || animalPelajeLargo === queryPelajeLargo) &&
-            (queryVacunas === '' || animalVacunas === queryVacunas) &&
-            (queryEPD === '' || animalEPD === queryEPD) &&
-            (queryEsterilizacion === '' || animalEsterilizacion === queryEsterilizacion) &&
-            (queryUbicacion === '' || animalUbicacion === queryUbicacion)
-        );
+async function findAnimales(query){
+    // let [tipo, raza, sexo, edadUnidad, edadValorInicial, edadValorFinal, pelajeTipo, pelajeColor, pelajeLargo, vacunas, EPD, esterilizacion, ubicacion] = query.split(':');
+    let consulta = {};
+    if (query._tipo && !Array.isArray(query._tipo)) consulta["_tipo"] =  query._tipo;
+    if (query._raza) consulta["_raza"] = query._raza;
+    if (query._sexo) consulta["_sexo"] = query._sexo;
+    if (query._edadUnidad) consulta["_edad.1"] = query._edadUnidad;
+
+    if (query._edadDesde && query._edadHasta) consulta["_edad.0"] = {"$gte": parseInt(query._edadDesde), "$lte": parseInt(query._edadHasta)};
+
+
+    return Animal.find(consulta)
+        .then(animal => {
+        return animal;
     });
+}
+
+
+function findUsers(req, res){
+    
 }
 
 
@@ -440,4 +434,4 @@ function findAnimalAdmin(query){
     });
 }
 
-module.exports = {register, getUserByEmail, getUserByEmail2, logIn, createAnimal, updateAnimal, deleteAnimal, createPublicacion, deletePublicacion};
+module.exports = {register, getUserByEmail, getUserByEmail2, logIn, createAnimal, updateAnimal, deleteAnimal, createPublicacion, deletePublicacion, findAnimales, getUsers, deleteUser};

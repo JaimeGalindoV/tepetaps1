@@ -44,24 +44,6 @@
           </div>
         </div>
         <!-- Sexo de la persona: hombre o mujer, si no se selecciona se muestran todos-->
-        <div class="form-group col-12" id="sexoForm">
-          <label for="animalSex">Sexo</label>
-          <select class="form-control" id="animalSex" name="Sexo del animal">
-            <option value="" disabled selected>Seleccione sexo</option>
-            <option value="Hombre">Hombre</option>
-            <option value="Mujer">Mujer</option>
-          </select>
-        </div>
-        <!-- Fecha de inscripcion -->
-        <div class="form-group col-12" id="fechaNaciminetoForm">
-          <label for="date">Fecha de nacimiento </label>
-          <div class="input-group" id="date">
-            <!-- agregar limites de min y max -->
-            <input type="date" class="form-control mr-2" placeholder="Desde" name="instripcion_desde ">
-            <span style="margin-right: 5px;">—</span>
-            <input type="date" class="form-control ml-2" placeholder="Hasta" name="instripcion_hasta ">
-          </div>
-        </div>
 
         <div class="form-group col-12" id="edadForm" style="display: none;">
           <label for="age">Edad</label>
@@ -100,12 +82,13 @@
         </div>
       </div>
 
+    
 
       <!-- Perfiles de persona: Nombre, telefono, correo -->
       <!-- al dar click en un perfil LINK A MODAL infoUsuario (con botones: adoptar->link modal registroAdopcion y voluntario->link a chat con usuario) -->
       <div class="row usuariosMedia" id="usuariosMedia">
-        <div class="col-10  col-md-10">
-
+        <div class="col-10  col-md-10" id="userList">
+    <!-- 
           <div class="d-flex flex-column flex-md-row" href="#" data-toggle="modal" data-target="#infoUsuario"
             id="usuario">
             <div class="col-8 col-sm-5 col-md-3 col-xl-2" id="imgContainer">
@@ -114,7 +97,7 @@
               </div>
             </div>
 
-            <div class="col-12 col-md-6 col-xl-8" id="body">
+            <div class="col-12 col-md-6 col-xl-8" id="bodyUser">
               <h5 class="mt-3 mb-3" id="nombre"><strong>Persona 1 </strong></h5>
               <p id="informacion">Tel. xx xxxx xxxx <br>
                 E-mail. people@example.com</p>
@@ -124,47 +107,8 @@
               <a name="" id="" class="btn btn-danger mensajeBtn w-100" href="#" role="button">Eliminar</a>
             </div>
 
-          </div>
+          </div> -->
 
-          <div class="d-flex flex-column flex-md-row" href="#" data-toggle="modal" data-target="#infoUsuario"
-            id="usuario">
-            <div class="col-8 col-sm-5 col-md-3 col-xl-2" id="imgContainer">
-              <div id="imgMarco">
-                <img src="https://randomuser.me/api/portraits/men/0.jpg" alt="">
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-xl-8" id="body">
-              <h5 class="mt-3 mb-3" id="nombre"><strong>Persona 1 </strong></h5>
-              <p id="informacion">Tel. xx xxxx xxxx <br>
-                E-mail. people@example.com</p>
-            </div>
-
-            <div class="col-10 col-md-3 col-xl-2" id="button">
-              <a name="" id="" class="btn btn-danger mensajeBtn w-100" href="#" role="button">Eliminar</a>
-            </div>
-
-          </div>
-
-          <div class="d-flex flex-column flex-md-row" href="#" data-toggle="modal" data-target="#infoUsuario"
-            id="usuario">
-            <div class="col-8 col-sm-5 col-md-3 col-xl-2" id="imgContainer">
-              <div id="imgMarco">
-                <img src="https://randomuser.me/api/portraits/men/0.jpg" alt="">
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-xl-8" id="body">
-              <h5 class="mt-3 mb-3" id="nombre"><strong>Persona 1 </strong></h5>
-              <p id="informacion">Tel. xx xxxx xxxx <br>
-                E-mail. people@example.com</p>
-            </div>
-
-            <div class="col-10 col-md-3 col-xl-2" id="button">
-              <a name="" id="" class="btn btn-danger mensajeBtn w-100" href="#" role="button">Eliminar</a>
-            </div>
-
-          </div>
 
 
 
@@ -173,9 +117,9 @@
       </div>
 
       <div class="row animalesMedia" id="animalesMedia" style="display: none;">
-        <div class="col-10">
+        <div class="col-10" id="animalsList">
 
-          <div class="d-flex flex-column flex-md-row" id="animal">
+          <!-- <div class="d-flex flex-column flex-md-row" id="animal">
             <div class="col-8 col-sm-5 col-md-3 col-xl-2" id="imgContainer">
               <div id="imgMarco">
                 <img
@@ -197,15 +141,15 @@
               <a class="btn btn-primary detalleBt w-100" href="#" role="button" data-toggle="modal"
                 data-target="#infoAnimal">Detalle</a>
             </div>
-          </div>
+          </div> -->
 
 
         </div>
       </div>
 
       <div class="row publicacionesMedia" id="publicacionesMedia" style="display: none;">
-        <div class="col-10">
-          <div class="post">
+        <div class="col-10" id="publicationsList">
+          <!-- <div class="post">
 
             <div class="header col-12">
               <div class="user-image col-1" style="background-image: url(https://randomuser.me/api/portraits/men/1.jpg);"></div>
@@ -213,7 +157,7 @@
               <div class="person-name col-6">
                 <h5>
                   Persona 1
-                </h5><!-- Nombre de la persona -->
+                </h5>
               </div>
 
               <div class="delete-button col-5">
@@ -223,62 +167,13 @@
             <div class="body">
 
               <div class="post-content">
-                <p>Texto de la publicación...</p><!-- Texto de la publicación -->
+                <p>Texto de la publicación...</p>
                 <img src="https://manchas.com/wp-content/uploads/2023/01/pexels-rhys-abel-15033180-scaled.jpg"
-                  alt="Imagen debajo del texto"><!-- Imagen debajo del texto -->
+                  alt="Imagen debajo del texto">
               </div>
             </div>
           </div>
-
-          <div class="post">
-
-            <div class="header col-12">
-              <div class="user-image col-1" style="background-image: url(https://randomuser.me/api/portraits/men/1.jpg);" onclick="location.href='/perfil'"></div>
-
-              <div class="person-name col-9">
-                <h5>
-                  Persona 1
-                </h5><!-- Nombre de la persona -->
-              </div>
-
-              <div class="delete-button col-2">
-                <button type="button" class="btn btn-danger">Eliminar</button>
-              </div>
-            </div>
-            <div class="body">
-
-              <div class="post-content">
-                <p>Texto de la publicación...</p><!-- Texto de la publicación -->
-                <img src="https://manchas.com/wp-content/uploads/2023/01/pexels-rhys-abel-15033180-scaled.jpg"
-                  alt="Imagen debajo del texto"><!-- Imagen debajo del texto -->
-              </div>
-            </div>
-          </div>
-
-          <div class="post">
-
-            <div class="header col-12">
-              <div class="user-image col-1" style="background-image: url(https://randomuser.me/api/portraits/men/1.jpg);" onclick="location.href='/perfil'"></div>
-
-              <div class="person-name col-9">
-                <h5>
-                  Persona 1
-                </h5><!-- Nombre de la persona -->
-              </div>
-
-              <div class="delete-button col-2">
-                <button type="button" class="btn btn-danger">Eliminar</button>
-              </div>
-            </div>
-            <div class="body">
-
-              <div class="post-content">
-                <p>Texto de la publicación...</p><!-- Texto de la publicación -->
-                <img src="https://manchas.com/wp-content/uploads/2023/01/pexels-rhys-abel-15033180-scaled.jpg"
-                  alt="Imagen debajo del texto"><!-- Imagen debajo del texto -->
-              </div>
-            </div>
-          </div>
+ -->
 
 
         </div>
@@ -312,12 +207,12 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <div class="headerContent text-center">
+          <div class="headerContent text-center" id="headerUser">
             <img class="imgUsuarioModal mb-2" src="https://randomuser.me/api/portraits/men/0.jpg" alt="...">
             <h5 class="modal-title">Nombre Apellido</h5>
           </div>
         </div>
-        <div class="modal-body p-5">
+        <div class="modal-body p-5" id="bodyUser">
           <div class="info">
             <p><strong>Fecha de nacimiento: </strong>dd/mm/yyyy</p>
             <p><strong>Fecha de registro: </strong>dd/mm/yyyy</p>
@@ -339,9 +234,9 @@
 
 
           <div class="row animalesMediaModal" id="animalesMediaModal">
-            <div class="col-7 col-lg-12">
+            <div class="col-7 col-lg-12" id="animalesList">
 
-              <div class="d-flex flex-column flex-lg-row" id="animalModal">
+              <!-- <div class="d-flex flex-column flex-lg-row" id="animalModal">
                 <div class="col-12 col-lg-3" id="imgContainer">
                   <div id="imgMarco">
                     <img src="https://cdn.pixabay.com/photo/2024/01/15/21/16/dog-8510901_640.jpg" alt="">
@@ -361,60 +256,16 @@
                   <a name="" id="" class="btn btn-primary detallesBtn w-100" role="button" href="#" data-toggle="modal"
                     data-target="#infoAnimal">Detalles</a>
                 </div>
-              </div>
-
-              <div class="d-flex flex-column flex-lg-row" id="animalModal">
-                <div class="col-12 col-lg-3" id="imgContainer">
-                  <div id="imgMarco">
-                    <img src="https://cdn.pixabay.com/photo/2024/01/15/21/16/dog-8510901_640.jpg" alt="">
-                  </div>
-                </div>
-
-                <div class="col-12 col-lg-6" id="body">
-                  <h6 id="nombre"><strong>Mascota 1 </strong></h6>
-                  <p id="informacion">
-                    Raza: ajdslkasd <br>
-                    Edad: 12 años <br>
-                    Sexo: Macho
-                  </p>
-                </div>
-
-                <div class="col-10 col-lg-3" id="button">
-                  <a name="" id="" class="btn btn-primary detallesBtn w-100" role="button" href="#" data-toggle="modal"
-                    data-target="#infoAnimal">Detalles</a>
-                </div>
-              </div>
-
-              <div class="d-flex flex-column flex-lg-row" id="animalModal">
-                <div class="col-12 col-lg-3" id="imgContainer">
-                  <div id="imgMarco">
-                    <img src="https://cdn.pixabay.com/photo/2024/01/15/21/16/dog-8510901_640.jpg" alt="">
-                  </div>
-                </div>
-
-                <div class="col-12 col-lg-6" id="body">
-                  <h6 id="nombre"><strong>Mascota 1 </strong></h6>
-                  <p id="informacion">
-                    Raza: ajdslkasd <br>
-                    Edad: 12 años <br>
-                    Sexo: Macho
-                  </p>
-                </div>
-
-                <div class="col-10 col-lg-3" id="button">
-                  <a name="" id="" class="btn btn-primary detallesBtn w-100" role="button" href="#" data-toggle="modal"
-                    data-target="#infoAnimal">Detalles</a>
-                </div>
-              </div>
+              </div> -->
 
 
             </div>
           </div>
 
           <div class="row publicacionesMediaModal" id="publicacionesMediaModal" style="display: none;">
-            <div class="col-12">
+            <div class="col-12" id="publicacionesList">
 
-              <div class="d-flex flex-column flex-lg-row" id="publicacionModal">
+              <!-- <div class="d-flex flex-column flex-lg-row" id="publicacionModal">
                 <div class="col-10 col-lg-4" id="imgPublicacionModal">
                   <img id="imgPublicacion" src="https://cdn.pixabay.com/photo/2018/01/09/11/04/dog-3071334_640.jpg"
                     alt="">
@@ -427,39 +278,7 @@
                     assumenda repellendus nobis quam quaerat? Repellendus!
                   </p>
                 </div>
-              </div>
-
-              <div class="d-flex flex-column flex-lg-row" id="publicacionModal">
-                <div class="col-10 col-lg-4" id="imgPublicacionModal">
-                  <img id="imgPublicacion"
-                    src="https://cdn.pixabay.com/photo/2024/04/21/14/35/ai-generated-8710779_640.jpg" alt="">
-                </div>
-                <div class="col-12 col-lg-8" id="texto">
-                  <h6 id="nombre"><strong>Titulo de publicacion</strong></h6>
-                  <p id="datos">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis iusto mollitia sapiente deserunt
-                    rem dicta neque cupiditate, quas necessitatibus obcaecati reiciendis quaerat corporis. Tempore
-                    assumenda repellendus nobis quam quaerat? Repellendus!
-                  </p>
-                </div>
-              </div>
-
-              <div class="d-flex flex-column flex-lg-row" id="publicacionModal">
-                <div class="col-10 col-lg-4" id="imgPublicacionModal">
-                  <img id="imgPublicacion"
-                    src="https://cdn.pixabay.com/photo/2013/09/22/15/29/prairie-dog-184974_640.jpg" alt="">
-                </div>
-                <div class="col-12 col-lg-8" id="texto">
-                  <h6 id="nombre"><strong>Titulo de publicacion</strong></h6>
-                  <p id="datos">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis iusto mollitia sapiente deserunt
-                    rem dicta neque cupiditate, quas necessitatibus obcaecati reiciendis quaerat corporis. Tempore
-                    assumenda repellendus nobis quam quaerat? Repellendus!
-                  </p>
-                </div>
-              </div>
-
-
+              </div> -->
 
 
             </div>
@@ -487,7 +306,7 @@
             <h5 class="modal-title">Nombre</h5>
           </div>
         </div>
-        <div class="modal-body p-5">
+        <div class="modal-body p-5 info" id="infoDetalleAnimal">
           <p><strong>Raza:</strong> asjdlak</p>
           <p><strong>Sexo:</strong> Macho</p>
           <p><strong>Edad:</strong> xx</p>
@@ -502,75 +321,13 @@
           <p><strong>Adoptado:</strong> No</p>
         </div>
         <div class="modal-footer">
-          <!-- ambos botones mandan un correo al responsable del perro -->
-          <!-- Adoptar: enviar form por correo al responsable -->
-          <a type="submit" class="btn btn-danger" href="#" data-toggle="modal" data-target="#registroAdoptar"
-            data-dismiss="modal">Eliminar</a>
-          <!-- Vloluntario: enviar correo o telefono a predeterminado y la comunicacion es aparte -->
-          <a href="mailto:responsable@registrado.com?subject=Solicitud%20de%20voluntariado(EDITA EL CORREO)"
-            class="btn btn-primary">Contactar dueño</a>
+          <!-- Elimnar: enviar form por correo al responsable para decirle que fue eliminado-->
+          <a type="submit" class="btn btn-danger" href="#" data-dismiss="modal" id="eliminarAnimalBtn">Eliminar</a>
         </div>
       </div>
     </div>
   </div>
 
-
-  <!-- REGISTRO PARA ADOPTAR -->
-  <div class="modal fade" id="registroAdoptar" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h5 class="modal-title">Registro de adopción</h5>
-        </div>
-        <div class="modal-body">
-          <!-- SE ENVIA AL CORREO DEL RESPONSABLE -->
-          <form enctype="text/plain" method="post"
-            action="mailto:POO@test.com?cc=otro@test.com&subject=Curso%20Programación%20Orinetada%20a%20Objetos">
-            <div class="row">
-              <div class="col-6">
-                <input type="text" name="Nombre" id="nombreRegistroAdopcion" class="form-control"
-                  placeholder="Nombre(s)" required>
-              </div>
-              <div class="col-6">
-                <input type="text" name="Apellido" id="appellidoRegistroAdopcion" class="form-control"
-                  placeholder="Apellidos" required>
-              </div>
-            </div>
-            <div class="input-group mt-3">
-              <input type="date" name="Fecha de Nacimiento" id="fechaNacimientoAdopcion" class="form-control" value="">
-            </div>
-            <input type="text" name="INE" id="INE" class="form-control mt-3" placeholder="INE" required>
-            <input type="email" name="Correo" id="correoRegistroAdopcion" class="form-control mt-3" placeholder="Correo"
-              required>
-            <input type="tel" name="Telefono" id="telefono_registroAdopcion" class="form-control mt-3"
-              placeholder="Número de teléfono" required>
-            <input type="text" name="Direccion" id="direccion_registroAdopcion" class="form-control mt-3"
-              placeholder="Direccion" required>
-            <hr>
-            <div class="row">
-              <div class="col-6">
-                <input type="text" name="Nombre Referencia" id="nombreReferenciaAdopcion" class="form-control"
-                  placeholder="Nombre(s) de Persona de Referencia" required>
-              </div>
-              <div class="col-6">
-                <input type="text" name="Apellido Rederencia" id="appellidoReferenciaAdopcion" class="form-control"
-                  placeholder="Apellido(s) de Persona de Referencia" required>
-              </div>
-            </div>
-            <input type="tel" name="Telefono Referencia" id="telefono_referenciaAdopcion" class="form-control mt-3"
-              placeholder="Número de teléfono de Persona de Referencia" required>
-            <div class="d-flex justify-content-center">
-              <button type="submit" class="btn btn-primary col-lg-10 mt-5 mb-4">Adoptar</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
 </body>
 
 
@@ -621,7 +378,6 @@
   // Obtener las distintas opciones de filtro
   let formDeFiltro = document.getElementById('formDeFiltro');
   let edadForm = document.getElementById('edadForm');
-  let fechaNaciminetoForm = document.getElementById('fechaNaciminetoForm');
 
 
   //para mostrar solo publicaciones
@@ -638,7 +394,6 @@
     animalesMedia.style.display = 'none';
     usuariosMedia.style.display = '';
     formDeFiltro.style.display = '';
-    fechaNaciminetoForm.style.display = '';
     edadForm.style.display = 'none';
   });
   
@@ -648,7 +403,6 @@
     animalesMedia.style.display = '';
     usuariosMedia.style.display = 'none';
     formDeFiltro.style.display = '';
-    fechaNaciminetoForm.style.display = 'none';
     edadForm.style.display = '';
   });
 
@@ -656,6 +410,7 @@
   //para mostrar solo una de las opciones dentro del modal animales/publicaciones 
 </script>
 
+<script src="utils/admin_utils.js"></script>
 <script src="utils/utils.js"></script>
 
 </html>

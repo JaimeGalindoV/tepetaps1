@@ -38,12 +38,21 @@ function navBar() {
             <div class="dropdown-menu" aria-labelledby="dropdownId" id="dropdownPrincipal">
               <!-- LINK A MODAL DE LogIn -->
               <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logIn" id="loginBtn">Iniciar Sesión</a>
+
               <!-- LINK A MODAL DE registro -->
               <a class="dropdown-item" href="#" data-toggle="modal" data-target="#registro" id="registerBtn">Regístrate</a>
+
               <!-- LINK A PAGINA PRINCIPAL? -->
               <a class="dropdown-item" href="../home" target="_blank">Sobre nosotros</a>
+
+              <!-- SOLO APARCE SI ESTA LOGIN Y ES ADMIN  -->
+              <a class="dropdown-item" href="../admin" id="adminSpaceBtn">Admin Space</a>
+
               <!-- SOLO APARCE SI ESTA LOGIN (cierra sesion y regresa en pagina principal) -->
               <a class="dropdown-item" onclick="logout()" id="logoutBtn">Cerrar sesión</a>
+
+
+
             </div>
           </li>
         </ul>
@@ -70,6 +79,8 @@ async function optionsToShow(){
   let loginBtn = document.getElementById('loginBtn');
   let registroBtn = document.getElementById('registerBtn');
   let logoutBtn = document.getElementById('logoutBtn');
+  let adminSpaceBtn = document.getElementById('adminSpaceBtn');
+
   let imgPerfil = document.getElementById('imgPerfil');
   let user_image = document.getElementById('user-image');
 
@@ -82,16 +93,27 @@ async function optionsToShow(){
     logoutBtn.style.display = 'none';
     loginBtn.style.display = '';
     registroBtn.style.display = '';
+    adminSpaceBtn.style.display = 'none';
     // dropdownPrincipal.style.border = '#fff 1px solid';
   }
   else{
     let user = await response.json();
-  
+
     user_image.style.backgroundImage = 'url(' + user._imagen + ')';
     imgPerfil.style.display = '';
     logoutBtn.style.display = '';
     loginBtn.style.display = 'none';
     registroBtn.style.display = 'none';
+
+    if (user._role === 'ADMIN'){
+      adminSpaceBtn.style.display = '';
+    } else{
+      adminSpaceBtn.style.display = 'none';
+    }
+ 
+  
+
+
 
   }
 
@@ -331,8 +353,6 @@ async function goToProfile(event) {
 async function goToDarAdopcion(event){
   let login = await veryfyLogin();
   
-  console.log("algo");
-
   if(!login){
     alert('Inicia sesion para acceder a esa pagina');
     $('#logIn').modal('show');

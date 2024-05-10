@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <!-- RAZA -->
-                <select class="form-control mb-3" id="razaAnimalRegistro" name="_raza">
+                <select class="form-control mb-3" id="razaAnimalRegistro" name="_raza" required>
                     <!-- Perros -->
                     <option value="" disabled selected>Seleccione raza</option>
                     <option value="Perro Mestizo" class="Perro">Perro mestizo</option>
@@ -122,13 +122,13 @@
                     <option value="Bombay" class="Gato">Gato Bombay</option>
                     <option value="Azul Ruso" class="Gato">Gato Azul ruso</option>
                     <option value="Persa" class="Gato">Gato Persa</option>
-                    <option value="Siames" class="Gato">Gato Siamés</option>
+                    <option value="Siamés" class="Gato">Gato Siamés</option>
                     <option value="Angora Turco" class="Gato">Gato Angora turco</option>
                     <option value="Siberiano" class="Gato">Gato Siberiano</option>
                     <option value="Mau Egipcio" class="Gato">Gato mau egipcio</option>
                     <option value="Snowshoe" class="Gato">Gato snowshoe</option>
                     <!--Otras -->
-                    <option value="OtraRaza">Otra</option>
+                    <option value="Otra">Otra</option>
                 </select>
                 <!-- SEXO -->
                 <select class="form-control mb-3" id="sexoAnimalRegistro" name="_sexo" required>
@@ -361,6 +361,19 @@
         let razaAnimalSelect = document.getElementById("razaAnimalRegistro"); 
         let opcionesGato = razaAnimalSelect.querySelectorAll(".Gato");
         let opcionesPerro = razaAnimalSelect.querySelectorAll(".Perro");
+        
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            if (perroRadio.checked) {
+                opcionesGato.forEach(function (opcion) {
+                    opcion.style.display = "none";
+                });
+                opcionesPerro.forEach(function (opcion) {
+                    opcion.style.display = "block";
+                });
+            }
+        });
+      
         perroRadio.addEventListener('change', function () {
             if (perroRadio.checked) {
                 opcionesGato.forEach(function (opcion) {

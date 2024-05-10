@@ -66,10 +66,10 @@ function publicacionToHtml(publicacion) {
           src="${publicacion._imagen}"
           class="card-imgPublicacion" alt="...">
       </div>
-      <div class="card-body-publicaciones col-5  mt-3 mb-3 mr-0">
+      <div class="card-body-publicaciones col-5  mt-3 mb-3 mr-0" style="overflow-y: auto;">
 
         <h5 class="card-title mb-3">${publicacion._titulo}</h5>
-        <p class="card-text">${publicacion._contenido}
+        <p class="card-text" style="overflow-wrap: break-word; word-wrap: break-word; white-space: pre-wrap;">${publicacion._contenido}
         </p>
       </div>
       <div class="btnEliminar col-1 mt-3 mb-3 mr-0">
@@ -77,12 +77,9 @@ function publicacionToHtml(publicacion) {
       </div>
     </div>
 
-</div>
-
-
+  </div>
   `
 }
-
 
 function infoAnimal(idAnimal) {
 
@@ -146,7 +143,6 @@ function infoAnimal(idAnimal) {
 
 
 }
-
 
 function editarAnimalModal(idAnimal) {
   let editarPerfilAnimal = document.getElementById('editarPerfilAnimal');
@@ -230,7 +226,13 @@ function editarAnimalModal(idAnimal) {
       enfermedadesAnimalEdit.value = (animal._enfermedades == undefined || animal._enfermedades == "") ? '' : animal._enfermedades; //Si jala
       dispacacidadesAnimalEdit.value = (animal._discapacidades == undefined || animal._discapacidades == "") ? '' : animal._discapacidades; // Si jala
 
-      estadoAdoptado.value = animal._estado; //
+      let si = estadoAdoptado.querySelector("#siAdoptado");
+      let no = estadoAdoptado.querySelector("#noAdoptado");
+      if(animal._estado){
+        si.checked = true;
+      } else{
+        no.checked = true;
+      }
 
     })
     .catch(error => console.error('Error:', error));
@@ -276,7 +278,6 @@ function eliminarAnimalModal(idAnimal) {
 
   // Recargar la página
   location.reload();
-
 }
 
 function eliminarPublicacion(idPublicacion){

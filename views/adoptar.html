@@ -130,12 +130,11 @@
                     <label for="animalType">Animal</label>
                     <div class="input-group col-4" id="animalType">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="dog" name="Tipo de animal"
-                                value="Perro">
+                            <input class="form-check-input" type="checkbox" id="dog" name="_tipo" value="Perro">
                             <label class="form-check-label" for="dog">Perro</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="cat" name="Tipo de animal" value="Gato">
+                            <input class="form-check-input" type="checkbox" id="cat" name="_tipo" value="Gato">
                             <label class="form-check-label" for="cat">Gato</label>
                         </div>
                     </div>
@@ -143,48 +142,48 @@
                 <!-- Raza del animal (mostrar dependiendo de si se eligio perro o gato, sino mostrar todas) -->
                 <div class="form-group col-12">
                     <label for="animalBreed">Raza</label>
-                    <select class="form-control" id="animalBreed" name="Raza del animal">
+                    <select class="form-control" id="animalBreed" name="_raza">
                         <option value="" disabled selected>Seleccione raza</option>
-                        <option value="PerroMestizo" class="Perro">Perro mestizo</option>
+                        <option value="Perro Mestizo" class="Perro">Perro mestizo</option>
                         <option value="Chihuahua" class="Perro">Chihuahua</option>
                         <option value="Schnauzer" class="Perro">Schnauzer</option>
-                        <option value="GoldenRetriever" class="Perro">Golden Retriever</option>
+                        <option value="Golden Retriever" class="Perro">Golden Retriever</option>
                         <option value="Pug" class="Perro">Pug</option>
-                        <option value="YorkshireTerriers" class="Perro">Yorkshire Terriers</option>
-                        <option value="BorderCollie" class="Perro">Border Collie</option>
+                        <option value="Yorkshire Terriers" class="Perro">Yorkshire Terriers</option>
+                        <option value="Border Collie" class="Perro">Border Collie</option>
                         <option value="Labrador" class="Perro">Labrador</option>
                         <option value="Bulldog" class="Perro">Bulldog</option>
                         <option value="Pitbull" class="Perro">Pitbull</option>
                         <option value="Pomerania" class="Perro">Pomerania</option>
-                        <option value="PastorAleman" class="Perro">Pastor Alemán</option>
+                        <option value="Pastor Aleman" class="Perro">Pastor Alemán</option>
                         <option value="Husky" class="Perro">Husky</option>
-                        <option value="PastorBelga" class="Perro">Pastor Belga</option>
+                        <option value="Pastor Belga" class="Perro">Pastor Belga</option>
                         <option value="Doberman" class="Perro">Dóberman</option>
                         <option value="Beagle" class="Perro">Beagle</option>
-                        <option value="PastorAustraliano" class="Perro">Pastor Australiano</option>
-                        <option value="DogoArgentino" class="Perro">Dogo Argentino</option>
-                        <option value="GranDanes" class="Perro">Gran Danés</option>
+                        <option value="Pastor Australiano" class="Perro">Pastor Australiano</option>
+                        <option value="Dogo Argentino" class="Perro">Dogo Argentino</option>
+                        <option value="Gran Danes" class="Perro">Gran Danés</option>
                         <option value="Rottweiler" class="Perro">Rottweiler</option>
                         <!-- Gatos -->
                         <option value="Mestizo" class="Gato">Gato Mestizo</option>
                         <option value="Americano" class="Gato">Gato Americano </option>
                         <option value="Europeo" class="Gato">Gato Europeo</option>
                         <option value="Bombay" class="Gato">Gato Bombay</option>
-                        <option value="AzulRuso" class="Gato">Gato Azul ruso</option>
+                        <option value="Azul Ruso" class="Gato">Gato Azul ruso</option>
                         <option value="Persa" class="Gato">Gato Persa</option>
                         <option value="Siames" class="Gato">Gato Siamés</option>
-                        <option value="AngoraTurco" class="Gato">Gato Angora turco</option>
+                        <option value="Angora Turco" class="Gato">Gato Angora turco</option>
                         <option value="Siberiano" class="Gato">Gato Siberiano</option>
-                        <option value="MauEgipcio" class="Gato">Gato mau egipcio</option>
+                        <option value="Mau Egipcio" class="Gato">Gato mau egipcio</option>
                         <option value="Snowshoe" class="Gato">Gato snowshoe</option>
                         <!-- agregar más -->
-                        <option value="OtraRaza">Otra</option>
+                        <option value="Otra">Otra</option>
                     </select>
                 </div>
                 <!-- Sexo del animal: macho o hembra, si no se selecciona se muestran todos-->
                 <div class="form-group col-12">
                     <label for="animalSex">Sexo</label>
-                    <select class="form-control" id="animalSex" name="Sexo del animal">
+                    <select class="form-control" id="animalSex" name="_sexo">
                         <option value="" disabled selected>Seleccione sexo del animal</option>
                         <option value="Macho">Macho</option>
                         <option value="Hembra">Hembra</option>
@@ -196,123 +195,25 @@
                     <!-- AÑOS O MESES -->
                     <div class="input-group col-12 mb-2">
                         <div class="form-check form-check-inline col-6">
-                            <input class="form-check-input" type="radio" id="years" name="Years" value="years">
+                            <input class="form-check-input" type="radio" id="years" name="_edadUnidad" value="años">
                             <label class="form-check-label" for="years">Años</label>
                         </div>
                         <div class="form-check form-check-inline col-4">
-                            <input class="form-check-input" type="radio" id="meses" name="Meses" value="meses">
+                            <input class="form-check-input" type="radio" id="meses" name="_edadUnidad" value="meses">
                             <label class="form-check-label" for="meses">Meses</label>
                         </div>
                     </div>
                     <!-- VALOR DE EDAD -->
                     <div class="input-group">
                         <!-- agregar limites de min y max -->
-                        <input type="number" class="form-control mr-2" min="0" placeholder="Desde" name="Edad desde ">
+                        <input type="number" class="form-control mr-2" min="0" placeholder="Desde" name="_edadDesde">
                         <span style="margin-right: 5px;">—</span>
-                        <input type="number" class="form-control ml-2" min="0" placeholder="Hasta" name="Edad hasta ">
+                        <input type="number" class="form-control ml-2" min="0" placeholder="Hasta" name="_edadHasta">
                     </div>
                 </div>
-                <!-- Pelaje: TIPO, COLOR, LARGO-->
-                <div class="form-group col-12">
-                    <label for="animalPelaje">Pelaje</label>
-                    <div class="selectGroup" id="animalPelaje">
-                        <select class="form-control mt-1" id="tipoPelaje" name="tipo_pelaje">
-                            <option value="" disabled selected>Seleccione tipo de pelaje</option>
-                            <option value="Lacio">Lacio</option>
-                            <option value="Rizado">Rizado</option>
-                            <option value="Otro">Otro</option>
-                            <!-- agregar más opciones según sea necesario -->
-                        </select>
-                        <select class="form-control mt-1" id="colorPelaje" name="color_pelaje">
-                            <option value="" disabled selected>Seleccione color de pelaje</option>
-                            <option value="Negro">Negro</option>
-                            <option value="Cafe oscuro">Café oscuro</option>
-                            <option value="Cafe claro">Café claro</option>
-                            <option value="Blanco">Blanco</option>
-                            <option value="Otro">Otro</option>
-                            <!-- agregar más opciones según sea necesario -->
-                        </select>
-                        <select class="form-control mt-1" id="largoPelaje" name="largo_pelaje">
-                            <option value="" disabled selected>Seleccione largo de pelaje</option>
-                            <option value="Largo">Largo</option>
-                            <option value="Mediano">Mediano</option>
-                            <option value="Corto">Corto</option>
-                            <option value="Otro">Otro</option>
-                        </select>
-                    </div>
-                </div>
-                <!-- Vacunas : si/no -->
-                <div class="form-group col-12">
-                    <label for="animalVacuna">Vacunas</label>
-                    <div class="input-group col-12" id="animalVacuna">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Vacunas" id="siV" value="Si">
-                            <label class="form-check-label" for="siV">Sí</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Vacunas" id="noV" value="No">
-                            <label class="form-check-label" for="noV">No</label>
-                        </div>
-                    </div>
-                </div>
-                <!-- Enfermedade: si/no -->
-                <div class="form-group col-12">
-                    <label for="animalIllness">Enfermedades/<br>Parasitos/<br>Discapacidades</label>
-                    <div class="input-group col-12" id="animalIllness">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Enfermedades/Parasitos/Discapacidades"
-                                id="siI" value="Si">
-                            <label class="form-check-label" for="siI">Sí</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Enfermedades/Parasitos/Discapacidades"
-                                id="noI" value="No">
-                            <label class="form-check-label" for="noI">No</label>
-                        </div>
-                    </div>
-                </div>
-                <!-- Estilirizados: si/no -->
-                <div class="form-group col-12">
-                    <label for="animalEsteril">Estirilización</label>
-                    <div class="input-group col-12" id="animalEsteril">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Estirilizacion/Castracion" id="siE"
-                                value="Si">
-                            <label class="form-check-label" for="siE">Sí</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Estirilizacion/Castracion" id="noE"
-                                value="No">
-                            <label class="form-check-label" for="noE">No</label>
-                        </div>
-                    </div>
-                </div>
-                <!-- Ubicacion: Mexico(default)/Jalisco (default)/cuidad LIMITAR -->
-                <div class="form-group col-12">
-                    <label for="ubicacion">Ubicación</label>
-                    <div class="selectGroup" id="ubicacion">
-                        <input type="text" class="form-control mt-1" id="pais" name="Pais" value="Mexico"
-                            placeholder="País: México" disabled>
-                        <input type="text" class="form-control mt-1" id="estado" name="Estado" value="Jalisco"
-                            placeholder="Estado: Jalisco" disabled>
-                        <!-- <select class="form-control mt-1" id="estado" name="Estado">
-                            <option value="" disabled selected>Estado</option>
-                            <option value="Jalisco">Jalisco</option>
-                            <option value="Colima">Colima</option>
-                        </select> -->
-                        <select class="form-control mt-1" id="ciudad" name="Ciudad">
-                            <option value="" disabled selected>Ciudad</option>
-                            <option value="Guadalajara">Guadalajara</option>
-                            <option value="Zapopan">Zapopan</option>
-                            <option value="Tonala">Tonála</option>
-                            <option value="Tlaquepaque">Tlaquepaque</option>
-                            <option value="Tlajomulco">Tlajomulco</option>
 
-                        </select>
-                    </div>
-                </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary col-10">Submit</button>
+                    <button type="submit" class="btn btn-primary col-10" id="filtrosBtn">Submit</button>
                 </div>
 
             </form>
@@ -324,7 +225,7 @@
             style="margin-right: 0px;">
             <ul class="navigation actions mt-5 ml-4 mr-5 justify-content-center" role="navigation">
                 <li class="filtro" style="list-style: none;">
-                    <a href="#searchBar" id="openFilter" class="btn btn-light btn-outline-dark w-10 d-lg-none"
+                    <a href="#formDeFiltroModal" id="openFilter" class="btn btn-light btn-outline-dark w-10 d-lg-none"
                         data-toggle="modal" data-target="#formDeFiltroModal">Filtrar</a>
                 </li>
             </ul>
@@ -369,195 +270,96 @@
                             <!-- Animal: Perro o Gato -->
                             <div class="form-group col-12">
                                 <label for="animalType">Animal</label>
-                                <div class="input-group col-4" id="animalTypeModal">
+                                <div class="input-group col-4" id="animalType">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="dogModal" name="Tipo de animal"
-                                            value="Perro">
-                                        <label class="form-check-label" for="dogModal">Perro</label>
+                                        <input class="form-check-input" type="checkbox" id="dog" name="_tipo" value="Perro">
+                                        <label class="form-check-label" for="dog">Perro</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="catModal" name="Tipo de animal" value="Gato">
-                                        <label class="form-check-label" for="catModal">Gato</label>
+                                        <input class="form-check-input" type="checkbox" id="cat" name="_tipo" value="Gato">
+                                        <label class="form-check-label" for="cat">Gato</label>
                                     </div>
                                 </div>
                             </div>
                             <!-- Raza del animal (mostrar dependiendo de si se eligio perro o gato, sino mostrar todas) -->
                             <div class="form-group col-12">
-                                <label for="animalBreedModal">Raza</label>
-                                <select class="form-control" id="animalBreedModal" name="Raza del animal">
+                                <label for="animalBreed">Raza</label>
+                                <select class="form-control" id="animalBreed" name="_raza">
                                     <option value="" disabled selected>Seleccione raza</option>
-                                    <option value="PerroMestizo" class="Perro">Perro mestizo</option>
+                                    <option value="Perro Mestizo" class="Perro">Perro mestizo</option>
                                     <option value="Chihuahua" class="Perro">Chihuahua</option>
                                     <option value="Schnauzer" class="Perro">Schnauzer</option>
-                                    <option value="GoldenRetriever" class="Perro">Golden Retriever</option>
+                                    <option value="Golden Retriever" class="Perro">Golden Retriever</option>
                                     <option value="Pug" class="Perro">Pug</option>
-                                    <option value="YorkshireTerriers" class="Perro">Yorkshire Terriers</option>
-                                    <option value="BorderCollie" class="Perro">Border Collie</option>
+                                    <option value="Yorkshire Terriers" class="Perro">Yorkshire Terriers</option>
+                                    <option value="Border Collie" class="Perro">Border Collie</option>
                                     <option value="Labrador" class="Perro">Labrador</option>
                                     <option value="Bulldog" class="Perro">Bulldog</option>
                                     <option value="Pitbull" class="Perro">Pitbull</option>
                                     <option value="Pomerania" class="Perro">Pomerania</option>
-                                    <option value="PastorAleman" class="Perro">Pastor Alemán</option>
+                                    <option value="Pastor Aleman" class="Perro">Pastor Alemán</option>
                                     <option value="Husky" class="Perro">Husky</option>
-                                    <option value="PastorBelga" class="Perro">Pastor Belga</option>
+                                    <option value="Pastor Belga" class="Perro">Pastor Belga</option>
                                     <option value="Doberman" class="Perro">Dóberman</option>
                                     <option value="Beagle" class="Perro">Beagle</option>
-                                    <option value="PastorAustraliano" class="Perro">Pastor Australiano</option>
-                                    <option value="DogoArgentino" class="Perro">Dogo Argentino</option>
-                                    <option value="GranDanes" class="Perro">Gran Danés</option>
+                                    <option value="Pastor Australiano" class="Perro">Pastor Australiano</option>
+                                    <option value="Dogo Argentino" class="Perro">Dogo Argentino</option>
+                                    <option value="Gran Danes" class="Perro">Gran Danés</option>
                                     <option value="Rottweiler" class="Perro">Rottweiler</option>
                                     <!-- Gatos -->
                                     <option value="Mestizo" class="Gato">Gato Mestizo</option>
                                     <option value="Americano" class="Gato">Gato Americano </option>
                                     <option value="Europeo" class="Gato">Gato Europeo</option>
                                     <option value="Bombay" class="Gato">Gato Bombay</option>
-                                    <option value="AzulRuso" class="Gato">Gato Azul ruso</option>
+                                    <option value="Azul Ruso" class="Gato">Gato Azul ruso</option>
                                     <option value="Persa" class="Gato">Gato Persa</option>
                                     <option value="Siames" class="Gato">Gato Siamés</option>
-                                    <option value="AngoraTurco" class="Gato">Gato Angora turco</option>
+                                    <option value="Angora Turco" class="Gato">Gato Angora turco</option>
                                     <option value="Siberiano" class="Gato">Gato Siberiano</option>
-                                    <option value="MauEgipcio" class="Gato">Gato mau egipcio</option>
+                                    <option value="Mau Egipcio" class="Gato">Gato mau egipcio</option>
                                     <option value="Snowshoe" class="Gato">Gato snowshoe</option>
                                     <!-- agregar más -->
-                                    <option value="OtraRaza">Otra</option>
+                                    <option value="Otra">Otra</option>
                                 </select>
                             </div>
                             <!-- Sexo del animal: macho o hembra, si no se selecciona se muestran todos-->
                             <div class="form-group col-12">
-                                <label for="animalSexModal">Sexo</label>
-                                <select class="form-control" id="animalSexModal" name="Sexo del animal">
+                                <label for="animalSex">Sexo</label>
+                                <select class="form-control" id="animalSex" name="_sexo">
                                     <option value="" disabled selected>Seleccione sexo del animal</option>
                                     <option value="Macho">Macho</option>
                                     <option value="Hembra">Hembra</option>
                                 </select>
                             </div>
                             <!-- Edad: filtrar por intervalo de años (se filtra por años o por meses?) -->
-                            <div class="form-group col-12" id="animalAgeModal">
-                                <label for="animalAgeModal">Edad</label>
+                            <div class="form-group col-12" id="animalAge">
+                                <label for="animalAge">Edad</label>
                                 <!-- AÑOS O MESES -->
                                 <div class="input-group col-12 mb-2">
                                     <div class="form-check form-check-inline col-6">
-                                        <input class="form-check-input" type="radio" id="yearsModal" name="Years" value="years">
-                                        <label class="form-check-label" for="yearsModal">Años</label>
+                                        <input class="form-check-input" type="radio" id="years" name="_edadUnidad" value="años">
+                                        <label class="form-check-label" for="years">Años</label>
                                     </div>
                                     <div class="form-check form-check-inline col-4">
-                                        <input class="form-check-input" type="radio" id="mesesModal" name="Meses" value="meses">
-                                        <label class="form-check-label" for="mesesModal">Meses</label>
+                                        <input class="form-check-input" type="radio" id="meses" name="_edadUnidad" value="meses">
+                                        <label class="form-check-label" for="meses">Meses</label>
                                     </div>
                                 </div>
                                 <!-- VALOR DE EDAD -->
                                 <div class="input-group">
                                     <!-- agregar limites de min y max -->
-                                    <input type="number" class="form-control mr-2" min="0" placeholder="Desde" name="Edad desde ">
+                                    <input type="number" class="form-control mr-2" min="0" placeholder="Desde" name="_edadDesde">
                                     <span style="margin-right: 5px;">—</span>
-                                    <input type="number" class="form-control ml-2" min="0" placeholder="Hasta" name="Edad hasta ">
+                                    <input type="number" class="form-control ml-2" min="0" placeholder="Hasta" name="_edadHasta">
                                 </div>
                             </div>
-                            <!-- Pelaje: TIPO, COLOR, LARGO-->
-                            <div class="form-group col-12">
-                                <label for="animalPelajeModal">Pelaje</label>
-                                <div class="selectGroup" id="animalPelajeModal">
-                                    <select class="form-control mt-1" id="tipoPelajeM" name="tipo_pelaje">
-                                        <option value="" disabled selected>Seleccione tipo de pelaje</option>
-                                        <option value="Lacio">Lacio</option>
-                                        <option value="Rizado">Rizado</option>
-                                        <option value="Otro">Otro</option>
-                                        <!-- agregar más opciones según sea necesario -->
-                                    </select>
-                                    <select class="form-control mt-1" id="colorPelajeModal" name="color_pelaje">
-                                        <option value="" disabled selected>Seleccione color de pelaje</option>
-                                        <option value="Negro">Negro</option>
-                                        <option value="Cafe oscuro">Café oscuro</option>
-                                        <option value="Cafe claro">Café claro</option>
-                                        <option value="Blanco">Blanco</option>
-                                        <option value="Otro">Otro</option>
-                                        <!-- agregar más opciones según sea necesario -->
-                                    </select>
-                                    <select class="form-control mt-1" id="largoPelajeModal" name="largo_pelaje">
-                                        <option value="" disabled selected>Seleccione largo de pelaje</option>
-                                        <option value="Largo">Largo</option>
-                                        <option value="Mediano">Mediano</option>
-                                        <option value="Corto">Corto</option>
-                                        <option value="Otro">Otro</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- Vacunas : si/no -->
-                            <div class="form-group col-12">
-                                <label for="animalVacunaModal">Vacunas</label>
-                                <div class="input-group col-12" id="animalVacunaModal">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="Vacunas" id="siVModal" value="Si">
-                                        <label class="form-check-label" for="siVModa">Sí</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="Vacunas" id="noVModal" value="No">
-                                        <label class="form-check-label" for="noVModal">No</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Enfermedade: si/no -->
-                            <div class="form-group col-12">
-                                <label for="animalIllnessModal">Enfermedades/<br>Parasitos/<br>Discapacidades</label>
-                                <div class="input-group col-12" id="animalIllnessModal">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="Enfermedades/Parasitos/Discapacidades"
-                                            id="siIModal" value="Si">
-                                        <label class="form-check-label" for="siIModal">Sí</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="Enfermedades/Parasitos/Discapacidades"
-                                            id="noIModal" value="No">
-                                        <label class="form-check-label" for="noIModal">No</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Estilirizados: si/no -->
-                            <div class="form-group col-12">
-                                <label for="animalEsterilModal">Estirilización</label>
-                                <div class="input-group col-12" id="animalEsterilModal">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="Estirilizacion/Castracion" id="siEModal"
-                                            value="Si">
-                                        <label class="form-check-label" for="siEModal">Sí</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="Estirilizacion/Castracion" id="noEModal"
-                                            value="No">
-                                        <label class="form-check-label" for="noEModal">No</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Ubicacion: Mexico(default)/Jalisco (default)/cuidad LIMITAR -->
-                            <div class="form-group col-12">
-                                <label for="ubicacion">Ubicación</label>
-                                <div class="selectGroup" id="ubicacionModal">
-                                    <input type="text" class="form-control mt-1" id="paisModal" name="Pais" value="Mexico"
-                                        placeholder="País: México" disabled>
-                                    <input type="text" class="form-control mt-1" id="estadoModal" name="Estado" value="Jalisco"
-                                        placeholder="Estado: Jalisco" disabled>
-                                    <!-- <select class="form-control mt-1" id="estado" name="Estado">
-                                        <option value="" disabled selected>Estado</option>
-                                        <option value="Jalisco">Jalisco</option>
-                                        <option value="Colima">Colima</option>
-                                    </select> -->
-                                    <select class="form-control mt-1" id="ciudadModal" name="Ciudad">
-                                        <option value="" disabled selected>Ciudad</option>
-                                        <option value="Guadalajara">Guadalajara</option>
-                                        <option value="Zapopan">Zapopan</option>
-                                        <option value="Tonala">Tonála</option>
-                                        <option value="Tlaquepaque">Tlaquepaque</option>
-                                        <option value="Tlajomulco">Tlajomulco</option>
             
-                                    </select>
-                                </div>
-                            </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary col-10" >Submit</button>
+                                <button type="submit" class="btn btn-primary col-10" id="filtrosBtn">Submit</button>
                             </div>
-                          
-                        </form>
             
+                        </form>
+                        
                     </div>
                 </div>
             </div>
@@ -597,7 +399,7 @@
                     <!-- ambos botones mandan un correo al responsable del perro -->
                     <!-- Adoptar: enviar form por correo al responsable -->
                     <a type="submit" class="btn btn-primary" href="#" data-toggle="modal"
-                        id="btnAdoptar" data-dismiss="modal" onclick="adoptarAnimal()">Adoptar</a>
+                        id="btnAdoptar" data-dismiss="modal">Adoptar</a>
                     <!-- Vloluntario: enviar correo o telefono a predeterminado y la comunicacion es aparte -->
                     <a id="btnVoluntarido" class="btn btn-primary" href="#" data-dismiss="modal">Voluntario</a>
                 </div>
@@ -619,46 +421,39 @@
                 </div>
                 <div class="modal-body">
                     <!-- SE ENVIA AL CORREO DEL RESPONSABLE -->
-                    <form enctype="text/plain" method="post"
-                        action="mailto:POO@test.com?cc=otro@test.com&subject=Curso%20Programación%20Orinetada%20a%20Objetos">
+                    <form>
                         <div class="row">
                             <div class="col-6">
                                 <input type="text" name="Nombre" id="nombreRegistroAdopcion" class="form-control"
                                     placeholder="Nombre(s)" required>
                             </div>
                             <div class="col-6">
-                                <input type="text" name="Apellido" id="appellidoRegistroAdopcion" class="form-control"
+                                <input type="text" name="Apellido" id="apellidoRegistroAdopcion" class="form-control"
                                     placeholder="Apellidos" required>
                             </div>
                         </div>
-                        <div class="input-group mt-3">
-                            <input type="date" name="Fecha de Nacimiento" id="fechaNacimientoAdopcion"
-                                class="form-control" value="" required>
-                        </div>
-                        <input type="text" name="INE" id="INE" class="form-control mt-3"
-                            pattern="[A-Z]{6}[0-9]{8}[HM][0-9]{3}" placeholder="INE" required>
-                        <input type="email" name="Correo" id="correoRegistroAdopcion" class="form-control mt-3"
-                            placeholder="Correo" required>
                         <input type="tel" name="Telefono" id="telefono_registroAdopcion" class="form-control mt-3"
-                            placeholder="Número de teléfono" required>
+                            placeholder="Número de teléfono" pattern="^\\d{10}$" required>
                         <input type="text" name="Direccion" id="direccion_registroAdopcion" class="form-control mt-3"
                             placeholder="Direccion" required>
                         <hr>
                         <div class="row">
                             <div class="col-6">
+                                <label for="nombreReferenciaAdopcion" style="font-weight: normal; font-size: small;">Nombre(s) de Presona de Referencia</label>
                                 <input type="text" name="Nombre Referencia" id="nombreReferenciaAdopcion"
-                                    class="form-control" placeholder="Nombre(s) de Persona de Referencia" required>
+                                    class="form-control" placeholder="Nombre(s)" required>
                             </div>
                             <div class="col-6">
-                                <input type="text" name="Apellido Rederencia" id="appellidoReferenciaAdopcion"
-                                    class="form-control" placeholder="Apellido(s) de Persona de Referencia" required>
+                                <label for="appellidoReferenciaAdopcion" style="font-weight: normal; font-size: small;">Apellido(s) de Presona de Referencia</label>
+                                <input type="text" name="Apellido Rederencia" id="apellidoReferenciaAdopcion"
+                                    class="form-control" placeholder="Apellido(s)" required>
                             </div>
                         </div>
                         <input type="tel" name="Telefono Referencia" id="telefono_referenciaAdopcion"
-                            class="form-control mt-3" placeholder="Número de teléfono de Persona de Referencia"
+                            class="form-control mt-3" placeholder="Número de teléfono de Persona de Referencia" pattern="^\\d{10}$"
                             required>
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary col-lg-10 mt-5 mb-4">Adoptar</button>
+                            <button type="submit" class="btn btn-primary col-lg-10 mt-5 mb-4" id="adoptarSubmit">Adoptar</button>
                         </div>
                     </form>
                 </div>
@@ -678,40 +473,40 @@
 
 
 <script>
-    //-------MOSTRAR SOLO RAZAS DE PERROS O GATOS O AMBAS------------------
-    let perroCheck = document.getElementById("dog");
-    let gatoCheck = document.getElementById("cat");
-    let razaAnimalSelect = document.getElementById("animalBreed");
-    let opcionesGato = razaAnimalSelect.querySelectorAll(".Gato");
-    let opcionesPerro = razaAnimalSelect.querySelectorAll(".Perro");
+    // //-------MOSTRAR SOLO RAZAS DE PERROS O GATOS O AMBAS------------------
+    // let perroCheck = document.getElementById("dog");
+    // let gatoCheck = document.getElementById("cat");
+    // let razaAnimalSelect = document.getElementById("_raza");
+    // let opcionesGato = razaAnimalSelect.querySelectorAll(".Gato");
+    // let opcionesPerro = razaAnimalSelect.querySelectorAll(".Perro");
 
-    function actualizarOpciones() {
-        if ((perroCheck.checked && !gatoCheck.checked) || (!perroCheck.checked && gatoCheck.checked)) {
-            opcionesGato.forEach(function (opcion) {
-                opcion.style.display = gatoCheck.checked ? "block" : "none";
-            });
-            opcionesPerro.forEach(function (opcion) {
-                opcion.style.display = perroCheck.checked ? "block" : "none";
-            });
-        } else if (perroCheck.checked && gatoCheck.checked) {
-            opcionesGato.forEach(function (opcion) {
-                opcion.style.display = "block";
-            });
-            opcionesPerro.forEach(function (opcion) {
-                opcion.style.display = "block";
-            });
-        } else {
-            opcionesGato.forEach(function (opcion) {
-                opcion.style.display = "none";
-            });
-            opcionesPerro.forEach(function (opcion) {
-                opcion.style.display = "none";
-            });
-        }
-    }
-    perroCheck.addEventListener('change', actualizarOpciones);
-    gatoCheck.addEventListener('change', actualizarOpciones);
-    actualizarOpciones();
+    // function actualizarOpciones() {
+    //     if ((perroCheck.checked && !gatoCheck.checked) || (!perroCheck.checked && gatoCheck.checked)) {
+    //         opcionesGato.forEach(function (opcion) {
+    //             opcion.style.display = gatoCheck.checked ? "block" : "none";
+    //         });
+    //         opcionesPerro.forEach(function (opcion) {
+    //             opcion.style.display = perroCheck.checked ? "block" : "none";
+    //         });
+    //     } else if (perroCheck.checked && gatoCheck.checked) {
+    //         opcionesGato.forEach(function (opcion) {
+    //             opcion.style.display = "block";
+    //         });
+    //         opcionesPerro.forEach(function (opcion) {
+    //             opcion.style.display = "block";
+    //         });
+    //     } else {
+    //         opcionesGato.forEach(function (opcion) {
+    //             opcion.style.display = "none";
+    //         });
+    //         opcionesPerro.forEach(function (opcion) {
+    //             opcion.style.display = "none";
+    //         });
+    //     }
+    // }
+    // perroCheck.addEventListener('change', actualizarOpciones);
+    // gatoCheck.addEventListener('change', actualizarOpciones);
+    // actualizarOpciones();
     //------------------------------------------------------------------------
 
     //MOSTRAR FILTROS--------------------------------------------------------------
@@ -740,19 +535,6 @@
 
         // Mostrar u ocultar la barra de búsqueda y el botón de filtro al cambiar el tamaño de la ventana
         window.addEventListener('resize', toggleSearchBar);
-        // Mostrar u ocultar la barra de búsqueda al hacer clic en el botón de filtro
-        // filterButton.addEventListener('click', function () {
-        //     if (searchBar.style.display === 'none') {
-        //         searchBar.style.display = 'block';
-        //         // searchBar.style.width = '230px';
-        //         // animalCards.style.marginLeft = '230px';
-        //         // searchBar.style.marginRight = '230px';
-        //     } else {
-        //         searchBar.style.display = 'none';
-        //         // animalCards.style.marginLeft = '0';
-        //         // searchBar.style.width = 'auto';
-        //     }
-        // });
     });
 </script>
 

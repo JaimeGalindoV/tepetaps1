@@ -20,13 +20,25 @@ router.route('/')
         res.sendFile(path.join(views, 'adoptar.html'));
     });
 
-router.get('/api', async (req, res) => {
-        try {
-            let mascotas = await Mascota.find({});
-            res.json(mascotas);
-        } catch (err) {
-            console.error(err);
-            res.status(500).send("Error al obtener las mascotas");
+
+router.route('/api')
+    .get(async (req, res) => {
+        if(Object.keys(req.query).length === 0){
+            try {
+                let mascotas = await Mascota.find({});
+                res.json(mascotas);
+            } catch (err) {
+                console.error(err);
+                res.status(500).send("Error al obtener las mascotas");
+            }
+        } else{
+            try {
+                let mascotas = await dataHandler.findAnimales(req.query);
+                res.json(mascotas);
+            } catch (err) {
+                console.error(err);
+                res.status(500).send("Error al obtener las mascotas");
+            }
         }
     });
 
@@ -41,7 +53,6 @@ router.route('/api/:idAnimal')
         }
     })
     .put(upload.none(), (req, res) => {
-        // console.log(req.body);
         dataHandler.updateAnimal(req, res);
 
     })
