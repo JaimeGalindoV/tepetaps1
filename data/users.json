@@ -1,135 +1,214 @@
 [
   {
-  "_id": {
-    "$oid": "66351ff5228bf117628acb71"
-  },
-  "_nombre": "Pepe",
-  "_apellido": "Juan",
-  "_correo": "pepe@its.com",
-  "_contraseña": "$2b$10$yjq92qc/yr9QK5wzsPeJGuszRogIyB52xc4Lqi1yFHXxA3gTxyZV2",
-  "_imagen": "aslkdmaskdm",
-  "_telefono": "1234567890",
-  "_fechaNacimiento": {
-    "$date": "2000-01-01T06:00:00.000Z"
-  },
-  "_animales": [],
-  "_publicaciones": [],
-  "_role": "USER",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "66353c34b40d9950b10f9129"
-  },
-  "_nombre": "Javier ",
-  "_apellido": "Laurian ",
-  "_correo": "armandolaurian74@gmail.com",
-  "_telefono": "3322108261",
-  "_contraseña": "$2b$10$l59QgD0kn7ihzhmWBiqUbOSjcdkwhlS/7hIjRlQ2dGTD.c0zvMcZW",
-  "_imagen": "aslkdmaskdm",
-  "_fechaNacimiento": {
-    "$date": "2004-11-25T00:00:00.000Z"
-  },
-  "_animales": [],
-  "_publicaciones": [],
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "66355c3b1935bbd8c58ccdab"
-  },
-  "_nombre": "Cristóbal ",
-  "_apellido": "Contreras ",
-  "_correo": "criscontrerastorres.22@gmail.com",
-  "_telefono": "3310394193",
-  "_contraseña": "$2b$10$0G/NpVpSscH0PxnqdcyGnuVG/gqy2.vu7331LJN6QUpRUGFbeSkp.",
-  "_imagen": "aslkdmaskdm",
-  "_fechaNacimiento": {
-    "$date": "2002-06-22T00:00:00.000Z"
-  },
-  "_animales": [],
-  "_publicaciones": [],
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6635a9eef2d1d720c33ad487"
-  },
-  "_nombre": "asdkmaldsmasñdm",
-  "_apellido": "aslmdasmdsamd",
-  "_correo": "asds@dlasd.casas",
-  "_contraseña": "$2b$10$czSZ5qbGqc/YOtdRGtxeJOJripQqAWFV3okByw03DirN5qcLFEmUi",
-  "_imagen": "aslkdmaskdm",
-  "_telefono": "3340085961",
-  "_fechaNacimiento": {
-    "$date": "2004-05-09T00:00:00.000Z"
-  },
-  "_animales": [],
-  "_publicaciones": [],
-  "_role": "USER",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6635af12670be57bf91ceaaf"
-  },
-  "_nombre": "asdkmaldsmasñdm",
-  "_apellido": "aslmdasmdsamd",
-  "_correo": "asds@dlasd.casa",
-  "_contraseña": "$2b$10$GOIrZ.ye.aWDi1Kj85/b4.JSdQMya9FpE5pmpMCnIi8JhjN50WEo.",
-  "_imagen": "aslkdmaskdm",
-
-  "_telefono": "3340085961",
-  "_fechaNacimiento": {
-    "$date": "2004-05-22T00:00:00.000Z"
-  },
-  "_animales": [],
-  "_publicaciones": [],
-  "_role": "USER",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "66373b8603526fd221d4ae96"
-  },
-  "_nombre": "Jaime Enrique",
-  "_apellido": "Galindo Villegas",
-  "_correo": "jaimeenriquegalindovillegas@gmail.com",
-  "_contraseña": "$2b$10$mSmtwmDOybmyDRW5XnYaJ.k6NVmeq8agPSXCVR0dL0KL0.HS2REJy",
-  "_imagen": "aslkdmaskdm",
-
-  "_telefono": "3340085961",
-  "_fechaNacimiento": {
-    "$date": "2004-04-30T00:00:00.000Z"
-  },
-  "_animales": [
-    {
-      "_nombre": "test2",
-      "_tipo": "perro",
-      "_imagen": "asmd",
-      "_raza": "Schnauzer",
-      "_sexo": "Macho",
-      "_caracter": "",
-      "_edad": null,
-      "_ubicacion": "Guadalajara",
-      "_pelajeTipo": "otro",
-      "_pelajeColor": "Cafe claro",
-      "_pelajeLargo": "Corto",
-      "_estirilizado": true,
-      "_vacunas": [
-        "leucemia"
-      ],
-      "_paracitos": [],
-      "_enfermedades": "",
-      "_estado": false,
-      "_correoUser": "jaimeenriquegalindovillegas@gmail.com",
-      "_id": {
-        "$oid": "6638260905a5861987d752f7"
+    "_id": {
+      "$oid": "663dafba8f250298c54a0c33"
+    },
+    "_nombre": "Luz",
+    "_apellido": "Topete",
+    "_correo": "teretopate@gmail.com",
+    "_contraseña": "$2b$10$Z53CpfpzzTXuV6mIBKIBq.gpzXfbGRv8.o5aBFU3UzNs3cG1tDz4e",
+    "_imagen": "https://randomuser.me/api/portraits/women/31.jpg",
+    "_telefono": "3319830162",
+    "_fechaNacimiento": {
+      "$date": {
+        "$numberLong": "793324800000"
+      }
+    },
+    "_animales": [
+      {
+        "$oid": "663db0788f250298c54a0c3a"
       },
-      "__v": 0
+      {
+        "$oid": "663db10a8f250298c54a0c46"
+      },
+      {
+        "$oid": "663db16f8f250298c54a0c51"
+      },
+      {
+        "$oid": "663db1fb8f250298c54a0c5d"
+      }
+    ],
+    "_publicaciones": [
+      {
+        "$oid": "663db5398f250298c54a0c8a"
+      },
+      {
+        "$oid": "663db5868f250298c54a0ca6"
+      },
+      {
+        "$oid": "663db6168f250298c54a0cb5"
+      }
+    ],
+    "_role": "USER",
+    "__v": {
+      "$numberInt": "0"
     }
-  ],
-  "_publicaciones": [],
-  "_role": "USER",
-  "__v": 0
-}]
+  },
+  {
+    "_id": {
+      "$oid": "663dd861df6a485b4bbff79f"
+    },
+    "_nombre": "Jorge",
+    "_apellido": "Barba",
+    "_correo": "profeponganos10@tepetaps.com",
+    "_contraseña": "$2b$10$gjzdmkwOl6WxBBjXK8QzZexlhU2p1aGCjMJPUXYs4cZovobG2fbOa",
+    "_imagen": "https://media.licdn.com/dms/image/C4E03AQENo5-vvHwoYA/profile-displayphoto-shrink_200_200/0/1517480328405?e=1720656000&v=beta&t=N0uflnzGAFLryjBtQ099JrPxiqFpgSoB8p7zSTHwTAk",
+    "_telefono": "3333333333",
+    "_fechaNacimiento": {
+      "$date": {
+        "$numberLong": "641433600000"
+      }
+    },
+    "_animales": [],
+    "_publicaciones": [],
+    "_role": "ADMIN",
+    "__v": {
+      "$numberInt": "0"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "66373b8603526fd221d4ae96"
+    },
+    "_nombre": "Jaime Enrique",
+    "_apellido": "Galindo Villegas",
+    "_correo": "jaimeenriquegalindovillegas@gmail.com",
+    "_contraseña": "$2b$10$mSmtwmDOybmyDRW5XnYaJ.k6NVmeq8agPSXCVR0dL0KL0.HS2REJy",
+    "_imagen": "https://randomuser.me/api/portraits/men/0.jpg",
+    "_telefono": "3340085961",
+    "_fechaNacimiento": {
+      "$date": {
+        "$numberLong": "1083283200000"
+      }
+    },
+    "_animales": [
+      {
+        "$oid": "663ad860877a607f80e07fdc"
+      },
+      {
+        "$oid": "663fbe8a3aca22933aab07bc"
+      }
+    ],
+    "_publicaciones": [
+      {
+        "$oid": "663e2b6f121929001d8e9fc1"
+      }
+    ],
+    "_role": "ADMIN",
+    "__v": {
+      "$numberInt": "0"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "663e1ce6121929001d8e9ed8"
+    },
+    "_nombre": "Sara",
+    "_apellido": "Aranda",
+    "_correo": "sara.aranda@tepetaps.com",
+    "_contraseña": "$2b$10$UeNjtSrnx/NndJ0kUgSaIepycyE.9QExTVTPZroSbqofjKUGY.3Vi",
+    "_imagen": "https://i.pinimg.com/originals/45/86/c8/4586c85e92dcd8bda7fdc32dc8603e49.jpg",
+    "_telefono": "3411340404",
+    "_fechaNacimiento": {
+      "$date": {
+        "$numberLong": "1097020800000"
+      }
+    },
+    "_animales": [],
+    "_publicaciones": [],
+    "_role": "ADMIN",
+    "__v": {
+      "$numberInt": "0"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "664296fee97a5236afb0c62c"
+    },
+    "_nombre": "Juan",
+    "_apellido": "Barba",
+    "_correo": "jbarba@iteso.mx",
+    "_contraseña": "$2b$10$ZHugubrEe6NgKbf1/KxwheWQ2x61oNeDA6QXPet.mpTN9.6Xy3pYq",
+    "_imagen": "https://m.media-amazon.com/images/G/33/apparel/rcxgs/tile._CB483369929_.gif",
+    "_telefono": "3333333333",
+    "_fechaNacimiento": {
+      "$date": {
+        "$numberLong": "704937600000"
+      }
+    },
+    "_animales": [],
+    "_publicaciones": [
+      {
+        "$oid": "6642973fe97a5236afb0c63a"
+      }
+    ],
+    "_role": "USER",
+    "__v": {
+      "$numberInt": "0"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "663f9809c2311ed1f913441e"
+    },
+    "_nombre": "Jaime",
+    "_apellido": "Galindo",
+    "_correo": "jaimegalindovillegas@gmail.com",
+    "_contraseña": "$2b$10$BGDT7hN5xvOkaHv8UYGRWufak2zh/T8XbB75U4WV9ExV0J7Fja2mW",
+    "_imagen": "https://th.bing.com/th/id/OIP.i17gX62mQi1Mrk89VH55lQHaG6?rs=1&pid=ImgDetMain",
+    "_telefono": "3340085961",
+    "_fechaNacimiento": {
+      "$date": {
+        "$numberLong": "1081641600000"
+      }
+    },
+    "_animales": [],
+    "_publicaciones": [],
+    "_role": "USER",
+    "__v": {
+      "$numberInt": "0"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "663fc53f3aca22933aab084b"
+    },
+    "_nombre": "Ana Paula",
+    "_apellido": "Castilla Romero",
+    "_correo": "paulana@gmail.com",
+    "_contraseña": "$2b$10$Zp1sD72.356FQ7UuAo14D.5ZOMPuRCmh6R./DJYCj9/dZb27MjRfW",
+    "_imagen": "https://i.pinimg.com/originals/94/55/72/94557248162d6bb98fcbe1af70f00a12.png",
+    "_telefono": "3411250215",
+    "_fechaNacimiento": {
+      "$date": {
+        "$numberLong": "160963200000"
+      }
+    },
+    "_animales": [
+      {
+        "$oid": "663fc6983aca22933aab0854"
+      },
+      {
+        "$oid": "663fc7563aca22933aab085e"
+      },
+      {
+        "$oid": "663fc8313aca22933aab0874"
+      },
+      {
+        "$oid": "663fc8893aca22933aab0881"
+      },
+      {
+        "$oid": "663fc8f93aca22933aab088f"
+      }
+    ],
+    "_publicaciones": [
+      {
+        "$oid": "663fc7b13aca22933aab0869"
+      }
+    ],
+    "_role": "USER",
+    "__v": {
+      "$numberInt": "0"
+    }
+  }
+]

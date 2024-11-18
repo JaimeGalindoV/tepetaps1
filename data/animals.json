@@ -1,629 +1,422 @@
-[{
-  "_id": {
-    "$oid": "6632c10cabd8dc73d89e7566"
+[
+  {
+    "_id": {
+      "$oid": "663ad860877a607f80e07fdc"
+    },
+    "_nombre": "Garfield",
+    "_tipo": "Gato",
+    "_imagen": "https://th.bing.com/th/id/R.8359b42bbcae99fc2473fb9bdb6e1ae0?rik=FdiaSrRDfG9mAQ&pid=ImgRaw&r=0",
+    "_raza": "Otra",
+    "_sexo": "Hembra",
+    "_caracter": "Es como garfiel",
+    "_edad": [
+      {
+        "$numberInt": "1"
+      },
+      "años"
+    ],
+    "_ubicacion": "Zapopan",
+    "_pelajeTipo": "Rizado",
+    "_pelajeColor": "Negro",
+    "_pelajeLargo": "Largo",
+    "_estirilizado": false,
+    "_fechaDesparasitacion": {
+      "$date": {
+        "$numberLong": "1713225600000"
+      }
+    },
+    "_vacunas": [
+      "Parvovirus",
+      "Panleucopenia",
+      "Herpesvirus",
+      "Calicivirus",
+      "Leucemia",
+      "Otras"
+    ],
+    "_paracitos": [
+      "Garrapatas"
+    ],
+    "_enfermedades": "Esta medio wey",
+    "_discapacidades": "No camina bien por viejo",
+    "_estado": false,
+    "_correoUser": "jaimeenriquegalindovillegas@gmail.com",
+    "__v": {
+      "$numberInt": "0"
+    }
   },
-  "_nombre": "Pepe",
-  "_tipo": "Perro",
-  "_imagen": "https://i.pinimg.com/564x/a4/3b/cd/a43bcd47b0c20ba05b2848f74d41e74f.jpg",
-  "_raza": "Labrador",
-  "_sexo": "Macho",
-  "_caracter": "Amigable",
-  "_edad": [
-    2,
-    "años"
-  ],
-  "_ubicacion": "Guadalajara",
-  "_pelajeTipo": "Lacio",
-  "_pelajeColor": "Otro",
-  "_pelajeLargo": "Corto",
-  "_estirilizado": false,
-  "_fechaDesparasitacion": {
-    "$date": "2000-01-01T06:00:00.000Z"
+  {
+    "_id": {
+      "$oid": "663db0788f250298c54a0c3a"
+    },
+    "_nombre": "Bola de nieve",
+    "_tipo": "Perro",
+    "_imagen": "https://www.purina.es/sites/default/files/styles/square_medium_440x440/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-09Chihuahua20smooth20coat.jpg?itok=M0z5cV0g",
+    "_raza": "Chihuahua",
+    "_sexo": "Hembra",
+    "_caracter": "Es delicada, le gustan las cosas caras pero es buena perrita",
+    "_edad": [
+      {
+        "$numberInt": "3"
+      },
+      "meses"
+    ],
+    "_ubicacion": "Zapopan",
+    "_pelajeTipo": "Lacio",
+    "_pelajeColor": "Blanco",
+    "_pelajeLargo": "Corto",
+    "_estirilizado": false,
+    "_fechaDesparasitacion": {
+      "$date": {
+        "$numberLong": "1714262400000"
+      }
+    },
+    "_vacunas": [
+      "Mosquillo",
+      "Parvovirus"
+    ],
+    "_paracitos": [
+      "no"
+    ],
+    "_enfermedades": "ser una diva es una enfermedad mental?",
+    "_discapacidades": "",
+    "_estado": false,
+    "_correoUser": "teretopate@gmail.com",
+    "__v": {
+      "$numberInt": "0"
+    }
   },
-  "_vacunas": [
-    "no",
-    "Rabia"
-  ],
-  "_paracitos": [
-    "no"
-  ],
-  "_enfermedades": "Tiene una enfermedad en los pulmones.",
-  "_estado": false,
-  "_correoUser": "userChido@servicio.com",
-  "_discapacidades": "No tiene una patita"
-},
-{
-  "_id": {
-    "$oid": "6632c10cabd8dc73d89e8568"
+  {
+    "_id": {
+      "$oid": "663fc8313aca22933aab0874"
+    },
+    "_nombre": "Lola",
+    "_tipo": "Gato",
+    "_imagen": "https://mx.hola.com/imagenes/estar-bien/20200413165436/gato-bombay-caracteristicas-lb/0-810-166/gato-bombay-caracteristicas-t.jpg",
+    "_raza": "Bombay",
+    "_sexo": "Hembra",
+    "_caracter": "Lola es tranquila y dormilona",
+    "_edad": [
+      {
+        "$numberInt": "3"
+      },
+      "años"
+    ],
+    "_ubicacion": "Tlajomulco",
+    "_pelajeTipo": "Lacio",
+    "_pelajeColor": "Negro",
+    "_pelajeLargo": "Corto",
+    "_estirilizado": true,
+    "_fechaDesparasitacion": {
+      "$date": {
+        "$numberLong": "1712102400000"
+      }
+    },
+    "_vacunas": [
+      "Primera Vacuna",
+      "Panleucopenia",
+      "Leucemia"
+    ],
+    "_paracitos": [],
+    "_enfermedades": "",
+    "_discapacidades": "No tiene una patita",
+    "_estado": true,
+    "_correoUser": "paulana@gmail.com",
+    "__v": {
+      "$numberInt": "0"
+    }
   },
-  "_nombre": "Jack",
-  "_tipo": "Gato",
-  "_imagen": "https://i.pinimg.com/564x/a4/3b/cd/a43bcd47b0c20ba05b2848f74d41e74f.jpg",
-  "_raza": "Bombay",
-  "_sexo": "Hembra",
-  "_caracter": "Amigable",
-  "_edad": [
-    1,
-    "meses"
-  ],
-  "_ubicacion": "Tonala",
-  "_pelajeTipo": "Rizado",
-  "_pelajeColor": "Blanco",
-  "_pelajeLargo": "Largo",
-  "_estirilizado": false,
-  "_fechaDesparasitacion": {
-    "$date": "2000-01-01T06:00:00.000Z"
+  {
+    "_id": {
+      "$oid": "663fbe8a3aca22933aab07bc"
+    },
+    "_nombre": "Peludito Nuevo",
+    "_tipo": "Gato",
+    "_imagen": "https://i.pinimg.com/originals/38/a0/3c/38a03c8aec4b954a0780bbd5f2e789f5.jpg",
+    "_raza": "Bombay",
+    "_sexo": "Macho",
+    "_caracter": "",
+    "_edad": [
+      {
+        "$numberInt": "1"
+      },
+      "años"
+    ],
+    "_ubicacion": "Guadalajara",
+    "_pelajeTipo": "Rizado",
+    "_pelajeColor": "Negro",
+    "_pelajeLargo": "Largo",
+    "_estirilizado": true,
+    "_fechaDesparasitacion": null,
+    "_vacunas": [],
+    "_paracitos": [],
+    "_enfermedades": "",
+    "_discapacidades": "",
+    "_estado": false,
+    "_correoUser": "jaimeenriquegalindovillegas@gmail.com",
+    "__v": {
+      "$numberInt": "0"
+    }
   },
-  "_vacunas": [
-    "Rabia"
-  ],
-  "_paracitos": [
-    "Pulgas"
-  ],
-  "_enfermedades": "",
-  "_estado": false,
-  "_correoUser": "userChido@servicio.com",
-  "_discapacidades": ""
-},
-{
-  "_id": {
-    "$oid": "6632c10cabd8dc73d89e8569"
+  {
+    "_id": {
+      "$oid": "663fc7563aca22933aab085e"
+    },
+    "_nombre": "Batman",
+    "_tipo": "Perro",
+    "_imagen": "https://royalpomsky.com/wp-content/uploads/2021/06/chiot-bebe-Siberian-husky.jpg",
+    "_raza": "Husky",
+    "_sexo": "Macho",
+    "_caracter": "Se cree batman",
+    "_edad": [
+      {
+        "$numberInt": "5"
+      },
+      "meses"
+    ],
+    "_ubicacion": "Tlaquepaque",
+    "_pelajeTipo": "Lacio",
+    "_pelajeColor": "Negro",
+    "_pelajeLargo": "Mediano",
+    "_estirilizado": false,
+    "_fechaDesparasitacion": {
+      "$date": {
+        "$numberLong": "1714521600000"
+      }
+    },
+    "_vacunas": [
+      "Primera Vacuna"
+    ],
+    "_paracitos": [
+      "no"
+    ],
+    "_enfermedades": "",
+    "_discapacidades": "",
+    "_estado": false,
+    "_correoUser": "paulana@gmail.com",
+    "__v": {
+      "$numberInt": "0"
+    }
   },
-  "_nombre": "Bella",
-  "_tipo": "Gato",
-  "_imagen": "https://i.pinimg.com/564x/a4/3b/cd/a43bcd47b0c20ba05b2848f74d41e74f.jpg",
-  "_raza": "Bombay",
-  "_sexo": "Hembra",
-  "_caracter": "Amigable",
-  "_edad": [
-    1,
-    "años"
-  ],
-  "_ubicacion": "Tonala",
-  "_pelajeTipo": "Rizado",
-  "_pelajeColor": "Blanco",
-  "_pelajeLargo": "Largo",
-  "_estirilizado": false,
-  "_fechaDesparasitacion": {
-    "$date": "2000-01-01T06:00:00.000Z"
+  {
+    "_id": {
+      "$oid": "663fc8f93aca22933aab088f"
+    },
+    "_nombre": "Lala",
+    "_tipo": "Perro",
+    "_imagen": "https://miro.medium.com/max/1080/1*YmhrhHaHY3B3ugjKemZ6cQ.png",
+    "_raza": "Otra",
+    "_sexo": "Hembra",
+    "_caracter": "",
+    "_edad": [
+      {
+        "$numberInt": "1"
+      },
+      "años"
+    ],
+    "_ubicacion": "Tonala",
+    "_pelajeTipo": "Rizado",
+    "_pelajeColor": "Blanco",
+    "_pelajeLargo": "Mediano",
+    "_estirilizado": false,
+    "_fechaDesparasitacion": null,
+    "_vacunas": [
+      "Primera Vacuna",
+      "Tos",
+      "Coronavirus"
+    ],
+    "_paracitos": [
+      "Garrapatas",
+      "Pulgas"
+    ],
+    "_enfermedades": "Gripa",
+    "_discapacidades": "No tiene buen olfato",
+    "_estado": false,
+    "_correoUser": "paulana@gmail.com",
+    "__v": {
+      "$numberInt": "0"
+    }
   },
-  "_vacunas": [
-    "no"
-  ],
-  "_paracitos": [
-    "no"
-  ],
-  "_enfermedades": "",
-  "_discapacidades": "",
-  "_estado": false,
-  "_correoUser": "userChido@servicio.com"
-},
-{
-  "_id": {
-    "$oid": "6632c10cabd8dc73d89e8949"
+  {
+    "_id": {
+      "$oid": "663db10a8f250298c54a0c46"
+    },
+    "_nombre": "Miaumi",
+    "_tipo": "Gato",
+    "_imagen": "https://lanoticia.com/wp-content/uploads/2020/08/gato_png_crop1567201738546-jpg_673822677-1.jpg",
+    "_raza": "Angora Turco",
+    "_sexo": "Macho",
+    "_caracter": "Le gusta mucho comer y es muy respondón",
+    "_edad": [
+      {
+        "$numberInt": "5"
+      },
+      "años"
+    ],
+    "_ubicacion": "Tlajomulco",
+    "_pelajeTipo": "Lacio",
+    "_pelajeColor": "Blanco",
+    "_pelajeLargo": "Mediano",
+    "_estirilizado": true,
+    "_fechaDesparasitacion": {
+      "$date": {
+        "$numberLong": "1714780800000"
+      }
+    },
+    "_vacunas": [
+      "Parvovirus"
+    ],
+    "_paracitos": [],
+    "_enfermedades": "Tiene alergia a las ensaladas",
+    "_discapacidades": "no tiene",
+    "_estado": false,
+    "_correoUser": "teretopate@gmail.com",
+    "__v": {
+      "$numberInt": "0"
+    }
   },
-  "_nombre": "Puca",
-  "_tipo": "Gato",
-  "_imagen": "https://i.pinimg.com/564x/a4/3b/cd/a43bcd47b0c20ba05b2848f74d41e74f.jpg",
-  "_raza": "Bombay",
-  "_sexo": "Hembra",
-  "_caracter": "Amigable",
-  "_edad": [
-    1,
-    "años"
-  ],
-  "_ubicacion": "Tonala",
-  "_pelajeTipo": "Rizado",
-  "_pelajeColor": "Blanco",
-  "_pelajeLargo": "Largo",
-  "_estirilizado": false,
-  "_fechaDesparasitacion": {
-    "$date": "2000-01-01T06:00:00.000Z"
+  {
+    "_id": {
+      "$oid": "663fc8893aca22933aab0881"
+    },
+    "_nombre": "Ala",
+    "_tipo": "Gato",
+    "_imagen": "http://gatos.pe/wp-content/uploads/2015/07/american-shorthair.jpg",
+    "_raza": "Americano",
+    "_sexo": "Hembra",
+    "_caracter": "",
+    "_edad": null,
+    "_ubicacion": "Tonala",
+    "_pelajeTipo": "Lacio",
+    "_pelajeColor": "Gris",
+    "_pelajeLargo": "Corto",
+    "_estirilizado": false,
+    "_fechaDesparasitacion": null,
+    "_vacunas": [
+      "no"
+    ],
+    "_paracitos": [
+      "no"
+    ],
+    "_enfermedades": "",
+    "_discapacidades": "",
+    "_estado": false,
+    "_correoUser": "paulana@gmail.com",
+    "__v": {
+      "$numberInt": "0"
+    }
   },
-  "_vacunas": [
-    "no"
-  ],
-  "_paracitos": [
-    "no"
-  ],
-  "_enfermedades": "",
-  "_discapacidades": "",
-  "_estado": false,
-  "_correoUser": "userChido@servicio.com"
-},
-{
-  "_id": {
-    "$oid": "6632c10cabd8dc73d89e8567"
+  {
+    "_id": {
+      "$oid": "663db1fb8f250298c54a0c5d"
+    },
+    "_nombre": "Dudi",
+    "_tipo": "Gato",
+    "_imagen": "https://i.pinimg.com/236x/34/31/95/343195464f8a4ba1748de800b4bdaaaf.jpg",
+    "_raza": "Siberiano",
+    "_sexo": "Macho",
+    "_caracter": "Es muy curioso y le gusta preguntar por todo",
+    "_edad": [
+      {
+        "$numberInt": "5"
+      },
+      "meses"
+    ],
+    "_ubicacion": "Tonala",
+    "_pelajeTipo": "Lacio",
+    "_pelajeColor": "Cafe claro",
+    "_pelajeLargo": "Mediano",
+    "_estirilizado": true,
+    "_fechaDesparasitacion": {
+      "$date": {
+        "$numberLong": "1714521600000"
+      }
+    },
+    "_vacunas": [
+      "Otras"
+    ],
+    "_paracitos": [],
+    "_enfermedades": "",
+    "_discapacidades": "",
+    "_estado": false,
+    "_correoUser": "teretopate@gmail.com",
+    "__v": {
+      "$numberInt": "0"
+    }
   },
-  "_nombre": "Sam",
-  "_tipo": "Perro",
-  "_imagen": "https://i.pinimg.com/564x/a4/3b/cd/a43bcd47b0c20ba05b2848f74d41e74f.jpg",
-  "_raza": "Pug",
-  "_sexo": "Macho",
-  "_caracter": "Dormilon",
-  "_edad": [
-    4,
-    "meses"
-  ],
-  "_ubicacion": "Zapopan",
-  "_pelajeTipo": "Rizado",
-  "_pelajeColor": "Negro",
-  "_pelajeLargo": "Corto",
-  "_estirilizado": true,
-  "_fechaDesparasitacion": {
-    "$date": "2000-01-01T06:00:00.000Z"
+  {
+    "_id": {
+      "$oid": "663fc6983aca22933aab0854"
+    },
+    "_nombre": "Jack",
+    "_tipo": "Perro",
+    "_imagen": "https://tse4.mm.bing.net/th?id=OIP.bK5EKpgc6PVeL8zU-gGIxAHaF7&pid=Api&P=0&h=180",
+    "_raza": "Pug",
+    "_sexo": "Macho",
+    "_caracter": "Tristón y llorón",
+    "_edad": [
+      {
+        "$numberInt": "3"
+      },
+      "meses"
+    ],
+    "_ubicacion": "Guadalajara",
+    "_pelajeTipo": "Lacio",
+    "_pelajeColor": "Amarillo",
+    "_pelajeLargo": "Mediano",
+    "_estirilizado": false,
+    "_fechaDesparasitacion": null,
+    "_vacunas": [
+      "Rabia",
+      "Primera Vacuna",
+      "Tos"
+    ],
+    "_paracitos": [
+      "Pulgas"
+    ],
+    "_enfermedades": "Depresión",
+    "_discapacidades": "",
+    "_estado": false,
+    "_correoUser": "paulana@gmail.com",
+    "__v": {
+      "$numberInt": "0"
+    }
   },
-  "_vacunas": [
-    "Rabia"
-  ],
-  "_paracitos": [
-    "no"
-  ],
-  "_enfermedades": "Tiene cancer",
-  "_discapacidades": "No tiene un ojo",
-  "_estado": false,
-  "_correoUser": "userChido@servicio.com"
-},
-{
-  "_id": {
-    "$oid": "6632c10cabd8dc73d89e8849"
-  },
-  "_nombre": "Lola",
-  "_tipo": "Perro",
-  "_imagen": "https://i.pinimg.com/564x/a4/3b/cd/a43bcd47b0c20ba05b2848f74d41e74f.jpg",
-  "_raza": "Pug",
-  "_sexo": "Hembra",
-  "_caracter": "Amigable",
-  "_edad": [
-    1,
-    "años"
-  ],
-  "_ubicacion": "Tonala",
-  "_pelajeTipo": "Rizado",
-  "_pelajeColor": "Blanco",
-  "_pelajeLargo": "Largo",
-  "_estirilizado": true,
-  "_fechaDesparasitacion": {
-    "$date": "2000-01-01T06:00:00.000Z"
-  },
-  "_vacunas": [
-    "no"
-  ],
-  "_paracitos": [
-    "Gusanos"
-  ],
-  "_enfermedades": "Tiene covid",
-  "_discapacidades": "",
-  "_estado": false,
-  "_correoUser": "userChido@servicio.com"
-},
-{
-  "_id": {
-    "$oid": "6632c10cabd8dc73d89e8459"
-  },
-  "_nombre": "Lilo",
-  "_tipo": "Gato",
-  "_imagen": "https://i.pinimg.com/564x/a4/3b/cd/a43bcd47b0c20ba05b2848f74d41e74f.jpg",
-  "_raza": "Bombay",
-  "_sexo": "Hembra",
-  "_caracter": "Amigable",
-  "_edad": [
-    1,
-    "años"
-  ],
-  "_ubicacion": "Tonala",
-  "_pelajeTipo": "Rizado",
-  "_pelajeColor": "Blanco",
-  "_pelajeLargo": "Largo",
-  "_estirilizado": false,
-  "_fechaDesparasitacion": {
-    "$date": "2000-01-01T06:00:00.000Z"
-  },
-  "_vacunas": [
-    "Rabia"
-  ],
-  "_paracitos": [
-    "no"
-  ],
-  "_enfermedades": "",
-  "_discapacidades": "",
-  "_estado": false,
-  "_correoUser": "userChido@servicio.com"
-},
-{
-  "_id": {
-    "$oid": "663989189ebe7fbc19ec0f32"
-  },
-  "_nombre": "Beatle",
-  "_tipo": "Perro",
-  "_imagen": "https://cdn.shortpixel.ai/client/q_lossy,ret_img,w_2863/https://www.packofpets.com/wp-content/uploads/2017/12/Cute_beagle_puppy_lilly.jpg",
-  "_raza": "Beagle",
-  "_sexo": "Macho",
-  "_caracter": "Triste",
-  "_edad": null,
-  "_ubicacion": "Tlajomulco",
-  "_pelajeTipo": "Lacio",
-  "_pelajeColor": "Cafe claro",
-  "_pelajeLargo": "Corto",
-  "_estirilizado": true,
-  "_vacunas": [
-    "Herpesvirus",
-    "Calicivirus",
-    "Leucemia",
-    "no"
-  ],
-  "_paracitos": [],
-  "_enfermedades": "Tiene depresion",
-  "_estado": false,
-  "_correoUser": "paulana@email.com",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "66398b263eb6bb8a133af707"
-  },
-  "_nombre": "Sal",
-  "_tipo": "Perro",
-  "_imagen": "http://cdn.wallpapersafari.com/44/8/P7iWMu.jpg",
-  "_raza": "Pug",
-  "_sexo": "Hembra",
-  "_caracter": "",
-  "_edad": null,
-  "_ubicacion": "Zapopan",
-  "_pelajeTipo": "Lacio",
-  "_pelajeColor": "Cafe claro",
-  "_pelajeLargo": "Corto",
-  "_estirilizado": false,
-  "_vacunas": [],
-  "_paracitos": [],
-  "_enfermedades": "",
-  "_estado": false,
-  "_correoUser": "paulana@email.com",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "66398c70606d0046d55a1db8"
-  },
-  "_nombre": "Nana",
-  "_tipo": "gato",
-  "_imagen": "http://vignette4.wikia.nocookie.net/reinoanimalia/images/9/98/Gato_bombay.jpg/revision/latest?cb=20130225175034&path-prefix=es",
-  "_raza": "Bombay",
-  "_sexo": "Hembra",
-  "_caracter": "",
-  "_edad": null,
-  "_ubicacion": "Tonala",
-  "_pelajeTipo": "Lacio",
-  "_pelajeColor": "Negro",
-  "_pelajeLargo": "Mediano",
-  "_estirilizado": true,
-  "_vacunas": [],
-  "_paracitos": [],
-  "_enfermedades": "",
-  "_estado": false,
-  "_correoUser": "paulana@email.com",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "66398dc79c27464ba9907d51"
-  },
-  "_nombre": "Bo",
-  "_tipo": "gato",
-  "_imagen": "http://fishsubsidy.org/wp-content/uploads/2020/01/american-bobtail-close-up-ginger-cat-pets-domestic-cat-1.jpg",
-  "_raza": "Americano",
-  "_sexo": "Macho",
-  "_caracter": "",
-  "_edad": null,
-  "_ubicacion": "Tonala",
-  "_pelajeTipo": "Lacio",
-  "_pelajeColor": "Amarillo",
-  "_pelajeLargo": "Mediano",
-  "_estirilizado": true,
-  "_vacunas": [],
-  "_paracitos": [],
-  "_enfermedades": "",
-  "_estado": false,
-  "_correoUser": "paulana@email.com",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "66398f180fb93aecc3092cc2"
-  },
-  "_nombre": "Chloe",
-  "_tipo": "Perro",
-  "_imagen": "https://vignette.wikia.nocookie.net/beverly-hills-chihuahua/images/0/00/Chloe_The_Dog.jpg/revision/latest?cb=20111218175159",
-  "_raza": "Chihuahua",
-  "_sexo": "Hembra",
-  "_caracter": "Linda",
-  "_edad": [
-    "3",
-    "años"
-  ],
-  "_ubicacion": "Tonala",
-  "_pelajeTipo": "Lacio",
-  "_pelajeColor": "Blanco",
-  "_pelajeLargo": "Corto",
-  "_estirilizado": false,
-  "_vacunas": [
-    "Primera Vacuna",
-    "Mosquillo"
-  ],
-  "_paracitos": [],
-  "_enfermedades": "",
-  "_estado": false,
-  "_correoUser": "paulana@email.com",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "663a33d6997f734cc1e488f7"
-  },
-  "_nombre": "Wawa",
-  "_tipo": "Perro",
-  "_imagen": "https://i.pinimg.com/originals/2d/45/8c/2d458c70987478a85148220676ef3edb.jpg",
-  "_raza": "Perro Mestizo",
-  "_sexo": "Macho",
-  "_caracter": "es algo 'molesto'",
-  "_edad": [
-    "1",
-    "años"
-  ],
-  "_ubicacion": "Guadalajara",
-  "_pelajeTipo": "Lacio",
-  "_pelajeColor": "Otro",
-  "_pelajeLargo": "Corto",
-  "_estirilizado": true,
-  "_vacunas": [
-    "no"
-  ],
-  "_paracitos": [],
-  "_enfermedades": "",
-  "_estado": false,
-  "_correoUser": "jaimeenriquegalindovillegas@gmail.com",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "663abcd73121a643523716c8"
-  },
-  "_nombre": "Juancho",
-  "_tipo": "Perro",
-  "_imagen": "https://i.pinimg.com/originals/38/a0/3c/38a03c8aec4b954a0780bbd5f2e789f5.jpg",
-  "_raza": "Schnauzer",
-  "_sexo": "Macho",
-  "_caracter": "Es 'Manzo'",
-  "_edad": [
-    "3",
-    "meses"
-  ],
-  "_ubicacion": "Tonala",
-  "_pelajeTipo": "Rizado",
-  "_pelajeColor": "Cafe oscuro",
-  "_pelajeLargo": "Mediano",
-  "_estirilizado": false,
-  "_fechaDesparasitacion": {
-    "$date": "2000-01-01T06:00:00.000Z"
-  },
-  "_vacunas": [
-    "Panleucopenia",
-    "Herpesvirus"
-  ],
-  "_paracitos": [],
-  "_enfermedades": "No tiene enfermedades",
-  "_discapacidades": "Tampoco tiene discapacidades",
-  "_estado": false,
-  "_correoUser": "jaimeenriquegalindovillegas@gmail.com",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "663ac068811f89177ea1e256"
-  },
-  "_nombre": "PepePechasPicaPapas",
-  "_tipo": "Perro",
-  "_imagen": "https://i.pinimg.com/originals/38/a0/3c/38a03c8aec4b954a0780bbd5f2e789f5.jpg",
-  "_raza": "",
-  "_sexo": "Hembra",
-  "_caracter": "",
-  "_edad": [
-    "3",
-    ""
-  ],
-  "_ubicacion": "Guadalajara",
-  "_pelajeTipo": "Lacio",
-  "_pelajeColor": "Blanco",
-  "_pelajeLargo": "Mediano",
-  "_estirilizado": false,
-  "_vacunas": [],
-  "_paracitos": [],
-  "_enfermedades": "",
-  "_discapacidades": "",
-  "_estado": false,
-  "_correoUser": "jaimeenriquegalindovillegas@gmail.com",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "663ac576057eebb0ca979aaa"
-  },
-  "_nombre": "Tostada",
-  "_tipo": "Perro",
-  "_imagen": "https://estag.fimagenes.com/imagenesred/fb_1344347_not-encoding.jpg",
-  "_raza": "GoldenRetriever",
-  "_sexo": "Macho",
-  "_caracter": "Jugueton",
-  "_edad": [
-    "2",
-    "años"
-  ],
-  "_ubicacion": "Tonala",
-  "_pelajeTipo": "Lacio",
-  "_pelajeColor": "Amarillo",
-  "_pelajeLargo": "Mediano",
-  "_estirilizado": false,
-  "_vacunas": [
-    "Primera Vacuna",
-    "Tos",
-    "Mosquillo"
-  ],
-  "_paracitos": [],
-  "_enfermedades": "Tiene covid",
-  "_discapacidades": "No tiene olfato",
-  "_estado": false,
-  "_correoUser": "paulana@email.com",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "663ac62f057eebb0ca979ab3"
-  },
-  "_nombre": "Guayaba",
-  "_tipo": "gato",
-  "_imagen": "https://heraldodemexico.com.mx/u/fotografias/m/2020/10/30/f1200x675-276234_391966_5050.jpg",
-  "_raza": "Europeo",
-  "_sexo": "Hembra",
-  "_caracter": "Autoestima muy 'alta'",
-  "_edad": null,
-  "_ubicacion": "Zapopan",
-  "_pelajeTipo": "Lacio",
-  "_pelajeColor": "Cafe claro",
-  "_pelajeLargo": "Largo",
-  "_estirilizado": true,
-  "_vacunas": [
-    "no"
-  ],
-  "_paracitos": [],
-  "_enfermedades": "Gripa",
-  "_discapacidades": "Sordo",
-  "_estado": false,
-  "_correoUser": "paulana@email.com",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "663ac8bd56a9a10e19639472"
-  },
-  "_nombre": "Naranjo",
-  "_tipo": "gato",
-  "_imagen": "https://tse2.mm.bing.net/th?id=OIP.f9JycsrlG_Zf2NXfCwozNgHaFj&pid=Api&P=0&h=180",
-  "_raza": "Persa",
-  "_sexo": "Hembra",
-  "_caracter": "Egocentrico",
-  "_edad": null,
-  "_ubicacion": "Guadalajara",
-  "_pelajeTipo": "Lacio",
-  "_pelajeColor": "Blanco",
-  "_pelajeLargo": "Largo",
-  "_estirilizado": true,
-  "_vacunas": [
-    "Mosquillo",
-    "Coronavirus",
-    "Parvovirus"
-  ],
-  "_paracitos": [],
-  "_enfermedades": "Esquizofrenia",
-  "_discapacidades": "No tiene una patita",
-  "_estado": false,
-  "_correoUser": "paulana@email.com",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "663acc354783b7842040113e"
-  },
-  "_nombre": "Bucky",
-  "_tipo": "Perro",
-  "_imagen": "http://4.bp.blogspot.com/-xTEjs5Vi4v4/UD-RT2y9eFI/AAAAAAAAi30/vwfksN9fKvE/s1600/Perro-Pitbull_Fondos-de-Pantalla-HD-de-Perros.jpg",
-  "_raza": "Pitbull",
-  "_sexo": "Macho",
-  "_caracter": "Loquito",
-  "_edad": [
-    "3",
-    "meses"
-  ],
-  "_ubicacion": "Tlaquepaque",
-  "_pelajeTipo": "Lacio",
-  "_pelajeColor": "Gris",
-  "_pelajeLargo": "Corto",
-  "_estirilizado": true,
-  "_vacunas": [
-    "Rabia",
-    "Primera Vacuna",
-    "Tos"
-  ],
-  "_paracitos": [
-    "Garrapatas",
-    "Pulgas",
-    "Piojos"
-  ],
-  "_enfermedades": "",
-  "_discapacidades": "",
-  "_estado": false,
-  "_correoUser": "paulana@email.com",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "663acf240ce64c0be7d60ac4"
-  },
-  "_nombre": "Test1",
-  "_tipo": "Gato",
-  "_imagen": "https://i.pinimg.com/originals/38/a0/3c/38a03c8aec4b954a0780bbd5f2e789f5.jpg",
-  "_raza": "Bombay",
-  "_sexo": "Hembra",
-  "_caracter": "Mi gatita :3",
-  "_edad": [
-    "1",
-    "años"
-  ],
-  "_ubicacion": "Guadalajara",
-  "_pelajeTipo": "Lacio",
-  "_pelajeColor": "Negro",
-  "_pelajeLargo": "Mediano",
-  "_estirilizado": true,
-  "_vacunas": [
-    "Rabia",
-    "Herpesvirus"
-  ],
-  "_paracitos": [
-    "Garrapatas",
-    "Piojos"
-  ],
-  "_enfermedades": "Esta sana :D",
-  "_discapacidades": "Se le rompio la patita hace 4 meses pero ya esta bien",
-  "_estado": false,
-  "_correoUser": "jaimeenriquegalindovillegas@gmail.com",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "663acfc82b2a0fb267b66790"
-  },
-  "_nombre": "Test2",
-  "_tipo": "Perro",
-  "_imagen": "https://i.pinimg.com/originals/38/a0/3c/38a03c8aec4b954a0780bbd5f2e789f5.jpg",
-  "_raza": "Pug",
-  "_sexo": "Hembra",
-  "_caracter": "",
-  "_edad": [
-    "1",
-    ""
-  ],
-  "_ubicacion": "Zapopan",
-  "_pelajeTipo": "Rizado",
-  "_pelajeColor": "Amarillo",
-  "_pelajeLargo": "Mediano",
-  "_estirilizado": true,
-  "_fechaDesparasitacion": {
-    "$date": "2024-05-01T00:00:00.000Z"
-  },
-  "_vacunas": [],
-  "_paracitos": [],
-  "_enfermedades": "",
-  "_discapacidades": "",
-  "_estado": false,
-  "_correoUser": "jaimeenriquegalindovillegas@gmail.com",
-  "__v": 0
-}]
+  {
+    "_id": {
+      "$oid": "663db16f8f250298c54a0c51"
+    },
+    "_nombre": "Amigobado",
+    "_tipo": "Perro",
+    "_imagen": "https://i.pinimg.com/736x/35/3a/d9/353ad9619623b527859c9ce2d07dbcac.jpg",
+    "_raza": "Dogo Argentino",
+    "_sexo": "Macho",
+    "_caracter": "Reniega de todo y juzga con la mirada, pero es un buen abogado",
+    "_edad": [
+      {
+        "$numberInt": "2"
+      },
+      "meses"
+    ],
+    "_ubicacion": "Guadalajara",
+    "_pelajeTipo": "Otro",
+    "_pelajeColor": "Blanco",
+    "_pelajeLargo": "Corto",
+    "_estirilizado": false,
+    "_fechaDesparasitacion": {
+      "$date": {
+        "$numberLong": "1715040000000"
+      }
+    },
+    "_vacunas": [
+      "Calicivirus"
+    ],
+    "_paracitos": [],
+    "_enfermedades": "",
+    "_discapacidades": "",
+    "_estado": false,
+    "_correoUser": "teretopate@gmail.com",
+    "__v": {
+      "$numberInt": "0"
+    }
+  }
+]
