@@ -5,7 +5,7 @@ const express = require('express');
 const router = require('./controllers/router');
 const loginRouter = require('./controllers/login_router');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
