@@ -149,7 +149,7 @@ function registerModal() {
                       required>
               </div>
               <input type="email" name="correo" id="correo" class="form-control mt-3" placeholder="Tu correo" required>
-              <input type="password" name="contraseña" id="password_registro" class="form-control mt-3" placeholder="Contraseña" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$" required>
+              <input type="password" name="contraseña" id="password_registro" class="form-control mt-3" placeholder="Contraseña" required>
               <input type="password" id="password_confirmRegistro" class="form-control mt-3" placeholder="Confirmar contraseña" required>
               <input type="tel" name="telefono" id="telefonoRegistro" class="form-control mt-3"
                   placeholder="Número de teléfono" pattern="^\\d{10}$" required>
@@ -272,6 +272,41 @@ document.getElementById('registerForm').addEventListener('submit', function (eve
     .catch(error => {
       console.error('Error:', error);
     });
+
+  // Verificar que la contaseña cumpla con los requisitos
+  const pass = document.getElementById("password_registro").value;
+  const reglas = {
+    longitud: pass.length >= 8,
+    mayuscula: /[A-Z]/.test(pass),
+    minuscula: /[a-z]/.test(pass),
+    numero: /\d/.test(pass),
+    simbolo: /[!@#$%^&*_\-+=]/.test(pass)
+  };
+
+  const mensajes = {
+    longitud: "✔ Mínimo 8 caracteres",
+    mayuscula: "✔ Una mayúscula",
+    minuscula: "✔ Una minúscula",
+    numero: "✔ Un número",
+    simbolo: "✔ Un símbolo (!@#$%^&*-_+=)"
+  };
+
+  let resultado = "Validación de contraseña:\n\n";
+  let todoBien = true;
+
+  for (let regla in reglas) {
+    if (reglas[regla]) {
+      resultado += mensajes[regla] + "\n";
+    } else {
+      resultado += mensajes[regla].replace("✔", "✖") + "\n";
+      todoBien = false;
+    }
+  }
+
+  if (!todoBien) {
+    event.preventDefault();
+    alert(resultado);
+  }
 
   // Verificar que las contraseñas coincidan
   let password = document.getElementById('password_registro').value;
