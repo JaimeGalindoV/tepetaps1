@@ -4,7 +4,14 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+  branches:
+    include:
+    - "*"
+
+pr:
+  branches:
+    include:
+      - master
 
 variables:
 
@@ -81,7 +88,7 @@ stages:
 - stage: DeployProd
   displayName: Deploy stage
   dependsOn: DeployDev
-  condition: succeeded()
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   jobs:
   - deployment: Deploy
     displayName: Deploy
