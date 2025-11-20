@@ -19,7 +19,8 @@ variables:
   azureSubscription: '718160c3-834b-45e4-8192-3df4d55db9de'
 
   # Web app name
-  webAppName: 'Tepetaps'
+  webAppProdName: 'Tepetaps'
+  webAppDevName: 'Tepetaps-dev'
 
   # Environment name
   environmentNameDev: 'dev'
@@ -80,8 +81,8 @@ stages:
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
-              appName: $(webAppName)
-              runtimeStack: 'NODE|22LTS'
+              appName: $(webAppDevName)
+              runtimeStack: 'NODE|22-lts'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               startUpCommand: 'npm run start'
 
@@ -104,7 +105,7 @@ stages:
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
-              appName: $(webAppName)
-              runtimeStack: 'NODE|22LTS'
+              appName: $(webAppProdName)
+              runtimeStack: 'NODE|22-lts'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               startUpCommand: 'npm run start'
