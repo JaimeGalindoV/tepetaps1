@@ -89,8 +89,13 @@ class Usuario {
         }
         
         // Verificar la presencia de números
-        if(!(/[0-9]/.test(contraseña))){
+        if(!(/\d/.test(contraseña))){
             throw new UsuarioExcepcion("La contraseña debe contener al menos un número.");
+        }
+        
+        // Verificar la precencia de caracteres especiales
+        if(!(/[!@#$%^&*_\-+=]/.test(contraseña))){
+            throw new UsuarioExcepcion("La contraseña debe contener al menos un símbolo (!@#$%^&*-_+=).");
         }
     
         // Si la contraseña pasa todas las verificaciones, se establece
